@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(248, 248, 250);
+}
+
 h1,
 h2,
 h3,
@@ -19,6 +23,12 @@ p {
 form {
     display: block;
     margin-top: 0em;
+}
+
+.page-border {
+    border: solid rgb(228, 228, 232) 1px;
+    border-radius: 5px;
+    background-color: white;
 }
 
 legend {
@@ -98,8 +108,8 @@ fieldset {
 /* footer */
 
 footer {
-    border-top: solid black 1px;
-    background: -webkit-linear-gradient(rgb(241, 248, 255), rgb(220, 229, 238));
+    border-top: solid rgb(205, 205, 215) 1px;
+    background: -webkit-linear-gradient(rgb(238, 238, 242), rgb(248, 248, 252));
 }
 
 .colour-facebook {
