@@ -20,6 +20,14 @@ p {
     color: grey;
 }
 
+p:hover {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 form {
     display: block;
     margin-top: 0em;
