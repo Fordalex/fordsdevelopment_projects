@@ -93,3 +93,25 @@ fieldset {
     border: solid black 1px;
     text-decoration: none;
 }
+
+
+/* footer */
+
+footer {
+    border-top: solid black 1px;
+    background: -webkit-linear-gradient(rgb(241, 248, 255), rgb(220, 229, 238));
+}
+
+.colour-facebook {
+    color: #4267B2;
+}
+
+.colour-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.colour-twitter {
+    color: #38A1F3;
+}
