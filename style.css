@@ -28,6 +28,19 @@ a:hover {
     text-decoration: none;
 }
 
+
+/* title */
+
+.links-title {
+    position: relative;
+    bottom: 15px;
+    right: 20px;
+    width: auto;
+    display: inline-block;
+    color: rgb(12, 12, 52);
+    float: right;
+}
+
 form {
     display: block;
     margin-top: 0em;
