@@ -24,6 +24,10 @@ p:hover {
     color: black;
 }
 
+a {
+    color: lightgray;
+}
+
 a:hover {
     text-decoration: none;
 }
