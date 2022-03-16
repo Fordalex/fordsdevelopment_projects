@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_212240) do
+ActiveRecord::Schema.define(version: 2022_03_16_221154) do
 
   create_table "features", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_212240) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "link"
+    t.string "image"
     t.date "started"
     t.text "description"
     t.text "ux"
@@ -36,6 +37,24 @@ ActiveRecord::Schema.define(version: 2022_03_16_212240) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["features_id"], name: "index_projects_on_features_id"
+  end
+
+  create_table "technologies", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.integer "project_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_technologies_on_project_id"
+  end
+
+  create_table "technology_groups", force: :cascade do |t|
+    t.integer "technology_id"
+    t.integer "project_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_technology_groups_on_project_id"
+    t.index ["technology_id"], name: "index_technology_groups_on_technology_id"
   end
 
 end
