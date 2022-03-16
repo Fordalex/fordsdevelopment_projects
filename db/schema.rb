@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2022_03_16_212240) do
     t.text "description"
     t.boolean "completed"
     t.date "started"
+    t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_features_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -35,4 +37,5 @@ ActiveRecord::Schema.define(version: 2022_03_16_212240) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["features_id"], name: "index_projects_on_features_id"
   end
+
 end

@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ .header-container {
+  background-color: #fff;
+  border-bottom: solid rgb(228, 228, 232) 1px;
+  margin-bottom:  2rem;
+}

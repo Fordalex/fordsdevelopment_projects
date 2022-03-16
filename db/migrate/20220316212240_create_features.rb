@@ -5,6 +5,7 @@ class CreateFeatures < ActiveRecord::Migration[6.1]
       t.text :description
       t.boolean :completed
       t.date :started
+      t.references :project
 
       t.timestamps
     end
