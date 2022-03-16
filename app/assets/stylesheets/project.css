@@ -1,0 +1,45 @@
+.project-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-pageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.project-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.project-sectionWrapper {
+  width: 100%;
+}
+
+.project-imageContainer {
+  display: inline-block;
+  padding: 1.5rem;
+  border: solid grey 1px;
+  height: 450px;
+  width: 800px;
+  overflow: hidden;
+  border-radius: 200px;
+}
+
+.project-imageWrapper {
+  height: 450px;
+  overflow: hidden;
+  border-radius: 200px;
+}
+
+.project-icon {
+  width: 30px;
+}
+
+
+.project-technologiesContainer {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,40 @@
+<% @projects.each do |project| %>
+  <h1 class="project-title"><%= project.name %></h1>
+
+  <div class="project-pageContainer">
+    <div class="project-sectionWrapper project-descriptionContainer">
+      <%= project.description %>
+    </div>
+    <div class="project-sectionWrapper project-imageContainer">
+      <div class="project-imageWrapper">
+        <%= image_tag "example.png", class: "project-image" %>
+      </div>
+    </div>
+    <div class="project-sectionWrapper">
+      <%= project.link %>
+    </div>
+  </div>
+  <footer class="project-technologiesContainer">
+    <div>
+      <%= image_tag "icons/html5.png", class: "project-icon" %>
+      <%= image_tag "icons/css3.png", class: "project-icon" %>
+      <%= image_tag "icons/javascript.png", class: "project-icon" %>
+      <%= image_tag "icons/ruby.png", class: "project-icon" %>
+      <%= image_tag "icons/ai.png", class: "project-icon" %>
+    </div>
+    <div>
+      <%= image_tag "icons/html5.png", class: "project-icon" %>
+      <%= image_tag "icons/css3.png", class: "project-icon" %>
+      <%= image_tag "icons/javascript.png", class: "project-icon" %>
+      <%= image_tag "icons/ruby.png", class: "project-icon" %>
+      <%= image_tag "icons/ai.png", class: "project-icon" %>
+    </div>
+    <div>
+      <%= image_tag "icons/html5.png", class: "project-icon" %>
+      <%= image_tag "icons/css3.png", class: "project-icon" %>
+      <%= image_tag "icons/javascript.png", class: "project-icon" %>
+      <%= image_tag "icons/ruby.png", class: "project-icon" %>
+      <%= image_tag "icons/ai.png", class: "project-icon" %>
+    </div>
+  </footer>
+<% end %>
