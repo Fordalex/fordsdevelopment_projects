@@ -9,46 +9,141 @@ Project.delete_all
 Feature.delete_all
 Technology.delete_all
 TechnologyGroup.delete_all
+TechnologyType.delete_all
+
+puts "\n Creating TechnologyTypes"
+
+frontend = TechnologyType.create!(
+  name: "Frontend"
+)
+
+backend = TechnologyType.create!(
+  name: "Backend"
+)
+
+dev_ops = TechnologyType.create!(
+  name: "DevOps"
+)
+
+creative = TechnologyType.create!(
+  name: "Creative"
+)
+
+other = TechnologyType.create!(
+  name: "Other"
+)
+
+puts "\n Creating Technologies"
 
 ruby = Technology.create!(
   name: "Ruby",
-  icon: "icons/ruby.png"
+  icon: "icons/ruby.png",
+  technology_type: backend
 )
 
 html = Technology.create!(
   name: "HTML5",
-  icon: "icons/html5.png"
+  icon: "icons/html5.png",
+  technology_type: frontend
 )
 
 css = Technology.create!(
   name: "CSS3",
-  icon: "icons/css3.png"
+  icon: "icons/css3.png",
+  technology_type: frontend
 )
 
 javascript = Technology.create!(
   name: "Javascript",
-  icon: "icons/javascript.png"
+  icon: "icons/javascript.png",
+  technology_type: frontend
 )
 
 django = Technology.create!(
   name: "Django",
-  icon: "icons/django.png"
+  icon: "icons/django.png",
+  technology_type: backend
 )
 
 ai = Technology.create!(
   name: "AI",
-  icon: "icons/ai.png"
+  icon: "icons/ai.png",
+  technology_type: creative
 )
 
 blender = Technology.create!(
   name: "blender",
-  icon: "icons/blender.png"
+  icon: "icons/blender.png",
+  technology_type: creative
 )
 
 mongodb = Technology.create!(
   name: "mongodb",
-  icon: "icons/mongodb.png"
+  icon: "icons/mongodb.png",
+  technology_type: backend
 )
+
+python = Technology.create!(
+  name: "python",
+  icon: "icons/python.png",
+  technology_type: backend
+)
+
+digital_ocean = Technology.create!(
+  name: "DigitalCcean",
+  icon: "icons/digital_ocean.png",
+  technology_type: dev_ops
+)
+
+heroku = Technology.create!(
+  name: "heroku",
+  icon: "icons/heroku.png",
+  technology_type: dev_ops
+)
+
+nginx = Technology.create!(
+  name: "nginx",
+  icon: "icons/nginx.png",
+  technology_type: dev_ops
+)
+
+github = Technology.create!(
+  name: "github",
+  icon: "icons/github.png",
+  technology_type: other
+)
+
+vscode = Technology.create!(
+  name: "vscode",
+  icon: "icons/vscode.png",
+  technology_type: other
+)
+
+gimp = Technology.create!(
+  name: "gimp",
+  icon: "icons/gimp.png",
+  technology_type: creative
+)
+
+jenkins = Technology.create!(
+  name: "jenkins",
+  icon: "icons/jenkins.png",
+  technology_type: other
+)
+
+bitbucket = Technology.create!(
+  name: "bitbucket",
+  icon: "icons/bitbucket.png",
+  technology_type: other
+)
+
+sass = Technology.create!(
+  name: "sass",
+  icon: "icons/sass.png",
+  technology_type: frontend
+)
+
+puts "\n Creating Projects"
 
 fordsdevelopment = Project.create!(
   name: "Fordsdevelopment",
@@ -96,12 +191,17 @@ calendar = Project.create!(
   acknowledgements: "Again maybe an association?"
 )
 
+puts "\n Creating Features"
+
 Feature.create!(
   name: "Contact",
   description: "Multi-part form",
   started: Date.new(2021,01,01),
-  project: fordsdevelopment
+  project: fordsdevelopment,
+  completed: true
 )
+
+puts "\n Creating TechnologyGroups"
 
 TechnologyGroup.create!(
   technology: html,

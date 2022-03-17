@@ -1,0 +1,12 @@
+.homeHeader-container {
+  display: flex;
+  justify-content: center;
+}
+
+.homeHeader-textContainer {
+width: 100%;
+}
+
+.homeHeader-featureContainer {
+width: 100%;
+}

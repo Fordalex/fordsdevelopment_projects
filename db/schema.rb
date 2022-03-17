@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_221154) do
+ActiveRecord::Schema.define(version: 2022_03_17_195934) do
 
   create_table "features", force: :cascade do |t|
     t.string "name"
@@ -45,7 +45,9 @@ ActiveRecord::Schema.define(version: 2022_03_16_221154) do
     t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "technology_type_id"
     t.index ["project_id"], name: "index_technologies_on_project_id"
+    t.index ["technology_type_id"], name: "index_technologies_on_technology_type_id"
   end
 
   create_table "technology_groups", force: :cascade do |t|
@@ -55,6 +57,14 @@ ActiveRecord::Schema.define(version: 2022_03_16_221154) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_technology_groups_on_project_id"
     t.index ["technology_id"], name: "index_technology_groups_on_technology_id"
+  end
+
+  create_table "technology_types", force: :cascade do |t|
+    t.integer "technologies_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["technologies_id"], name: "index_technology_types_on_technologies_id"
   end
 
 end
