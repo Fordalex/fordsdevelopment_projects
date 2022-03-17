@@ -101,6 +101,12 @@ heroku = Technology.create!(
   technology_type: dev_ops
 )
 
+stripe = Technology.create!(
+  name: "stripe",
+  icon: "icons/stripe.png",
+  technology_type: backend
+)
+
 nginx = Technology.create!(
   name: "nginx",
   icon: "icons/nginx.png",
@@ -141,6 +147,61 @@ sass = Technology.create!(
   name: "sass",
   icon: "icons/sass.png",
   technology_type: frontend
+)
+
+postgres = Technology.create!(
+  name: "postgres",
+  icon: "icons/postgres.png",
+  technology_type: backend
+)
+
+sql = Technology.create!(
+  name: "sql",
+  icon: "icons/sql.png",
+  technology_type: backend
+)
+
+# maybe remove?
+api = Technology.create!(
+  name: "api",
+  icon: "icons/api.png",
+  technology_type: backend
+)
+
+travis = Technology.create!(
+  name: "travis",
+  icon: "icons/travis.png",
+  technology_type: other
+)
+
+google_api = Technology.create!(
+  name: "Google API",
+  icon: "icons/google_api.png",
+  technology_type: backend
+)
+
+amazon_aws = Technology.create!(
+  name: "Amazon",
+  icon: "icons/amazon_aws.png",
+  technology_type: dev_ops
+)
+
+virtual_machine = Technology.create!(
+  name: "VirtualMachine",
+  icon: "icons/virtual_machine.png",
+  technology_type: other
+)
+
+adobe_xd = Technology.create!(
+  name: "AdobeXD",
+  icon: "icons/adobe_xd.png",
+  technology_type: creative
+)
+
+w3c = Technology.create!(
+  name: "W3C",
+  icon: "icons/w3c.png",
+  technology_type: creative
 )
 
 puts "\n Creating Projects"

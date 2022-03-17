@@ -1,4 +1,8 @@
+<%# TODO These should be links redirecting to a page off all my projects that use this technology. %>
+<%# TODO Then a link to the project show page %>
+
 <div class="technology-container">
-  <p><b><%= technology.name %></b></p>
+  <%# TODO Add for screen readers %>
+  <p><b><%= technology.name.capitalize %></b></p>
   <%= image_tag technology.icon, class: "project-icon" %>
 </div>
