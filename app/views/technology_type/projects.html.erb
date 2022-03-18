@@ -1,0 +1,24 @@
+<h2 class="my-4"><%= @technology.name.capitalize %><%= image_tag @technology.icon, class: "project-icon ml-1 mb-1" %></h2>
+
+<h5>Projects</h5>
+<% if @technology_groups.any? %>
+  <% @technology_groups.each do |technology_group| %>
+    <% project = technology_group.project %>
+    <p class="m-0">
+      <%= project.name %>
+      <%= link_to "Read More", project.link, target: "_blank" %>
+      <%= link_to "Visit Website", project.link, target: "_blank" %>
+    </p>
+  <% end %>
+<% else %>
+  <p>No project examples currently availble.</p>
+<% end %>
+
+<h5>Features</h5>
+<p>No features currently availble.</p>
+
+<%# Display a list of projects %>
+
+<%# Display a list of features that use that technolgy - features is linked to a project %>
+
+<%# Should a project be listed and then all the features listed underneath?? %>

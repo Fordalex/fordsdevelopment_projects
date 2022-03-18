@@ -47,11 +47,16 @@
 .technology-container {
   padding: 0.4rem;
   border-radius: 0.5rem;
-  border: solid grey 1px;
+  border: solid #d6d6d6 1px;
   background-color: #fff;
   box-shadow: 0 0 9px 0 rgba(0,0,0,0.1);
   width: 70px;
   margin: 0 0.25rem;
+  transition: 0.2s;
+}
+
+.technology-container:hover {
+  transform: scale(1.05);
 }
 
 .technology-container p {
@@ -63,4 +68,17 @@
 .technology-container img {
   display: block;
   margin: auto;
+}
+
+.projectNavigation-container {
+  display: flex;
+  justify-content: center;
+}
+
+.projectNavigation-link {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: black;
+  margin: 1rem;
 }

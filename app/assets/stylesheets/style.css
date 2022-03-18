@@ -20,12 +20,8 @@ p {
     color: grey;
 }
 
-p:hover {
-    color: black;
-}
-
 a {
-    color: lightgray;
+    color: #000;
 }
 
 a:hover {
@@ -41,7 +37,7 @@ a:hover {
     right: 20px;
     width: auto;
     display: inline-block;
-    color: rgb(12, 12, 52);
+    color: rgb(130, 130, 146);
     float: right;
 }
 
@@ -55,6 +51,7 @@ form {
     border-radius: 5px;
     background-color: white;
     max-width: 1250px;
+    width: 100%;
 }
 
 legend {

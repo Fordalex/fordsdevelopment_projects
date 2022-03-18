@@ -1,4 +1,4 @@
 class Technology < ApplicationRecord
-  has_one :technology_group
+  has_many :technology_groups
   belongs_to :technology_type
 end
