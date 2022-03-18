@@ -6,19 +6,19 @@
 }
 
 .nav-icon {
-  width: 27px;
-  margin: 0.3rem;
+  width: 28px;
+  margin: 0.37rem;
   transition: 0.25s;
   filter: grayscale(1);
 }
 
 .nav-icon-active {
-  transform: scale(1.4);
+  transform: scale(1.5);
   filter: grayscale(0);
 }
 
 .nav-icon:hover {
-  transform: scale(1.4);
+  transform: scale(1.5);
   cursor: pointer;
   filter: grayscale(0);
 }
