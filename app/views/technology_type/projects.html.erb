@@ -6,7 +6,7 @@
     <% project = technology_group.project %>
     <p class="m-0">
       <%= project.name %>
-      <%= link_to "Read More", project.link, target: "_blank" %>
+      <%= link_to "Read More", project_path(project) %>
       <%= link_to "Visit Website", project.link, target: "_blank" %>
     </p>
   <% end %>
