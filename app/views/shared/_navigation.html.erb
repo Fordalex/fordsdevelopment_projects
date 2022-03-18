@@ -4,7 +4,7 @@
 <nav class="navigation-container">
   <% Technology.all.each do |technology| %>
     <%= link_to technology_type_path(technology.name) do %>
-      <%= image_tag technology.icon, class: "nav-icon #{"nav-icon-active" if technology.name == params[:name]}" %>
+      <%= image_tag technology.icon, class: "nav-icon #{"nav-icon-active" if technology.name == params[:name] || @project&.technologies&.include?(technology.name)}" %>
     <% end %>
   <% end %>
 </nav>

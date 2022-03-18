@@ -9,4 +9,8 @@ class Project < ApplicationRecord
   def features_left_to_implement
     features.where(completed: false)
   end
+
+  def technologies
+    technology_groups.map { |tg| tg.technology.name }
+  end
 end

@@ -19,8 +19,8 @@
           <p><%= feature.name %></p>
         <% end %>
         <h4>Technologies</h4>
-        <% @project.technology_groups.each do |technology_group| %>
-          <p class="m-0"><%= technology_group.technology.name %></p>
+        <% @project.technologies.each do |technology| %>
+          <p class="m-0"><%= technology %></p>
         <% end %>
       </div>
       <div class="project-sectionWrapper project-imageContainer">
