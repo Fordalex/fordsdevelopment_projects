@@ -1,10 +1,9 @@
 <div class="projectNavigation-container">
-  <div class="projectNavigation-link"></div>
-  <div class="projectNavigation-link"></div>
-  <div class="projectNavigation-link"></div>
-  <div class="projectNavigation-link"></div>
-  <div class="projectNavigation-link"></div>
-  <div class="projectNavigation-link"></div>
+  <% Project.all.each do |project| %>
+    <%= link_to project_path(project), class: "projectNavigation-linkWrapper" do %>
+      <div class="projectNavigation-link  <%= "projectNavigation-linkActive" if project.id == @project.id %>" id="<%= project.id %>"></div>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="d-flex justify-content-center">
@@ -38,7 +37,6 @@
 
     <div class="d-flex justify-content-center mt-4">
       <%= link_to "Vist Website", @project.link, class: "btn btn-info", target: "_blank" %>
-      <%= link_to "Read More", @project.link, class: "btn btn-info", target: "_blank" %>
     </div>
 
     <div class="project-technologiesContainer">

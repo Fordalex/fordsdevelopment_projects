@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_195934) do
     t.date "started"
     t.text "description"
     t.text "ux"
+    t.integer "order"
     t.integer "features_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

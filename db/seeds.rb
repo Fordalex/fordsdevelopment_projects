@@ -214,7 +214,8 @@ fordsdevelopment = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
-  image: "logos/fordsdevelopment.svg"
+  image: "logos/fordsdevelopment.svg",
+  order: 1
 )
 
 family_organiser = Project.create!(
@@ -223,7 +224,8 @@ family_organiser = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
-  image: "projects/family_organiser.png"
+  image: "projects/family_organiser.png",
+  order: 2
 )
 
 the_note_worthy = Project.create!(
@@ -232,6 +234,7 @@ the_note_worthy = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
+  order: 3
 )
 
 calendar = Project.create!(
@@ -240,6 +243,7 @@ calendar = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
+  order: 4
 )
 
 puts "\n Creating Features"

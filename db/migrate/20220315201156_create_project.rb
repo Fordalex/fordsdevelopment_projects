@@ -7,6 +7,7 @@ class CreateProject < ActiveRecord::Migration[6.1]
       t.date :started
       t.text :description
       t.text :ux
+      t.integer :order
       # Add acknowledgements as another model
       t.references :features
 

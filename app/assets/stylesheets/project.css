@@ -80,15 +80,27 @@
   height: 10px;
   border-radius: 10px;
   background-color: black;
-  margin: 1rem;
+  margin: 1.5rem;
+}
+
+.projectNavigation-linkActive {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border: solid #000 1px;
+  transform: scale(1.2);
+}
+
+.projectNavigation-linkWrapper:hover .projectNavigation-link {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .large-backgroundIcon {
   position: absolute;
   top: 250px;
-  right: 550px;
+  right: 22vw;
   opacity: 0.05;
   filter: grayscale(1);
   z-index: -1;
-  height: 350px;
+  height: 380px;
 }

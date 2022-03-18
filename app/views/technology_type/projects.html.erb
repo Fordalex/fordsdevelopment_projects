@@ -1,26 +1,28 @@
-<h1 class="mt-5"><%= @technology.name.capitalize %></h1>
-<hr class="mb-4">
+<div class="technologyType-container">
+  <h1 class="mt-5"><%= @technology.name.capitalize %></h1>
+  <hr class="mb-4">
 
-<% if @technology&.icon_high_res&.present? %>
-  <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
-<% end %>
-
-<h5 class="my-3">Projects</h5>
-<% if @technology_groups.any? %>
-  <% @technology_groups.each do |technology_group| %>
-    <% project = technology_group.project %>
-    <p class="m-0">
-      <%= project.name %>
-      <%= link_to "Read More", project_path(project) %>
-      <%= link_to "Visit Website", project.link, target: "_blank" %>
-    </p>
+  <% if @technology&.icon_high_res&.present? %>
+    <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
   <% end %>
-<% else %>
-  <p>No project examples currently availble.</p>
-<% end %>
 
-<h5 class="my-3">Features</h5>
-<p>No features currently availble.</p>
+  <h5 class="my-3">Projects</h5>
+  <% if @technology_groups.any? %>
+    <% @technology_groups.each do |technology_group| %>
+      <% project = technology_group.project %>
+      <p class="m-0">
+        <%= project.name %>
+        <%= link_to "Read More", project_path(project) %>
+        <%= link_to "Visit Website", project.link, target: "_blank" %>
+      </p>
+    <% end %>
+  <% else %>
+    <p>No project examples currently availble.</p>
+  <% end %>
+
+  <h5 class="my-3">Features</h5>
+  <p>No features currently availble.</p>
+</div>
 
 <%# Display a list of projects %>
 
