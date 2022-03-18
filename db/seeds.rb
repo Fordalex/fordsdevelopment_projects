@@ -275,6 +275,11 @@ TechnologyGroup.create!(
 )
 
 TechnologyGroup.create!(
+  technology: ruby,
+  project: the_note_worthy,
+)
+
+TechnologyGroup.create!(
   technology: css,
   project: fordsdevelopment,
 )
