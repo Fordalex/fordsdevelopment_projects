@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "home#home"
-  get "projects" => "projects#index", as: :projects
+  get "project/:id" => "projects#show", as: :project
+  get "technology-type/:name" => "technology_type#projects", as: :technology_type
 end

@@ -1,9 +1,6 @@
 class ProjectsController < ApplicationController
-  def index
-    # sort by the project
-    @projects = Project.all
-  end
-
   def show
+    # sort by the project
+    @project = Project.find(params[:id])
   end
 end
