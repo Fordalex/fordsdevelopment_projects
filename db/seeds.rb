@@ -38,12 +38,14 @@ puts "\n Creating Technologies"
 ruby = Technology.create!(
   name: "Ruby",
   icon: "icons/ruby.png",
+  icon_high_res: "icons/ruby_high_res.png",
   technology_type: backend
 )
 
 html = Technology.create!(
   name: "HTML5",
   icon: "icons/html5.png",
+  icon_high_res: "icons/html_high_res.png",
   technology_type: frontend
 )
 
@@ -212,9 +214,6 @@ fordsdevelopment = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
-  features_left_to_implement: "Tonnes",
-  current_features: "maybe change to an association?",
-  acknowledgements: "Again maybe an association?",
   image: "logos/fordsdevelopment.svg"
 )
 
@@ -224,9 +223,6 @@ family_organiser = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
-  features_left_to_implement: "Tonnes",
-  current_features: "maybe change to an association?",
-  acknowledgements: "Again maybe an association?",
   image: "projects/family_organiser.png"
 )
 
@@ -236,9 +232,6 @@ the_note_worthy = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
-  features_left_to_implement: "Tonnes",
-  current_features: "maybe change to an association?",
-  acknowledgements: "Again maybe an association?"
 )
 
 calendar = Project.create!(
@@ -247,9 +240,6 @@ calendar = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
-  features_left_to_implement: "Tonnes",
-  current_features: "maybe change to an association?",
-  acknowledgements: "Again maybe an association?"
 )
 
 puts "\n Creating Features"

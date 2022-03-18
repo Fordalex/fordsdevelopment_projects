@@ -1,6 +1,11 @@
-<h2 class="my-4"><%= @technology.name.capitalize %><%= image_tag @technology.icon, class: "project-icon ml-1 mb-1" %></h2>
+<h1 class="mt-5"><%= @technology.name.capitalize %></h1>
+<hr class="mb-4">
 
-<h5>Projects</h5>
+<% if @technology&.icon_high_res&.present? %>
+  <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
+<% end %>
+
+<h5 class="my-3">Projects</h5>
 <% if @technology_groups.any? %>
   <% @technology_groups.each do |technology_group| %>
     <% project = technology_group.project %>
@@ -14,7 +19,7 @@
   <p>No project examples currently availble.</p>
 <% end %>
 
-<h5>Features</h5>
+<h5 class="my-3">Features</h5>
 <p>No features currently availble.</p>
 
 <%# Display a list of projects %>
