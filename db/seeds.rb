@@ -52,73 +52,85 @@ html = Technology.create!(
 css = Technology.create!(
   name: "CSS3",
   icon: "icons/css3.png",
+  icon_high_res: "icons/css_high_res.png",
   technology_type: frontend
 )
 
 javascript = Technology.create!(
   name: "Javascript",
   icon: "icons/javascript.png",
+  icon_high_res: "icons/javascript_high_res.png",
   technology_type: frontend
 )
 
 django = Technology.create!(
   name: "Django",
   icon: "icons/django.png",
+  icon_high_res: "icons/django_high_res.png",
   technology_type: backend
 )
 
-ai = Technology.create!(
-  name: "AI",
+adobe_ai = Technology.create!(
+  name: "Adobe",
   icon: "icons/ai.png",
+  icon_high_res: "icons/adobe_ai_high_res.png",
   technology_type: creative
 )
 
 blender = Technology.create!(
   name: "blender",
   icon: "icons/blender.png",
+  icon_high_res: "icons/blender_high_res.png",
   technology_type: creative
 )
 
 mongodb = Technology.create!(
   name: "mongodb",
   icon: "icons/mongodb.png",
+  icon_high_res: "icons/mongodb_high_res.png",
   technology_type: backend
 )
 
 python = Technology.create!(
   name: "python",
   icon: "icons/python.png",
+  icon_high_res: "icons/python_high_res.png",
   technology_type: backend
 )
 
 digital_ocean = Technology.create!(
-  name: "DigitalCcean",
+  name: "DigitalOcean",
   icon: "icons/digital_ocean.png",
+  icon_high_res: "icons/digital_ocean_high_res.png",
   technology_type: dev_ops
 )
 
 heroku = Technology.create!(
   name: "heroku",
   icon: "icons/heroku.png",
+  icon_high_res: "icons/heroku_high_res.png",
   technology_type: dev_ops
 )
 
 stripe = Technology.create!(
   name: "stripe",
   icon: "icons/stripe.png",
+  icon_high_res: "icons/stripe_high_res.png",
   technology_type: backend
 )
 
 nginx = Technology.create!(
   name: "nginx",
   icon: "icons/nginx.png",
+  icon_high_res: "icons/nginx_high_res.png",
   technology_type: dev_ops
 )
 
 github = Technology.create!(
   name: "github",
   icon: "icons/github.png",
-  technology_type: other
+  icon_high_res: "icons/github_high_res.png",
+  technology_type: other,
 )
 
 vscode = Technology.create!(
