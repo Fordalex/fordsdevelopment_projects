@@ -1,12 +1,39 @@
 .homeHeader-container {
   display: flex;
   justify-content: center;
+  min-height: 750px;
+  padding: 2rem 0;
 }
 
 .homeHeader-textContainer {
-width: 100%;
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.homeHeader-text {
+  padding: 1rem 0;
 }
 
 .homeHeader-featureContainer {
-width: 100%;
+  width: 100%;
+}
+
+.callToAction-buttonMain {
+  padding: 1rem;
+  background-color: #fa3c3c;
+  color: #fff;
+  font-weight: 600;
+  border: solid #c12222 1px;
+  border-radius: 50px;
+  margin-right: 1rem;
+}
+
+.callToAction-buttonSecondary {
+  padding: 1rem;
+  background-color: #ffffff;
+  color: #ea4638;
+  font-weight: 600;
+  border: solid #c12222 1px;
+  border-radius: 50px;
+  margin-right: 1rem;
 }

@@ -2,14 +2,17 @@
   <h1 class="mt-5"><%= @technology.name.capitalize %></h1>
   <hr class="mb-4">
 
+  <% if @technology.description.present? %>
+    <%= @technology.description %>
+  <% end %>
+
   <% if @technology&.icon_high_res&.present? %>
     <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
   <% end %>
 
   <h5 class="my-3">Projects</h5>
-  <% if @technology_groups.any? %>
-    <% @technology_groups.each do |technology_group| %>
-      <% project = technology_group.project %>
+  <% if @technology.projects.any? %>
+    <% @technology.projects.each do |project| %>
       <p class="m-0">
         <%= project.name %>
         <%= link_to "Read More", project_path(project) %>
@@ -17,11 +20,21 @@
       </p>
     <% end %>
   <% else %>
-    <p>No project examples currently availble.</p>
+    <p>No project examples currently available.</p>
   <% end %>
 
   <h5 class="my-3">Features</h5>
-  <p>No features currently availble.</p>
+    <% if @technology.features.any? %>
+    <% @technology.features.each do |feature| %>
+      <p class="m-0">
+        <%= feature.name %>
+        <%= feature.project.name
+         %>
+      </p>
+    <% end %>
+  <% else %>
+    <p>No features currently available.</p>
+  <% end %>
 </div>
 
 <%# Display a list of projects %>

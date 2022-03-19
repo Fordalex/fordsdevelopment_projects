@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_195934) do
     t.string "name"
     t.string "icon"
     t.string "icon_high_res"
+    t.text "description"
     t.integer "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,10 +52,12 @@ ActiveRecord::Schema.define(version: 2022_03_17_195934) do
 
   create_table "technology_groups", force: :cascade do |t|
     t.integer "technology_id"
-    t.integer "project_id"
+    t.string "technology_groupable_type"
+    t.integer "technology_groupable_id"
+    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_technology_groups_on_project_id"
+    t.index ["technology_groupable_type", "technology_groupable_id"], name: "index_technology_groups_on_technology_groupable"
     t.index ["technology_id"], name: "index_technology_groups_on_technology_id"
   end
 

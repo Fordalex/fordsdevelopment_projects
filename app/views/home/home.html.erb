@@ -1,12 +1,14 @@
 
 <div class="homeHeader-container">
   <div class="homeHeader-textContainer">
-    <h1>Hello</h1>
+    <h1>Welcome!</h1>
 
-    <p>Some interesting text</p>
+    <p class="homeHeader-text">Here are a list of all my projects and features I've completed or I'm currently working on.
+    In the navigation are a list of all the technologies I've used with examples to my projects and
+    features where an example of my work can be seen.</p>
 
-    <%= link_to "View my projects", project_path(Project.first) %>
-    <%= link_to "Read more", "#about_me" %>
+    <%= link_to "View my projects", project_path(Project.first), class: "callToAction-buttonMain" %>
+    <%= link_to "Read more", "#aboutMe", class: "callToAction-buttonSecondary" %>
   </div>
   <div class="homeHeader-featureContainer">
     <p>Some feature using canvas</p>
@@ -16,7 +18,8 @@
 <hr>
 
 <% TechnologyType.all.each do |technology_type| %>
-  <h3 class="mt-3"><%= technology_type.name %></h3>
+  <%# Change about me link to be smooth scroll using js %>
+  <h3 class="mt-3" id="aboutMe"><%= technology_type.name %></h3>
   <div class="d-flex justify-content-start">
     <%# TODO add on scroll animation %>
     <% technology_type.technologies.each do |technology| %>
@@ -24,3 +27,5 @@
     <% end %>
   </div>
 <% end %>
+
+<%= javascript_pack_tag "aos" %>

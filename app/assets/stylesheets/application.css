@@ -14,6 +14,18 @@
  *= require_self
  */
 
+ .body {
+   scroll-behavior: smooth;
+ }
+
+ .logo-link:hover .title {
+   color: grey;
+ }
+
+ .logo-link:hover .sub-title {
+   color: #000;
+ }
+
  .page-container {
    display: block;
    margin: auto;

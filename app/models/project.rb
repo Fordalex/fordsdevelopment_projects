@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   has_many :features
-  has_many :technology_groups
+  has_many :technology_groups, as: :technology_groupable, dependent: :destroy
 
   def completed_features
     features.where(completed: true)

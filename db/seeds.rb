@@ -39,6 +39,7 @@ ruby = Technology.create!(
   name: "Ruby",
   icon: "icons/ruby.png",
   icon_high_res: "icons/ruby_high_res.png",
+  description: "I've used ruby before...",
   technology_type: backend
 )
 
@@ -215,7 +216,7 @@ adobe_xd = Technology.create!(
 w3c = Technology.create!(
   name: "W3C",
   icon: "icons/w3c.png",
-  technology_type: creative
+  technology_type: other
 )
 
 puts "\n Creating Projects"
@@ -260,7 +261,7 @@ calendar = Project.create!(
 
 puts "\n Creating Features"
 
-Feature.create!(
+contact = Feature.create!(
   name: "Contact",
   description: "Multi-part form",
   started: Date.new(2021,01,01),
@@ -272,37 +273,42 @@ puts "\n Creating TechnologyGroups"
 
 TechnologyGroup.create!(
   technology: html,
-  project: fordsdevelopment,
+  technology_groupable: fordsdevelopment,
 )
 
 TechnologyGroup.create!(
   technology: ruby,
-  project: fordsdevelopment,
+  technology_groupable: fordsdevelopment,
 )
 
 TechnologyGroup.create!(
   technology: ruby,
-  project: the_note_worthy,
+  technology_groupable: contact,
+)
+
+TechnologyGroup.create!(
+  technology: ruby,
+  technology_groupable: the_note_worthy,
 )
 
 TechnologyGroup.create!(
   technology: css,
-  project: fordsdevelopment,
+  technology_groupable: fordsdevelopment,
 )
 
 TechnologyGroup.create!(
   technology: javascript,
-  project: fordsdevelopment,
+  technology_groupable: fordsdevelopment,
 )
 
 TechnologyGroup.create!(
   technology: django,
-  project: fordsdevelopment,
+  technology_groupable: fordsdevelopment,
 )
 
 TechnologyGroup.create!(
   technology: mongodb,
-  project: fordsdevelopment,
+  technology_groupable: fordsdevelopment,
 )
 
 # I think add a polymorphic model Info

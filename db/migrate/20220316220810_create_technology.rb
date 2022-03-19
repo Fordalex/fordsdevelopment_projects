@@ -4,6 +4,7 @@ class CreateTechnology < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :icon
       t.string :icon_high_res
+      t.text :description
       t.references :project
 
       t.timestamps
