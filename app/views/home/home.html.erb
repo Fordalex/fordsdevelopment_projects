@@ -15,11 +15,13 @@
   </div>
 </div>
 
+
+<h2>Technologies</h2>
 <hr>
 
 <% TechnologyType.all.each do |technology_type| %>
   <%# Change about me link to be smooth scroll using js %>
-  <h3 class="mt-3" id="aboutMe"><%= technology_type.name %></h3>
+  <h4 class="mt-3" id="aboutMe"><%= technology_type.name %></h4>
   <div class="d-flex justify-content-start">
     <%# TODO add on scroll animation %>
     <% technology_type.technologies.each do |technology| %>
@@ -29,3 +31,26 @@
 <% end %>
 
 <%= javascript_pack_tag "aos" %>
+
+
+<h2>Overview on my projects</h2>
+<hr>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Theme</th>
+    <th>Audience</th>
+    <th>About</th>
+    <th>Actions</th>
+  </tr>
+  <% Project.all.each do |project| %>
+    <tr>
+      <td><%= project.name %></td>
+      <td><%= project.name %></td>
+      <td><%= project.name %></td>
+      <td><%= project.name %></td>
+      <td><%= link_to "Read more", project_path(project) %></td>
+    </tr>
+  <% end %>
+</table>
