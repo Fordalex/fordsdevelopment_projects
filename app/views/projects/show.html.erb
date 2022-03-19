@@ -21,7 +21,7 @@
 
       <div class="project-sectionWrapper">
         <h1 class="project-title mt-0 mb-5"><%= @project.name %></h1>
-        <%# TODO Add spinning dashed boarders %>
+        <%# TODO change this code... %>
         <div class="d-flex justify-content-center">
           <div class="project-imageContainer-outer">
             <div class="project-imageContainer-inner">
@@ -48,12 +48,6 @@
 
     <div class="d-flex justify-content-center mt-4">
       <%= link_to "Vist Website", @project.link, class: "btn btn-info", target: "_blank" %>
-    </div>
-
-    <div class="project-technologiesContainer">
-      <% @project.technology_groups.each do |technology_group| %>
-        <%#= render partial: "/shared/technology", locals: {technology: technology_group.technology} %>
-      <% end %>
     </div>
   </div>
 </div>

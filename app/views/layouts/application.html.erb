@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Caladea&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -24,44 +24,13 @@
         <% end %>
       </div>
     </div>
+
     <%= render partial: "/shared/navigation" %>
 
     <div class="page-container">
       <%= yield %>
     </div>
 
-    <footer class="row m-0 p-2 mt-4">
-      <div class="col-12">
-          <div class="row m-0 p-0">
-              <div class="col-12 col-lg-4 mb-2 p-0 d-flex justify-content-center">
-                  <p class="m-0 p-0">fordsdevelopment@gmail.com</p>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-4 mb-2 d-flex justify-content-center m-0 p-0">
-                  <a href="https://github.com/Fordalex" class="d-flex justify-content-center align-items-center" target="_blank">
-                      <i class="fab fa-github mr-1 text-dark"></i>
-                      <p class="m-0 p-0">github.com/Fordalex</p>
-                  </a>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-4 mb-2  d-flex justify-content-center m-0 p-0">
-                  <a href="https://www.facebook.com/Fords-development-102522668044543" class="d-flex justify-content-center align-items-center" target="_blank">
-                      <i class="fab fa-facebook-square mr-1 colour-facebook"></i>
-                      <p class="m-0 p-0">Fords development</p>
-                  </a>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-4 mb-2 d-flex justify-content-center m-0 p-0">
-                  <a href="https://www.instagram.com/fordsdevelopment/?hl=en" class="d-flex justify-content-center align-items-center" target="_blank">
-                      <i class="fab fa-instagram mr-1 colour-instagram"></i>
-                      <p class="m-0 p-0">fordsdevelopment</p>
-                  </a>
-              </div>
-              <div class="col-12 col-sm-6 col-lg-4 mb-2  d-flex justify-content-center m-0 p-0">
-                  <a href="https://twitter.com/alexfordsdev" class="d-flex justify-content-center align-items-center" target="_blank">
-                      <i class="fab fa-twitter-square mr-1 colour-twitter"></i>
-                      <p class="m-0 p-0">fordsdevelopment</p>
-                  </a>
-              </div>
-          </div>
-      </div>
-  </footer>
+    <%= render partial: "/shared/footer" %>
   </body>
 </html>
