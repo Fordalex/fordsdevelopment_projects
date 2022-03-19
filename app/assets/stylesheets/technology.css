@@ -1,0 +1,22 @@
+.technologyType-container {
+  min-height: 450px;
+}
+
+.feature-container {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: solid grey 1px;
+  border-radius: 5px;
+}
+
+.feature-container p {
+  margin: 0;
+}
+
+.feature-container b {
+  float: right;
+}
+
+.feature-icon {
+  width: 20px;
+}
