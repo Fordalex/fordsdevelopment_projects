@@ -19,6 +19,7 @@
 }
 
 .callToAction-buttonMain {
+  display: inline-block;
   padding: 1rem;
   background-color: #fa3c3c;
   color: #fff;
@@ -26,9 +27,17 @@
   border: solid #c12222 1px;
   border-radius: 50px;
   margin-right: 1rem;
+  transition: 0.2s;
+}
+
+.callToAction-buttonMain:hover {
+  color: #fa3c3c;
+  background-color: #fff;
+  transform: scale(1.09);
 }
 
 .callToAction-buttonSecondary {
+  display: inline-block;
   padding: 1rem;
   background-color: #ffffff;
   color: #ea4638;
@@ -36,4 +45,11 @@
   border: solid #c12222 1px;
   border-radius: 50px;
   margin-right: 1rem;
+  transition: 0.2s;
+}
+
+.callToAction-buttonSecondary:hover {
+  color: #fff;
+  background-color: #fa3c3c;
+  transform: scale(1.09);
 }
