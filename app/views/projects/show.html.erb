@@ -7,16 +7,10 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="page-border">
-    <h1 class="project-title my-4"><%= @project.name %></h1>
-
+  <div class="projectMain-container">
     <div class="project-pageContainer">
       <div class="project-sectionWrapper project-descriptionContainer">
-        <p>1 / 6</p>
-        <h4>Features</h4>
-        <% @project.completed_features.each do |feature| %>
-          <p><%= feature.name %></p>
-        <% end %>
+        <p class="project-count"><%= @project.order %> / <%= Project.count %></p>
         <h4>Technologies</h4>
         <% @project.technologies.each do |technology| %>
           <%= link_to technology_path(technology), class: "projectSection-technologyWrapper" do %>
@@ -24,14 +18,29 @@
           <% end %>
         <% end %>
       </div>
-      <div class="project-sectionWrapper project-imageContainer">
-        <%# TODO Add spinning dashed boarders %>
-        <div class="project-imageWrapper">
-          <%= image_tag @project.image || "example.png", class: "project-image" %>
-        </div>
-      </div>
+
       <div class="project-sectionWrapper">
+        <h1 class="project-title mt-0 mb-5"><%= @project.name %></h1>
+        <%# TODO Add spinning dashed boarders %>
+        <div class="d-flex justify-content-center">
+          <div class="project-imageContainer-outer">
+            <div class="project-imageContainer-inner">
+              <div class="project-imageWrapper">
+                <%= image_tag @project.image || "example.png", class: "project-image" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <p><%= @project.description %></p>
+      </div>
+
+      <div class="project-sectionWrapper">
+        <h4>Features</h4>
+        <% @project.completed_features.each do |feature| %>
+          <%= render partial: "/shared/feature", locals: {feature: feature} %>
+        <% end %>
+        <hr>
         <p>Start date: from github</p>
         <p>Commits: from github</p>
       </div>
@@ -48,3 +57,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag "project" %>

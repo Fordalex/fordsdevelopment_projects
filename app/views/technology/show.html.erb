@@ -28,15 +28,7 @@
   <h5 class="my-3">Features</h5>
     <% if @technology.features.any? %>
     <% @technology.features.each do |feature| %>
-      <div class="feature-container">
-        <h6><%= feature.name %></h6>
-        <p><%= feature.description %></p>
-        <p><%= feature.project.name %></p>
-        <% feature.technologies.each do |technolgy| %>
-          <%= image_tag technolgy.icon, class: "feature-icon" %>
-        <% end %>
-        <b><%= feature.completed ? "Completed" : "In progress" %></b>
-      </div>
+      <%= render partial: "/shared/feature", locals: {feature: feature} %>
     <% end %>
   <% else %>
     <p>No features currently available.</p>
