@@ -20,3 +20,9 @@
 .feature-icon {
   width: 20px;
 }
+
+.technologyShow-projectContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

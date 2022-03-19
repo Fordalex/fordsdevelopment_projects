@@ -13,11 +13,13 @@
   <h5 class="my-3">Projects</h5>
   <% if @technology.projects.any? %>
     <% @technology.projects.each do |project| %>
-      <p class="m-0">
+      <div class="technologyShow-projectContainer">
         <%= project.name %>
-        <%= link_to "Read More", project_path(project) %>
-        <%= link_to "Visit Website", project.link, target: "_blank" %>
-      </p>
+        <div>
+          <%= link_to "Read More", project_path(project), class: "main-button" %>
+          <%= link_to "Visit Website", project.link, target: "_blank", class: "secondary-button" %>
+        </div>
+      </div>
     <% end %>
   <% else %>
     <p>No project examples currently available.</p>
