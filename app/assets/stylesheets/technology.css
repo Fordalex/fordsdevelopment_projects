@@ -25,4 +25,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 0.2rem 0;
+  background-color: rgba(0,0,0,0.05);
+}
+
+.technologyShow-projectContainer:nth-child(odd) {
+  background-color: rgba(255,255,255,0.35);
 }

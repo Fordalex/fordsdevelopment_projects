@@ -17,4 +17,8 @@ class Technology < ApplicationRecord
       end
     end.compact
   end
+
+  def to_param
+    name
+  end
 end

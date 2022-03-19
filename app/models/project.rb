@@ -10,7 +10,11 @@ class Project < ApplicationRecord
     features.where(completed: false)
   end
 
-  def technologies
+  def technology_names
     technology_groups.map { |tg| tg.technology.name }
+  end
+
+  def technologies
+    technology_groups.map { |tg| tg.technology }
   end
 end

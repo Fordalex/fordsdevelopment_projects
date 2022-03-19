@@ -19,7 +19,9 @@
         <% end %>
         <h4>Technologies</h4>
         <% @project.technologies.each do |technology| %>
-          <p class="m-0"><%= technology %></p>
+          <%= link_to technology_path(technology), class: "projectSection-technologyWrapper" do %>
+            <%= image_tag technology.icon %><%= technology.name %>
+          <% end %>
         <% end %>
       </div>
       <div class="project-sectionWrapper project-imageContainer">

@@ -43,14 +43,14 @@
   background-color: #fa3c3c;
   color: #fff;
   border-radius: 50px;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   transition: 0.2s;
 }
 
 .main-button:hover {
   color: #fa3c3c;
   background-color: #fff;
-  transform: scale(1.09);
+  transform: scale(1.02);
 }
 
 .secondary-button {
@@ -59,12 +59,12 @@
   background-color: #fff;
   color: #fa3c3c;
   border-radius: 50px;
-  margin-right: 1rem;
+  margin-right: 0.2rem;
   transition: 0.2s;
 }
 
 .secondary-button:hover {
   color: #fff;
   background-color: #fa3c3c;
-  transform: scale(1.09);
+  transform: scale(1.02);
 }
