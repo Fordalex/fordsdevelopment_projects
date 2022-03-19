@@ -269,7 +269,7 @@ contact = Feature.create!(
   completed: true
 )
 
-puts "\n Creating TechnologyGroups"
+puts "\n Creating TechnologyGroups projects"
 
 TechnologyGroup.create!(
   technology: html,
@@ -279,16 +279,6 @@ TechnologyGroup.create!(
 TechnologyGroup.create!(
   technology: ruby,
   technology_groupable: fordsdevelopment,
-)
-
-TechnologyGroup.create!(
-  technology: ruby,
-  technology_groupable: contact,
-)
-
-TechnologyGroup.create!(
-  technology: ruby,
-  technology_groupable: the_note_worthy,
 )
 
 TechnologyGroup.create!(
@@ -311,13 +301,24 @@ TechnologyGroup.create!(
   technology_groupable: fordsdevelopment,
 )
 
-# I think add a polymorphic model Info
+TechnologyGroup.create!(
+  technology: ruby,
+  technology_groupable: the_note_worthy,
+)
 
-# CURRENT_FEATURE = "Current Feature"
-# FUTURE_FEATURE = "Future Feature"
-# ACKNOWLEDGEMENT = "Acknowledgement"
+puts "\n Creating TechnologyGroups features"
 
-# has_many :current_features, class_name: "Info", category: CURRENT_FEATURE
-# has_many :future_features, class_name: "Info"
-# has_many :acknowledgements, class_name: "Info"
+TechnologyGroup.create!(
+  technology: javascript,
+  technology_groupable: contact,
+)
 
+TechnologyGroup.create!(
+  technology: html,
+  technology_groupable: contact,
+)
+
+TechnologyGroup.create!(
+  technology: css,
+  technology_groupable: contact,
+)
