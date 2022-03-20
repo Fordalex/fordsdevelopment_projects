@@ -6,14 +6,16 @@ var innerRotation = 0;
 var imageRotation = 0;
 
 function rotate_circles() {
-  outerRotation += 0.5;
-  innerRotation -= 1;
-  imageRotation += 0.5;
+  outerRotation += 0.1;
+  innerRotation -= 0.2;
+  imageRotation += 0.1;
   imageContainerOuter.style.transform = `rotate(${outerRotation}deg)`;
   imageContainerInner.style.transform = `rotate(${innerRotation}deg)`;
   projectImageWrapper.style.transform = `rotate(${imageRotation}deg)`;
+
+  setTimeout(() => {
+    rotate_circles();
+  }, 15)
 }
 
-document.onmousemove = function() {
-  rotate_circles();
-}
+rotate_circles();
