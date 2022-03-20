@@ -33,7 +33,7 @@
 <h2>My projects</h2>
 <hr>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Theme</th>
@@ -47,7 +47,7 @@
       <td><%= project.name %></td>
       <td><%= project.name %></td>
       <td><%= project.name %></td>
-      <td><%= link_to "Read more", project_path(project) %></td>
+      <td><%= link_to "Read more", project_path(project), class: "main-button" %></td>
     </tr>
   <% end %>
 </table>
