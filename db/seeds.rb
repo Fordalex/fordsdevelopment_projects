@@ -239,6 +239,7 @@ fordsdevelopment = Project.create!(
   ux: "Some information about the ux",
   logo: "logos/fordsdevelopment.svg",
   image: "illustrations/undraw_fordsdevelopment.svg",
+  theme_colours: "#527ab6, #3b4b62, #fff"
   order: 1
 )
 

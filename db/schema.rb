@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_03_20_113449) do
     t.string "link"
     t.string "logo"
     t.string "image"
+    t.string "theme_colours"
     t.date "started"
     t.text "description"
     t.text "ux"
