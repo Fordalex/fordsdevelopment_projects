@@ -26,6 +26,7 @@
     </div>
 
     <%= render partial: "/shared/navigation" %>
+    <%= render partial: "/admin/shared/navigation" %>
 
     <%= link_to 'Logout', destroy_administrator_session_path, :data => {:confirm => 'Are you sure?', :method => "Delete"}, class: "float-right" %>
     <h2 class="text-center">Admin</h2>

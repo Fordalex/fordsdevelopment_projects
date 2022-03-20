@@ -1,6 +1,7 @@
-<h1>Projects</h1>
 
 <%= link_to "New", new_admin_project_path, class: "btn btn-success" %>
+
+<h3>Projects</h3>
 
 <table class="table ">
   <tr>
@@ -13,7 +14,7 @@
       <td>
         <%= link_to "View", project_path(project), class: "btn btn-secondary" %>
         <%= link_to "Edit", edit_admin_project_path(project), class: "btn btn-info" %>
-        <%= link_to "Delete", admin_project_path(project), class: "btn btn-danger", method: :delete %>
+        <%= link_to "Delete", admin_project_path(project), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
       </td>
     </tr>
   <% end %>

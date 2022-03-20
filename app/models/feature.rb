@@ -5,4 +5,8 @@ class Feature < ApplicationRecord
   def technologies
     technology_groups.map { |tg| tg.technology }
   end
+
+  def technology_names
+    technology_groups.map { |tg| tg.technology.name }
+  end
 end

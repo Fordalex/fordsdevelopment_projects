@@ -1,0 +1,20 @@
+
+<%= link_to "New", new_admin_feature_path, class: "btn btn-success" %>
+
+<h3>Features</h3>
+
+<table class="table ">
+  <tr>
+    <td>Name</td>
+    <td>Actions</td>
+  </tr>
+  <% @features.each do |feature| %>
+    <tr>
+      <td><%= feature.name %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_feature_path(feature), class: "btn btn-info" %>
+        <%= link_to "Delete", admin_feature_path(feature), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
