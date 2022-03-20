@@ -149,7 +149,16 @@
   height: 100%;
 }
 
-.project-featuresContainer {
+.features-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.themeWrapper {
+  border: solid 1px grey;
+  border-radius: 23px;
+  height: 30px;
+  margin-bottom: 0.5rem;
+  width: 30px;
+  display: inline-block;
 }

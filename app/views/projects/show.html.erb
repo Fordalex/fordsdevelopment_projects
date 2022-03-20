@@ -38,7 +38,7 @@
   <div class="col-12 col-md-9 p-2">
     <div class="project-sectionContainer">
       <h4>Features</h4>
-      <div class="project-featuresContainer">
+      <div class="features-container">
         <% @project.completed_features.each do |feature| %>
           <%= render partial: "/shared/feature", locals: {feature: feature} %>
         <% end %>
@@ -54,6 +54,11 @@
   <div class="col-2 p-2">
     <div class="project-sectionContainer">
       <h4>Theme</h4>
+      <% if @project.theme_colours.present? %>
+        <% @project.theme_colours.split(",").each do |theme| %>
+          <div class="themeWrapper" style="background-color: <%= theme %>"></div>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="col-6 p-2">

@@ -37,15 +37,19 @@
   <tr>
     <th>Name</th>
     <th>Theme</th>
-    <th>Audience</th>
     <th>About</th>
     <th>Actions</th>
   </tr>
   <% Project.all.each do |project| %>
     <tr>
       <td><%= project.name %></td>
-      <td><%= project.name %></td>
-      <td><%= project.name %></td>
+      <td>
+        <% if project.theme_colours.present? %>
+          <% project.theme_colours.split(",").each do |theme| %>
+            <div class="themeWrapper" style="background-color: <%= theme %>"></div>
+          <% end %>
+        <% end %>
+      </td>
       <td><%= project.name %></td>
       <td><%= link_to "Read more", project_path(project), class: "main-button" %></td>
     </tr>

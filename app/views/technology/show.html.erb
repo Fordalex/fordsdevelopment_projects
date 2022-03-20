@@ -27,9 +27,11 @@
 
   <h5 class="my-3">Features</h5>
     <% if @technology.features.any? %>
-    <% @technology.features.each do |feature| %>
-      <%= render partial: "/shared/feature", locals: {feature: feature} %>
-    <% end %>
+    <div class="features-container">
+      <% @technology.features.each do |feature| %>
+        <%= render partial: "/shared/feature", locals: {feature: feature} %>
+      <% end %>
+    </div>
   <% else %>
     <p>No features currently available.</p>
   <% end %>

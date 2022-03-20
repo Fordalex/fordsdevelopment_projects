@@ -24,11 +24,17 @@
 .technologyShow-projectContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 0.2rem 0;
-  background-color: rgba(0,0,0,0.05);
+  padding: 0.2rem 0.2rem;
+  background-color: rgba(0,0,0,0.03);
+  border-top: solid rgb(0, 0, 0) 1px;
 }
 
 .technologyShow-projectContainer:nth-child(odd) {
-  background-color: rgba(255,255,255,0.35);
+  background-color: rgba(255,255,255,0.20);
+}
+
+.technologyShow-projectContainer:last-of-type {
+  border-bottom: solid #000 1px;
 }

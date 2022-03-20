@@ -239,7 +239,7 @@ fordsdevelopment = Project.create!(
   ux: "Some information about the ux",
   logo: "logos/fordsdevelopment.svg",
   image: "illustrations/undraw_fordsdevelopment.svg",
-  theme_colours: "#527ab6, #3b4b62, #fff"
+  theme_colours: "#527ab6, #3b4b62, #fff",
   order: 1
 )
 
@@ -250,6 +250,8 @@ family_organiser = Project.create!(
   description: "My website",
   ux: "Some information about the ux",
   logo: "projects/family_organiser.png",
+  image: "illustrations/undraw_family_organiser.svg",
+  theme_colours: "#34c03c, #fff",
   order: 2
 )
 
