@@ -1,1 +1,17 @@
 <h1>Projects</h1>
+
+<table class="table ">
+  <tr>
+    <td>Name</td>
+    <td>Actions</td>
+  </tr>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.name %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_project_path(project), class: "btn btn-info" %>
+        <%= link_to "Delete", admin_project_path(project), class: "btn btn-danger", method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>

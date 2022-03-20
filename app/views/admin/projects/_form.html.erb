@@ -1,0 +1,23 @@
+<%= form_with(model: [:admin, project]) do |form| %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="admin-technologyOptionsContainer">
+    <% Technology.all.each do |technology| %>
+      <div class="form-group">
+        <%= image_tag technology.icon %>
+        <%= label_tag technology.name %>
+        <%= check_box_tag "[technologies][#{technology.name}]", {}, project.technology_names.include?(technology.name) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+  <%= form.submit class: "btn btn-success w-100 mt-3" %>
+  </div>
+
+<% end %>
+

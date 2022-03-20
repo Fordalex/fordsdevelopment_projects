@@ -1,6 +1,7 @@
 class Technology < ApplicationRecord
   has_many :technology_groups
   belongs_to :technology_type
+  validates_uniqueness_of :name
 
   def projects
     find_technolgoy_group_type("Project")
