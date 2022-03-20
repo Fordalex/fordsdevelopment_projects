@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :administrator
+
+  namespace :admin do
+    root "projects#index"
+    get "projects" => "projects#index"
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "home#home"
   get "project/:id" => "projects#show", as: :project

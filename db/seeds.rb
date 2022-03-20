@@ -10,6 +10,14 @@ Feature.delete_all
 Technology.delete_all
 TechnologyGroup.delete_all
 TechnologyType.delete_all
+Administrator.delete_all
+
+puts "\n Creating Admin"
+
+Administrator.create(
+  email: "admin@example.com",
+  password: "Password123"
+)
 
 puts "\n Creating TechnologyTypes"
 
@@ -102,6 +110,7 @@ python = Technology.create!(
 
 digital_ocean = Technology.create!(
   name: "DigitalOcean",
+  description: "Most of my sites are hosted on my VPS, I have created subdomains for all my projects.",
   icon: "icons/digital_ocean.png",
   icon_high_res: "icons/digital_ocean_high_res.png",
   technology_type: dev_ops
