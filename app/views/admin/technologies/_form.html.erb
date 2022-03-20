@@ -1,0 +1,28 @@
+<%= form_with(model: [:admin, technology]) do |form| %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :icon %>
+    <%= form.text_field :icon, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :icon_high_res %>
+    <%= form.text_field :icon_high_res, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :technology_type %>
+    <%= form.select :technology_type_id, options_for_select(TechnologyType.all.map{|p| [p.name, p.id] }), class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-success w-100 mt-3" %>
+  </div>
+
+<% end %>
+
