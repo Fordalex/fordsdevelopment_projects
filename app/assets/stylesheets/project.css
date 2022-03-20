@@ -33,20 +33,20 @@
 .project-imageContainer-outer {
   display: inline-block;
   padding: 0.45rem;
-  border: dashed 4px #000;
+  border: dashed 3px #000;
   border-radius: 8rem;
 }
 
 .project-imageContainer-inner {
   display: inline-block;
-  padding: 1.5rem;
-  border: dashed 4px #000;
+  padding: 0.75rem;
+  border: dashed 3px #000;
   border-radius: 8rem;
 }
 
 .project-imageWrapper {
-  height: 150px;
-  width: 150px;
+  height: 80px;
+  width: 80px;
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -131,4 +131,25 @@
 .projectSection-technologyWrapper img {
   width: 22px;
   margin-right: 5px;
+}
+
+
+/* new design */
+
+.project-name {
+  font-size: 3rem;
+}
+
+.project-sectionContainer {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+  border: solid rgb(212, 212, 212) 1px;
+  height: 100%;
+}
+
+.project-featuresContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
