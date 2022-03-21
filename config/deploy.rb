@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.16.0"
+lock "~> 3.17.0"
 
 set :application, "fordsdevelopment_projects"
 set :repo_url, "git@github.com:Fordalex/fordsdevelopment_projects.git"
