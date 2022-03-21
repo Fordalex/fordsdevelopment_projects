@@ -240,7 +240,8 @@ fordsdevelopment = Project.create!(
   logo: "logos/fordsdevelopment.svg",
   image: "illustrations/undraw_fordsdevelopment.svg",
   theme_colours: "#527ab6, #3b4b62, #fff",
-  order: 1
+  order: 1,
+  repo: "fordsdevelopment_projects",
 )
 
 family_organiser = Project.create!(
@@ -265,12 +266,13 @@ the_note_worthy = Project.create!(
 )
 
 calendar = Project.create!(
-  name: "Calendar",
+  name: "Work Assistant",
   link: "https://fordsdevelopment.co.uk",
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
-  order: 4
+  order: 4,
+  repo: "work-assistant"
 )
 
 puts "\n Creating Features"

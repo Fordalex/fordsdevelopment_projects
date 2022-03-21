@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_03_20_113449) do
     t.string "logo"
     t.string "image"
     t.string "theme_colours"
+    t.string "repo"
     t.date "started"
     t.text "description"
     t.text "ux"

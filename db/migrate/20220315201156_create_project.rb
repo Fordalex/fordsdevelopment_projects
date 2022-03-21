@@ -6,6 +6,7 @@ class CreateProject < ActiveRecord::Migration[6.1]
       t.string :logo
       t.string :image
       t.string :theme_colours
+      t.string :repo
       t.date :started
       t.text :description
       t.text :ux

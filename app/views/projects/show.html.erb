@@ -1,3 +1,5 @@
+<%= @commits %>
+
 <div class="projectNavigation-container">
   <% Project.all.each do |project| %>
     <%= link_to project_path(project), class: "projectNavigation-linkWrapper" do %>
