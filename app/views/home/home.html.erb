@@ -1,4 +1,5 @@
 <div class="homeHeader-container">
+    <%= render partial: "canvas_feature" %>
   <div class="homeHeader-textContainer">
     <h1 class="welcome-text">Welcome!</h1>
 
@@ -6,15 +7,19 @@
     In the navigation are a list of all the technologies I've used with examples to my projects and
     features where an example of my work can be seen.</p>
 
-    <%= link_to "View my projects", project_path(Project.first), class: "callToAction-buttonMain" %>
-    <%= link_to "Read more", "#aboutMe", class: "callToAction-buttonSecondary" %>
+    <div class="home-buttonsContainer">
+      <%= link_to "View my projects", project_path(Project.first), class: "callToAction-buttonMain" %>
+      <%= link_to "Read more", "#aboutMe", class: "callToAction-buttonSecondary" %>
+      <div class="firework-button" id="fireworkButton">
+        <%= image_tag "icons/firework.png" %>
+      </div>
+    </div>
   </div>
   <div class="homeHeader-featureContainer">
-    <%= render partial: "canvas_feature" %>
   </div>
 </div>
 
-<h2>Technologies</h2>
+<h1>Technologies</h1>
 <hr>
 
 <% TechnologyType.all.each do |technology_type| %>
@@ -30,28 +35,32 @@
 
 <%= javascript_pack_tag "aos" %>
 
-<h2>My projects</h2>
-<hr>
-
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Theme</th>
-    <th>About</th>
-    <th>Actions</th>
-  </tr>
-  <% Project.all.each do |project| %>
+<div class="bg-white">
+  <h1>My projects</h1>
+  <hr>
+<%# remove table and change to look more like cards %>
+  <table class="table">
     <tr>
-      <td><%= project.name %></td>
-      <td>
-        <% if project.theme_colours.present? %>
-          <% project.theme_colours.split(",").each do |theme| %>
-            <div class="themeWrapper" style="background-color: <%= theme %>"></div>
-          <% end %>
-        <% end %>
-      </td>
-      <td><%= project.name %></td>
-      <td><%= link_to "Read more", project_path(project), class: "main-button" %></td>
+      <th>Name</th>
+      <th>Theme</th>
+      <th>About</th>
+      <th>Actions</th>
     </tr>
-  <% end %>
-</table>
+    <% Project.all.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td>
+          <% if project.theme_colours.present? %>
+            <% project.theme_colours.split(",").each do |theme| %>
+              <div class="themeWrapper" style="background-color: <%= theme %>"></div>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= project.name %></td>
+        <td><%= link_to "Read more", project_path(project), class: "main-button" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= javascript_pack_tag "canvas_feature" %>

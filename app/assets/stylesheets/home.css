@@ -1,25 +1,24 @@
 .homeHeader-container {
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
   min-height: 750px;
-  padding: 2rem 0;
   position: relative;
 }
 
 .homeHeader-container::after {
-  z-index: -1;
+  z-index: -2;
   content: "";
   display: inline-block;
   position: absolute;
   width: 109vw;
-  height: 801px;
+  height: 720px;
   background-color: #000000;
   transform: rotate(-6deg) translateY(-197px);
 }
 
 .homeHeader-textContainer {
   width: 100%;
-  padding: 4rem 0;
 }
 
 .homeHeader-text {
@@ -31,6 +30,7 @@
 }
 
 .callToAction-buttonMain {
+  white-space: nowrap;
   display: inline-block;
   padding: 1rem;
   background-color: #fa3c3c;
@@ -49,6 +49,7 @@
 }
 
 .callToAction-buttonSecondary {
+  white-space: nowrap;
   display: inline-block;
   padding: 1rem;
   background-color: #ffffff;
@@ -70,4 +71,37 @@
   color: #fff;
   font-size: 5rem;
   margin-top: 3rem;
+}
+
+.home-buttonsContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.firework-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.firework-button {
+  transition: 0.2s;
+  border-radius: 50px;
+  background-color: rgb(0, 0, 0);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #fff 2px
+}
+
+.firework-button img {
+  width: 70%;
+  height: 70%;
+}
+
+.homeFeature-canvas {
+  top: 0;
+  position: absolute;
+  z-index: -1;
 }

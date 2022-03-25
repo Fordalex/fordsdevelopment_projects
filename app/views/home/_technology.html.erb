@@ -1,8 +1,8 @@
 <%# TODO These should be links redirecting to a page off all my projects that use this technology. %>
 <%# TODO Then a link to the project show page %>
 
-<%= link_to technology_path(technology), class: "technology-container", data: {"aos-center": "slow"} do %>
+<%= link_to technology_path(technology.name), class: "technology-container", data: {"aos-center": "slow"} do %>
   <%# TODO Add for screen readers %>
-  <p><b><%= technology.name.capitalize %></b></p>
+  <p class="text-secondary"><b><%= technology.name.capitalize %></b></p>
   <%= image_tag technology.icon, class: "project-icon" %>
 <% end %>
