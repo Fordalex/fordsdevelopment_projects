@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_03_20_113449) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "administrators", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_03_20_113449) do
     t.text "description"
     t.boolean "completed"
     t.date "started"
-    t.integer "project_id"
+    t.bigint "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_features_on_project_id"
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_03_20_113449) do
     t.text "description"
     t.text "ux"
     t.integer "order"
-    t.integer "features_id"
+    t.bigint "features_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["features_id"], name: "index_projects_on_features_id"
@@ -57,18 +60,18 @@ ActiveRecord::Schema.define(version: 2022_03_20_113449) do
     t.string "icon"
     t.string "icon_high_res"
     t.text "description"
-    t.integer "project_id"
+    t.bigint "project_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "technology_type_id"
+    t.bigint "technology_type_id"
     t.index ["project_id"], name: "index_technologies_on_project_id"
     t.index ["technology_type_id"], name: "index_technologies_on_technology_type_id"
   end
 
   create_table "technology_groups", force: :cascade do |t|
-    t.integer "technology_id"
+    t.bigint "technology_id"
     t.string "technology_groupable_type"
-    t.integer "technology_groupable_id"
+    t.bigint "technology_groupable_id"
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

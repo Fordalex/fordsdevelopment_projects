@@ -14,9 +14,6 @@
  *= require_self
  */
 
- .body {
-   scroll-behavior: smooth;
- }
 
  .logo-link:hover .title {
    color: grey;

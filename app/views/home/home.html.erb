@@ -1,6 +1,6 @@
 <div class="homeHeader-container">
   <div class="homeHeader-textContainer">
-    <h1>Welcome!</h1>
+    <h1 class="welcome-text">Welcome!</h1>
 
     <p class="homeHeader-text">Here are a list of all my projects and features I've completed or I'm currently working on.
     In the navigation are a list of all the technologies I've used with examples to my projects and
@@ -10,7 +10,7 @@
     <%= link_to "Read more", "#aboutMe", class: "callToAction-buttonSecondary" %>
   </div>
   <div class="homeHeader-featureContainer">
-    <p>Some feature using canvas</p>
+    <%= render partial: "canvas_feature" %>
   </div>
 </div>
 

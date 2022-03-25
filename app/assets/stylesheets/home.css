@@ -3,6 +3,18 @@
   justify-content: center;
   min-height: 750px;
   padding: 2rem 0;
+  position: relative;
+}
+
+.homeHeader-container::after {
+  z-index: -1;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 109vw;
+  height: 801px;
+  background-color: #000000;
+  transform: rotate(-7deg) translateY(-197px);
 }
 
 .homeHeader-textContainer {
@@ -52,4 +64,10 @@
   color: #fff;
   background-color: #fa3c3c;
   transform: scale(1.09);
+}
+
+.welcome-text {
+  color: #fff;
+  font-size: 5rem;
+  margin-top: 3rem;
 }
