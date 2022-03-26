@@ -1,0 +1,9 @@
+<div class="projectNavigation-container">
+  <% Project.all.order(:order).each do |project| %>
+    <%= link_to project_path(project), class: "projectNavigation-linkWrapper" do %>
+      <div class="projectNavigation-link  <%= "projectNavigation-linkActive" if project.id == @project.id %>" id="<%= project.id %>">
+        <%= image_tag project.logo || "example.png", class: "projectNavigation-logo" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

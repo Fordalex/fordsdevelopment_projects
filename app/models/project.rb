@@ -17,4 +17,8 @@ class Project < ApplicationRecord
   def technologies
     technology_groups.map { |tg| tg.technology }
   end
+
+  def theme_colour_first
+    theme_colours.split(",").first
+  end
 end

@@ -198,7 +198,7 @@ p,
 
 .project-open {
   box-shadow: 0 0 25px 0 rgba(30, 30, 30, var(--shadow-opacity));
-  width: 60%;
+  width: 25%;
   cursor: default;
   height: 450px;
 }

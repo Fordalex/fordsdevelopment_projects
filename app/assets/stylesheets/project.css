@@ -21,6 +21,7 @@
 }
 
 .project-image {
+  padding: 0.5rem;
   object-fit: contain;
   height: 100%;
   width: 100%;
@@ -45,8 +46,8 @@
 }
 
 .project-imageWrapper {
-  height: 80px;
-  width: 80px;
+  height: 180px;
+  width: 180px;
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -89,20 +90,31 @@
 }
 
 .projectNavigation-container {
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
 }
 
 .projectNavigation-link {
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
   background-color: black;
   margin: 1.5rem;
 }
 
+.projectNavigation-logo {
+  display: block;
+  margin: auto;
+  width: 70%;
+}
+
 .projectNavigation-linkActive {
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: rgb(255, 255, 255);
   border: solid #000 1px;
   transform: scale(1.2);
