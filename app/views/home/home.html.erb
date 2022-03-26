@@ -39,28 +39,21 @@
   <h1>My projects</h1>
   <hr>
 <%# remove table and change to look more like cards %>
-  <table class="table">
-    <tr>
-      <th>Name</th>
-      <th>Theme</th>
-      <th>About</th>
-      <th>Actions</th>
-    </tr>
+
     <% Project.all.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td>
+      <div class="border d-inline-block">
+        <div><%= project.name %></div>
+        <div>
           <% if project.theme_colours.present? %>
             <% project.theme_colours.split(",").each do |theme| %>
               <div class="themeWrapper" style="background-color: <%= theme %>"></div>
             <% end %>
           <% end %>
-        </td>
-        <td><%= project.name %></td>
-        <td><%= link_to "Read more", project_path(project), class: "main-button" %></td>
-      </tr>
+        </div>
+        <div><%= project.name %></div>
+        <div><%= link_to "Read more", project_path(project), class: "main-button" %></div>
+      </div>
     <% end %>
-  </table>
-</div>
+
 
 <%= javascript_pack_tag "canvas_feature" %>
