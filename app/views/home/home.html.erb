@@ -49,5 +49,8 @@
   </div>
 </div>
 
-<%= javascript_pack_tag "aos" %>
-<%= javascript_pack_tag "canvas_feature" %>
+<% content_for :extra_js do %>
+  <%= javascript_pack_tag "aos" %>
+  <%= javascript_pack_tag "home/projects" %>
+<% end %>
+

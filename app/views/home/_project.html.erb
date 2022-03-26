@@ -1,12 +1,17 @@
-<div class="home-projectWrapper">
-  <div><%= project.name %></div>
-  <div>
-    <% if project.theme_colours.present? %>
-      <% project.theme_colours.split(",").each do |theme| %>
-        <div class="themeWrapper" style="background-color: <%= theme %>"></div>
-      <% end %>
-    <% end %>
+<div class="home-projectWrapper project-toggable project-closed">
+  <div class="home-projectLogo">
+    <%= image_tag project.logo || "example.png", class: "project-image" %>
   </div>
-  <div><%= project.name %></div>
-  <div><%= link_to "Read more", project_path(project), class: "main-button" %></div>
+  <% if project.theme_colours.present? %>
+    <% project.theme_colours.split(",").each do |theme| %>
+      <div class="home-projectTheme" style="background-color: <%= theme %>"></div>
+    <% end %>
+  <% end %>
+
+  <div class="home-projectInfoWrapper">
+    <h5><%= project.name %></h5>
+    <p><%= project.description %></p>
+    <%= link_to "Read more", project_path(project), class: "main-button" %>
+    <%= link_to "Vist site", project.link, class: "secondary-button" %>
+  </div>
 </div>

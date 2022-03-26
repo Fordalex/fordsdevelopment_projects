@@ -1,2 +1,6 @@
 <canvas id="myCanvas" width="1250" height="530" class="homeFeature-canvas">
 Your browser does not support the HTML canvas tag.</canvas>
+
+<% content_for :extra_js do %>
+  <%= javascript_pack_tag "canvas_feature" %>
+<% end %>
