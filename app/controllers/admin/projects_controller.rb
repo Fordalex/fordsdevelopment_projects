@@ -38,7 +38,7 @@ module Admin
     end
 
     def index
-      @projects = Project.all
+      @projects = Project.all.order(:order)
     end
 
     private
@@ -48,12 +48,14 @@ module Admin
     end
 
     def create_technology_groups
-      params[:technologies].each do |key, value|
-        technology = Technology.find_by(name: key)
-        TechnologyGroup.create(
-          technology_groupable: @project,
-          technology: technology
-        )
+      if params[:technologies]
+        params[:technologies].each do |key, value|
+          technology = Technology.find_by(name: key)
+          TechnologyGroup.create(
+            technology_groupable: @project,
+            technology: technology
+          )
+        end
       end
     end
 
@@ -62,7 +64,7 @@ module Admin
     end
 
     def project_params
-      params.require(:project).permit(:name, :order, :link, :image, :description, :ux)
+      params.require(:project).permit(:name, :order, :link, :image, :description, :ux, :theme_colours)
     end
   end
 end
