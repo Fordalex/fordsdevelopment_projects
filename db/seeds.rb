@@ -233,6 +233,7 @@ puts "\n Creating Projects"
 
 fordsdevelopment = Project.create!(
   name: "Fordsdevelopment",
+  sub_title: "Web development",
   link: "https://fordsdevelopment.co.uk",
   started: Date.new(2021,10,01),
   description: "My website",
