@@ -1,44 +1,44 @@
-<div class="technologyType-container">
-  <h1 class="mt-5"><%= @technology.name.capitalize %></h1>
-  <hr class="mb-4">
+<div class="content-inset">
+  <div class="technologyType-container">
+    <h1 class="mt-5"><%= @technology.name.capitalize %></h1>
+    <hr class="mb-4">
 
-  <% if @technology.description.present? %>
-    <%= @technology.description %>
-  <% end %>
-
-  <% if @technology&.icon_high_res&.present? %>
-    <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
-  <% end %>
-
-  <h5 class="my-3">Projects</h5>
-  <% if @technology.projects.any? %>
-    <% @technology.projects.each do |project| %>
-      <div class="technologyShow-projectContainer">
-        <%= project.name %>
-        <div>
-          <%= link_to "Read More", project_path(project), class: "secondary-button" %>
-          <%= link_to "Visit Website", project.link, target: "_blank", class: "main-button" %>
-        </div>
-      </div>
+    <% if @technology.description.present? %>
+      <%= @technology.description %>
     <% end %>
-  <% else %>
-    <p>No project examples currently available.</p>
-  <% end %>
 
-  <h5 class="my-3">Features</h5>
-    <% if @technology.features.any? %>
-    <div class="features-container">
-      <% @technology.features.each do |feature| %>
-        <%= render partial: "/shared/feature", locals: {feature: feature} %>
+    <% if @technology&.icon_high_res&.present? %>
+      <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
+    <% end %>
+
+    <h5 class="my-3">Projects</h5>
+    <% if @technology.projects.any? %>
+      <% @technology.projects.each do |project| %>
+        <div class="technologyShow-projectContainer">
+          <%= project.name %>
+          <div>
+            <%= link_to "Read More", project_path(project), class: "secondary-button" %>
+            <%= link_to "Visit Website", project.link, target: "_blank", class: "main-button" %>
+          </div>
+        </div>
       <% end %>
-    </div>
-  <% else %>
-    <p>No features currently available.</p>
-  <% end %>
+    <% else %>
+      <p>No project examples currently available.</p>
+    <% end %>
+
+    <h5 class="my-3">Features</h5>
+      <% if @technology.features.any? %>
+      <div class="features-container">
+        <% @technology.features.each do |feature| %>
+          <%= render partial: "/shared/feature", locals: {feature: feature} %>
+        <% end %>
+      </div>
+    <% else %>
+      <p>No features currently available.</p>
+    <% end %>
+  </div>
 </div>
 
-<%# Display a list of projects %>
-
-<%# Display a list of features that use that technolgy - features is linked to a project %>
-
 <%# Should a project be listed and then all the features listed underneath?? %>
+
+<%# Should add a boolean to a technology if has add_ons. Gems, Packages, js libraies etc. %>
