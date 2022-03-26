@@ -4,7 +4,7 @@
     <div class="homeHeader-textContainer">
       <h1 class="welcome-text">Welcome!</h1>
 
-      <p class="homeHeader-text">Here are a list of all my projects and features I've completed or I'm currently working on.
+      <p class="text-lightGrey">Here are a list of all my projects and features I've completed or I'm currently working on.
       In the navigation are a list of all the technologies I've used with examples of my work.</p>
 
       <div class="home-buttonsContainer">
@@ -30,12 +30,11 @@
     <div class="d-flex justify-content-start">
       <%# TODO add on scroll animation %>
       <% technology_type.technologies.each do |technology| %>
-        <%= render partial: "technology", locals: {technology: technology} %>
+        <%= render partial: "/shared/technology", locals: {technology: technology} %>
       <% end %>
     </div>
   <% end %>
 </div>
-
 
 <div class="home-projectsSection">
   <div class="content-inset">
