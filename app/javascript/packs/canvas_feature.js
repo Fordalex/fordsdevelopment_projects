@@ -175,10 +175,6 @@ function draw() {
   setTimeout(() => {
     draw();
   }, 10)
-
-  console.log("Spark", sparks.length)
-  console.log("Particals", particals.length)
-  console.log("Fireworks", firework)
 }
 
 var particals = [];
