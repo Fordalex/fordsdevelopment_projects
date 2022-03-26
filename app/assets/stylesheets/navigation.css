@@ -2,20 +2,25 @@
   display: flex;
   justify-content: center;
   border-bottom: solid grey 1px;
-  padding: 0.3rem 4rem;
+  padding: 0.3rem;
   background-color: #fff;
+}
+
+.navigation-wrapper {
+  max-width: 1200px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 
 @media screen and (min-width: 768px) {
-  .navigation-container {
+  .navigation-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 @media screen and (min-width: 1200px) {
-  .navigation-container {
+  .navigation-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

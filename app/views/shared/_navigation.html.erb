@@ -2,9 +2,11 @@
 <%# TODO: Change that when on a project the navigation lights up the links %>
 
 <nav class="navigation-container">
-  <% Technology.all.each do |technology| %>
-    <%= link_to technology_path(technology.name) do %>
-      <%= image_tag technology.icon, class: "nav-icon #{"nav-icon-active" if technology.name == params[:name] || @project&.technology_names&.include?(technology.name)}" %>
+  <div class="navigation-wrapper">
+    <% Technology.all.each do |technology| %>
+      <%= link_to technology_path(technology.name) do %>
+        <%= image_tag technology.icon, class: "nav-icon #{"nav-icon-active" if technology.name == params[:name] || @project&.technology_names&.include?(technology.name)}" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </nav>

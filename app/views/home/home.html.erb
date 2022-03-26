@@ -1,58 +1,53 @@
-<div class="homeHeader-container">
-    <%= render partial: "canvas_feature" %>
-  <div class="homeHeader-textContainer">
-    <h1 class="welcome-text">Welcome!</h1>
+<div class="content-inset">
+  <div class="homeHeader-container">
+      <%= render partial: "canvas_feature" %>
+    <div class="homeHeader-textContainer">
+      <h1 class="welcome-text">Welcome!</h1>
 
-    <p class="homeHeader-text">Here are a list of all my projects and features I've completed or I'm currently working on.
-    In the navigation are a list of all the technologies I've used with examples of my work.</p>
+      <p class="homeHeader-text">Here are a list of all my projects and features I've completed or I'm currently working on.
+      In the navigation are a list of all the technologies I've used with examples of my work.</p>
 
-    <div class="home-buttonsContainer">
-      <%= link_to "View my projects", project_path(Project.first), class: "callToAction-buttonMain" %>
-      <%= link_to "Read more", "#aboutMe", class: "callToAction-buttonSecondary" %>
-      <div class="firework-button" id="fireworkButton">
-        <%= image_tag "icons/firework.png" %>
+      <div class="home-buttonsContainer">
+        <%= link_to "View my projects", project_path(Project.first), class: "callToAction-buttonMain" %>
+        <%= link_to "Read more", "#aboutMe", class: "callToAction-buttonSecondary" %>
+        <div class="firework-button" id="fireworkButton">
+          <%= image_tag "icons/firework.png" %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="homeHeader-featureContainer">
+    <div class="homeHeader-featureContainer">
+    </div>
   </div>
 </div>
 
-<h1>Technologies</h1>
-<hr>
+<div class="content-inset">
+  <h1>Technologies</h1>
+  <hr>
 
-<% TechnologyType.all.each do |technology_type| %>
-  <%# Change about me link to be smooth scroll using js %>
-  <h4 class="mt-3" id="aboutMe"><%= technology_type.name %></h4>
-  <div class="d-flex justify-content-start">
-    <%# TODO add on scroll animation %>
-    <% technology_type.technologies.each do |technology| %>
-      <%= render partial: "technology", locals: {technology: technology} %>
-    <% end %>
+  <% TechnologyType.all.each do |technology_type| %>
+    <%# Change about me link to be smooth scroll using js %>
+    <h4 class="mt-3" id="aboutMe"><%= technology_type.name %></h4>
+    <div class="d-flex justify-content-start">
+      <%# TODO add on scroll animation %>
+      <% technology_type.technologies.each do |technology| %>
+        <%= render partial: "technology", locals: {technology: technology} %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="home-projectsSection">
+  <div class="content-inset">
+    <h1>My projects</h1>
+    <hr>
+    <div class="home-projectsContainer">
+      <% Project.all.each do |project| %>
+        <%= render partial: "project", locals: {project: project} %>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
 
 <%= javascript_pack_tag "aos" %>
-
-<div class="bg-white">
-  <h1>My projects</h1>
-  <hr>
-<%# remove table and change to look more like cards %>
-
-    <% Project.all.each do |project| %>
-      <div class="border d-inline-block">
-        <div><%= project.name %></div>
-        <div>
-          <% if project.theme_colours.present? %>
-            <% project.theme_colours.split(",").each do |theme| %>
-              <div class="themeWrapper" style="background-color: <%= theme %>"></div>
-            <% end %>
-          <% end %>
-        </div>
-        <div><%= project.name %></div>
-        <div><%= link_to "Read more", project_path(project), class: "main-button" %></div>
-      </div>
-    <% end %>
-
-
 <%= javascript_pack_tag "canvas_feature" %>

@@ -1,7 +1,6 @@
 body {
-    background-color: rgb(248, 248, 250);
-    overflow-x: hidden;
-    width: calc(100vw - 15px);
+  background-color: rgb(248, 248, 250);
+  overflow-x: hidden;
 }
 
 h1,

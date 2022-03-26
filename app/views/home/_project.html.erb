@@ -1,0 +1,12 @@
+<div class="home-projectWrapper">
+  <div><%= project.name %></div>
+  <div>
+    <% if project.theme_colours.present? %>
+      <% project.theme_colours.split(",").each do |theme| %>
+        <div class="themeWrapper" style="background-color: <%= theme %>"></div>
+      <% end %>
+    <% end %>
+  </div>
+  <div><%= project.name %></div>
+  <div><%= link_to "Read more", project_path(project), class: "main-button" %></div>
+</div>

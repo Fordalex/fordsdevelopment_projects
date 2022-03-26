@@ -14,6 +14,11 @@
  *= require_self
  */
 
+ .content-inset {
+  margin: auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+ }
 
  .logo-link:hover .title {
    color: grey;
@@ -24,9 +29,7 @@
  }
 
  .page-container {
-   display: block;
-   margin: auto;
-   max-width: 1200px;
+   overflow-x: hidden;
  }
 
  .header-container {
