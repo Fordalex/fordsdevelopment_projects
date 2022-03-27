@@ -50,7 +50,7 @@ class Partical {
     }
     this.velocity = {
         x: Math.random() < 0.5 ? -Math.abs(Math.random()) * 3 : Math.random() * 3,
-        y: Math.random() < 0.5 ? -Math.abs(Math.random()) * 3 : Math.random() * 1.5
+        y: Math.random() < 0.8 ? -Math.abs(Math.random()) * 3 : Math.random() * 1.5
     }
     this.green = Math.floor(Math.random() * 210)
     this.blue = Math.floor(Math.random() * 210)
