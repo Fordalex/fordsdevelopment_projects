@@ -1,0 +1,35 @@
+footer {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.footer-iconsContainer .footer-icon {
+  transition: 0.2s;
+  color: #fff;
+  border: solid #595959 1px;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0.25rem;
+  margin: 2rem 0.25rem;
+  margin-top: 0.5rem;
+  background-color: rgba(255,255,255,0.2);
+  filter: grayscale(1);
+}
+
+.footer-iconsContainer .footer-icon:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+.footer-iconsContainer .footer-icon img {
+  width: 40px;
+}
+
+.footer-linksContainer a {
+  margin: 0 0.5rem;
+  color: #fff;
+}
