@@ -229,6 +229,18 @@ w3c = Technology.create!(
   technology_type: other
 )
 
+php = Technology.create!(
+  name: "PHP",
+  icon: "icons/php.png",
+  technology_type: other
+)
+
+godot = Technology.create!(
+  name: "PHP",
+  icon: "icons/php.png",
+  technology_type: other
+)
+
 puts "\n Creating Projects"
 
 fordsdevelopment = Project.create!(
