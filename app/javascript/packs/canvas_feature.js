@@ -41,16 +41,17 @@ class Spark {
   }
 }
 class Partical {
-  constructor(posX, posY) {
-    this.diameter = Math.random() * 2;
-    this.alpha = Math.random() * 3 + 1;
+  constructor(posX, posY, canExplode) {
+    this.canExplode = canExplode
+    this.diameter = 0.15 + (Math.random() / 5);
+    this.alpha = 1;
     this.position = {
         x: posX,
         y: posY,
     }
     this.velocity = {
-        x: Math.random() < 0.5 ? -Math.abs(Math.random()) * 3 : Math.random() * 3,
-        y: Math.random() < 0.8 ? -Math.abs(Math.random()) * 3 : Math.random() * 1.5
+        x: Math.random() < 0.5 ? -Math.abs(Math.random()) * 5 : Math.random() * 5,
+        y: Math.random() < 0.8 ? -Math.abs(Math.random()) * 5 : Math.random() * 1.5
     }
     this.green = Math.floor(Math.random() * 210)
     this.blue = Math.floor(Math.random() * 210)
@@ -70,11 +71,11 @@ class Partical {
     sparks.push(new Spark(this.position.x, this.position.y, alpha, velocityX, velocityY));
   }
   update() {
-    this.alpha -= this.diameter / 50;
-    this.position.y += this.velocity.y;
-    this.position.x += this.velocity.x;
+    this.alpha -= this.diameter / 10;
+    this.position.y += this.velocity.y / 2;
+    this.position.x += this.velocity.x / 2;
     this.velocity.y += this.diameter / 100;
-    this.velocity.y += 0.01;
+    this.velocity.y += 0.03;
 
     if (this.velocity.x > 0.5) {
       this.velocity.x -= this.diameter / 120;
@@ -83,7 +84,15 @@ class Partical {
       this.velocity.x += this.diameter / 120;
     }
     if (this.alpha < 0 || this.position.y > 600) {
+      if (this.canExplode) {
+        this.explode();
+      }
       this.destroy();
+    }
+  }
+  explode() {
+    for (let i = 0; i < 5; i++) {
+      particals.push(new Partical(this.position.x, this.position.y, false));
     }
   }
   destroy() {
@@ -100,7 +109,7 @@ class Firework {
     }
     this.velocity = {
       x: 0,
-      y: -12.7
+      y: -14
     }
     this.reduce = 0;
     this.exploded = false;
@@ -124,11 +133,11 @@ class Firework {
   }
   explode() {
     for (let i = 0; i < 200; i++) {
-      particals.push(new Partical(this.position.x, this.position.y));
+      particals.push(new Partical(this.position.x, this.position.y, true));
     }
     ctx.moveTo(this.position.x, this.position.y)
     ctx.beginPath();
-    ctx.arc(this.position.x, this.position.y, 10, 0, 2 * Math.PI);
+    ctx.arc(this.position.x, this.position.y, 5, 0, 2 * Math.PI);
     ctx.fillStyle = "#fff";
     ctx.fill();
   }
@@ -175,6 +184,8 @@ function draw() {
   setTimeout(() => {
     draw();
   }, 10)
+  console.log("partial:", particals.length)
+  console.log("spark:", sparks.length)
 }
 
 var particals = [];
