@@ -1,16 +1,16 @@
-<div class="home-projectWrapper project-toggable project-closed" data-aos-left="slow">
-  <div class="home-projectLogo">
-    <%= image_tag project.logo || "example.png", class: "project-image" %>
-  </div>
-  <% if project.theme_colours.present? %>
-    <% project.theme_colours.split(",").each do |theme| %>
-      <div class="home-projectTheme" style="background-color: <%= theme %>"></div>
-    <% end %>
-  <% end %>
-
+<%# add js to add project-open class to the projectFirst id %>
+<div class="home-projectWrapper project-toggable project-closed" style="background-color:<%= project.theme_colour_first %>;" id="<%= "projectFirst" if first %>">
+  <%= image_tag project.image || "example.png", class: "home-projectImage" %>
   <div class="home-projectInfoWrapper">
-    <h5><%= project.name %></h5>
-    <p><%= project.description %></p>
+    <div>
+      <% if project.theme_colours.present? %>
+        <% project.theme_colours.split(",").each do |theme| %>
+          <div class="home-projectTheme" style="background-color: <%= theme %>"></div>
+        <% end %>
+      <% end %>
+    </div>
+    <h5><%= image_tag project.logo || "example.png", class: "project-image" %> <%= project.name %></h5>
+    <p class="home-projectSubTitle"><%= project.sub_title %></p>
     <%= link_to "Read more", project_path(project), class: "main-button" %>
     <%= link_to "Vist site", project.link, class: "secondary-button" %>
   </div>

@@ -28,7 +28,7 @@
   padding: 0.5rem;
   object-fit: contain;
   height: 100%;
-  width: 100%;
+  width: 50px;
 }
 
 .project-sectionWrapper {
@@ -70,9 +70,9 @@
 .technology-container {
   padding: 0.4rem;
   border-radius: 0.5rem;
-  border: solid #d6d6d6 1px;
+  border: solid #ffffff 1px;
   background-color: #fff;
-  box-shadow: 0 0 9px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px 0 rgb(0, 0, 0, 0.05);
   width: 70px;
   margin: 0 0.25rem;
 }

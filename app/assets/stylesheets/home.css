@@ -109,41 +109,74 @@
   display: none;
 }
 
+.home-projectImage {
+  transition: 0.6s;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  padding: 0 3rem;
+  padding-top: 2rem;
+  padding-bottom: 16rem;
+}
+
 .home-projectsSection {
   margin-top: 5.5rem;
-  padding: 4rem 0;
+  padding: 6rem 0;
   background-color: #fff;
-  border-top: solid rgb(153, 153, 153) 1px;
+  z-index: -1;
 }
 
 .home-projectsContainer {
-  height: 550px;
+  box-shadow: 0 0 20px 0 rgb(0,0,0,0.05);
+  height: 500px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .home-projectWrapper {
+  position: relative;
   overflow: hidden;
   cursor: pointer;
-  margin-right: 1rem;
-  height: 400px;
-  border-radius: 5px;
-  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1);
-  border: solid #e1e1e1 1px;
+  height: 100%;
+  border-right: solid #ffffff 5px;
+  padding: 1rem;
+}
+
+.home-projectWrapper::before {
+  z-index:0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255,255,255,0) 50%);
+}
+
+.home-projectWrapper:last-child {
+  border: none;
 }
 
 .home-projectWrapper h5 {
+  color: #fff;
   display: inline-block;
   width: 200px;
   white-space: nowrap;
 }
 
 .home-projectTheme {
-  border: solid 1px grey;
+  border: solid 1px rgb(0, 0, 0);
   border-radius: 23px;
-  height: 10px;
-  width: 10px;
+  height: 12px;
+  width: 12px;
   margin: 0.5rem;
   margin-right: 0;
   display: inline-block;
@@ -158,19 +191,30 @@
 .home-projectInfoWrapper {
   padding: 1rem;
   padding-top: 0;
+  position: absolute;
+  bottom: 25px;
 }
 
 .project-closed {
-  width: 7%;
+  width: 100%
 }
 
-.home-projectWrapper h5,
+.home-projectTheme {
+  transition: 0.4s;
+}
+
+.home-projectWrapper h5 {
+  transition: 0.6s;
+}
+
+.home-projectSubTitle {
+  color: rgb(255, 255, 255);
+  transition: 0.8s;
+}
+
 .home-projectWrapper,
-.home-projectLogo,
-.home-projectTheme,
-p,
-.secondary-button,
-.main-button
+.home-projectWrapper .secondary-button,
+.home-projectWrapper .main-button
 {
   transition: 1s;
 }
@@ -178,8 +222,9 @@ p,
 .project-closed .home-projectTheme,
 .project-closed p,
 .project-closed .secondary-button,
-.project-closed .main-button {
-  transform: translateX(80px);
+.project-closed .main-button,
+.project-closed h5 {
+  transform: translateY(400px);
 }
 
 .project-closed .home-projectLogo {
@@ -187,20 +232,14 @@ p,
   height: 50px;
 }
 
-.project-closed:hover {
-  height: 440px;
-}
-
 .project-closed h5 {
   font-size: 1rem;
-  transform: rotateZ(90deg) translateY(73px) translateX(95px);
 }
 
 .project-open {
   box-shadow: 0 0 25px 0 rgba(30, 30, 30, var(--shadow-opacity));
-  width: 25%;
+  width: 250%;
   cursor: default;
-  height: 450px;
 }
 
 /* mobile view */
