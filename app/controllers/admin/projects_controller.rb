@@ -64,7 +64,7 @@ module Admin
     end
 
     def project_params
-      params.require(:project).permit(:name, :order, :link, :image, :description, :ux, :theme_colours)
+      params.require(:project).permit(:name, :sub_title, :order, :link, :image, :description, :ux, :theme_colours)
     end
   end
 end
