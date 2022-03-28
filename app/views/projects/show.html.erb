@@ -9,7 +9,7 @@
     </div>
     <div class="col-6">
       <h1 class="project-name"><%= @project.name %></h1>
-      <h4 style="color: <%= @project.theme_colour_first %>"><%= @project.sub_title %></h4>
+      <p style="color: <%= @project.theme_colour_first %>" class="project-subtitle"><%= @project.sub_title %></p>
       <p class="text-secondary"><%= @project.description %></p>
       <%= link_to "Visit site", @project.link, target: "_blank", class: "callToAction-buttonMain" %>
     </div>

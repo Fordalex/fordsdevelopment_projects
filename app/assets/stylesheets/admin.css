@@ -10,3 +10,7 @@
 .admin-technologyOptionsContainer .form-group {
   margin: 0;
 }
+
+.admin-technologyOptionsContainer img {
+  width: 40px;
+}

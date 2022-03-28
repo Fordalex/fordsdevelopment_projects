@@ -19,6 +19,11 @@
   margin-bottom: 2rem;
 }
 
+.project-logo {
+  width: 70px;
+  margin-right: 0.75rem;
+}
+
 .project-pageContainer {
   display: flex;
   justify-content: center;
@@ -26,9 +31,15 @@
 
 .project-image {
   padding: 0.5rem;
+  padding-left: 0;
   object-fit: contain;
   height: 100%;
   width: 50px;
+}
+
+.project-subtitle {
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .project-sectionWrapper {
@@ -191,6 +202,8 @@
 
 .project-name {
   font-size: 3rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .project-sectionContainer {
