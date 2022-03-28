@@ -236,9 +236,10 @@ php = Technology.create!(
 )
 
 godot = Technology.create!(
-  name: "PHP",
-  icon: "icons/php.png",
-  technology_type: other
+  name: "Godot",
+  icon: "icons/godot.svg",
+  icon_high_res: "icons/godot.svg",
+  technology_type: creative
 )
 
 puts "\n Creating Projects"
