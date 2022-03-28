@@ -1,19 +1,17 @@
-<div class="d-flex justify-content-center mt-4">
-  <h5 class="project-count"><%= @project.order %>/<%= Project.count %></h5>
-</div>
-
-<%= render partial: "navigation" %>
-
 <div class="content-inset">
   <div class="project-landingContainer row">
-    <div class="col-6 d-flex justify-content-center">
-      <%= render partial: "logo" %>
+    <div class="col-6">
+      <div class="project-imagesContainer">
+        <%= image_tag @project.image || "example.png", class: "project-imageSmall" %>
+        <%= image_tag @project.image || "example.png", class: "project-imageMedium" %>
+        <%= image_tag @project.image || "example.png", class: "project-imageLarge" %>
+      </div>
     </div>
     <div class="col-6">
       <h1 class="project-name"><%= @project.name %></h1>
       <h4 style="color: <%= @project.theme_colour_first %>"><%= @project.sub_title %></h4>
       <p class="text-secondary"><%= @project.description %></p>
-      <%= link_to "Visit site", @project.link, target: "_blank", class: "callToAction-buttonMain", style: "background-color: #{@project.theme_colour_first}" %>
+      <%= link_to "Visit site", @project.link, target: "_blank", class: "callToAction-buttonMain" %>
     </div>
   </div>
 </div>

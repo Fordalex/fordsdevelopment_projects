@@ -151,6 +151,41 @@
   margin-right: 5px;
 }
 
+.project-imagesContainer {
+  position: relative;
+  height: 450px;
+  width: 450px;
+}
+
+.project-imageSmall {
+  width: 174px;
+  height: 161px;
+  top: 119px;
+  left: 0;
+  position: absolute;
+  border: solid grey 1px;
+  border-radius: 10px;
+}
+
+.project-imageMedium {
+  width: 192px;
+  height: 189px;
+  top: 0;
+  right: 62px;
+  position: absolute;
+  border: solid grey 1px;
+  border-radius: 10px;
+}
+
+.project-imageLarge {
+  width: 254px;
+  height: 238px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border: solid grey 1px;
+  border-radius: 10px;
+}
 
 /* new design */
 

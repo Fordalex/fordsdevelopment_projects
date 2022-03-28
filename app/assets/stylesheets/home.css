@@ -193,6 +193,8 @@
   padding-top: 0;
   position: absolute;
   bottom: 25px;
+  height: 155px;
+  width: 100%;
 }
 
 .project-closed {
