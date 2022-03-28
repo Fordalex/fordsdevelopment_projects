@@ -80,6 +80,9 @@ function setElementsStartingStyle() {
   }
 }
 
+const firstProject = document.getElementById('projectFirst');
+var allClosed = true;
+
 function checkVisible() {
   var windowBottomLocation = window.scrollY + window.innerHeight;
   var offset = 20;
@@ -94,7 +97,11 @@ function checkVisible() {
       }
     })
   }
-
+  if (windowBottomLocation > firstProject.offsetTop + 350 && allClosed) {
+    firstProject.classList.remove("project-closed");
+    firstProject.classList.add("project-open");
+    allClosed = false;
+  }
 }
 
 window.onload = function() {

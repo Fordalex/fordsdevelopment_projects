@@ -1,4 +1,4 @@
-let projects = document.querySelectorAll('.project-toggable')
+let projects = document.querySelectorAll('.project-toggable');
 
 projects.forEach((p) => {
   p.addEventListener('click', toggleProject)
