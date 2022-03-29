@@ -235,18 +235,47 @@
 /* Features */
 
 .project-featuresContainer {
+  position: relative;
+  right: 185px;
   margin-bottom: 8rem;
 }
 
-.project-featuresWrapper {
+.project-featureShapeWrapper {
+  display: inline-block;
+  text-align: center;
+  padding: 3rem;
   position: relative;
-  white-space: nowrap;
+  width: 350px;
+  transition: 2.5s;
+  height: 350px;
+  opacity: 0;
+  margin-right: 243px;
+}
+
+.project-featureTitle {
+  margin-bottom: 1.5rem;
+}
+
+.project-featureDescription {
+  white-space: break-spaces;
+}
+
+.project-featuresWrapper {
   height: 340px;
-  right: 185px;
+  width: 340px;
 }
 
 .project-featuresRow {
   white-space: nowrap;
+}
+
+.project-featureShape {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transition: 2.5s;
+  filter: drop-shadow(5px 7px 17px rgba(0,0,0,0.0));
 }
 
 .project-featuresRowOffSet {
@@ -256,18 +285,6 @@
   left: -300px;
 }
 
-
-.project-featureShape {
-  overflow: hidden;
-  width: 350px;
-  display: inline-block;
-  margin-right: 243px;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  transition: 2.5s;
-  filter: drop-shadow(5px 7px 17px rgba(0,0,0,0.0));
-  opacity: 0;
-}
 
 .project-featureShapeOpen {
   filter: drop-shadow(5px 7px 17px rgba(0,0,0,0.06));

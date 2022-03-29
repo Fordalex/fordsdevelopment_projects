@@ -104,7 +104,7 @@ function checkVisible() {
   }
 }
 
-const hexShapes = document.querySelectorAll('.project-featureShape');
+const hexShapes = document.querySelectorAll('.project-featureShapeWrapper');
 var hexCount = 0;
 
 function openShape(first = false) {
@@ -117,7 +117,7 @@ function openShape(first = false) {
     hexShapes[hexCount + 6].classList.add("project-featureShapeOpen");
   }
   hexCount++;
-  if (hexCount < 10) {
+  if (hexCount < 20) {
     setTimeout(() => {
       openShape()
     }, 350)

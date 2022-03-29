@@ -295,7 +295,7 @@ puts "\n Creating Features"
 
 contact = Feature.create!(
   name: "Contact",
-  description: "Multi-part form",
+  description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
   started: Date.new(2021,01,01),
   project: fordsdevelopment,
   completed: true
