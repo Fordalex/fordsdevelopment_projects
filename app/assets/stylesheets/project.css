@@ -169,6 +169,7 @@
 }
 
 .project-imageSmall {
+  background-color: #fff;
   width: 174px;
   height: 161px;
   top: 119px;
@@ -179,6 +180,7 @@
 }
 
 .project-imageMedium {
+  background-color: #fff;
   width: 192px;
   height: 189px;
   top: 0;
@@ -189,6 +191,7 @@
 }
 
 .project-imageLarge {
+  background-color: #fff;
   width: 254px;
   height: 238px;
   bottom: 0;
@@ -227,4 +230,46 @@
   margin-bottom: 0.5rem;
   width: 30px;
   display: inline-block;
+}
+
+/* Features */
+
+.project-featuresContainer {
+  margin-bottom: 8rem;
+}
+
+.project-featuresWrapper {
+  position: relative;
+  white-space: nowrap;
+  height: 340px;
+  right: 185px;
+}
+
+.project-featuresRow {
+  white-space: nowrap;
+}
+
+.project-featuresRowOffSet {
+  white-space: nowrap;
+  position: relative;
+  bottom: 182px;
+  left: -300px;
+}
+
+
+.project-featureShape {
+  overflow: hidden;
+  width: 350px;
+  display: inline-block;
+  margin-right: 243px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transition: 2.5s;
+  filter: drop-shadow(5px 7px 17px rgba(0,0,0,0.0));
+  opacity: 0;
+}
+
+.project-featureShapeOpen {
+  filter: drop-shadow(5px 7px 17px rgba(0,0,0,0.06));
+  opacity: 1;
 }

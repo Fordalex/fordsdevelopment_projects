@@ -36,15 +36,15 @@
 <div class="home-projectsSection">
   <div class="content-inset">
     <div class="home-projectsContainer">
-      <% Project.all.each do |project| %>
-        <%= render partial: "project", locals: {project: project, first: project.id == Project.first.id} %>
+      <% @projects.all.each do |project| %>
+        <%= render partial: "project", locals: {project: project} %>
       <% end %>
     </div>
   </div>
 </div>
 
 <% content_for :extra_js do %>
-  <%= javascript_pack_tag "aos" %>
+  <%= javascript_pack_tag "home/aos" %>
   <%= javascript_pack_tag "home/projects" %>
 <% end %>
 
