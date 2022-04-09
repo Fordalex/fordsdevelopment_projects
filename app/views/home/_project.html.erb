@@ -12,7 +12,7 @@
     <h5><%= image_tag project.logo || "example.png", class: "project-image" %> <%= project.name %></h5>
     <p class="home-projectSubTitle"><%= project.sub_title %></p>
     <%= link_to "Read more", project_path(project), class: "main-button" %>
-    <%= link_to "Vist site", project.link, class: "secondary-button" %>
+    <%= link_to "Vist site", project.link, class: "secondary-button", target: "_blank" %>
     <div class="home-projectTechContainer">
       <% project.technologies.each do |technology| %>
         <%= image_tag technology.icon, class: "home-projectIcon" %>
