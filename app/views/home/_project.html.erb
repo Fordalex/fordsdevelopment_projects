@@ -13,5 +13,10 @@
     <p class="home-projectSubTitle"><%= project.sub_title %></p>
     <%= link_to "Read more", project_path(project), class: "main-button" %>
     <%= link_to "Vist site", project.link, class: "secondary-button" %>
+    <div class="home-projectTechContainer">
+      <% project.technologies.each do |technology| %>
+        <%= image_tag technology.icon, class: "home-projectIcon" %>
+      <% end %>
+    </div>
   </div>
 </div>
