@@ -65,6 +65,15 @@
       </div>
     </div>
 
+
+  <h3>Plans</h3>
+
+  <% @project.plans.each do |plan| %>
+    <p>
+      <%= plan.title %>
+      <%= plan.description %>
+    </p>
+  <% end %>
 </div>
 
 <% content_for :extra_js do %>
