@@ -276,6 +276,7 @@ the_note_worthy = Project.create!(
   started: Date.new(2021,10,01),
   description: "My website",
   ux: "Some information about the ux",
+  image: "illustrations/undraw_thenoteworthy.svg",
   theme_colours: "#527ab6, #3b4b62, #fff",
   order: 3
 )
