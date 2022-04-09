@@ -38,3 +38,16 @@
 .technologyShow-projectContainer:last-of-type {
   border-bottom: solid #000 1px;
 }
+
+.technologyShow-projectsFeaturesContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.technologyShow-projectsFeaturesWrapper:first-child {
+  margin-right: 1rem;
+}
+
+.technologyShow-projectsFeaturesWrapper {
+  width: 100%;
+}
