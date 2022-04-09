@@ -16,6 +16,10 @@
   </head>
 
   <body>
+    <% if administrator_signed_in? %>
+      <%= link_to "Admin home", admin_root_path, class: "d-block text-center" %>
+    <% end %>
+
     <header class="row header-container m-0 p-0">
       <div class="col-12 d-flex justify-content-center m-0 p-0">
         <%= link_to root_path, class: "logo-link" do %>

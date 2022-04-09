@@ -12,7 +12,7 @@
   <% @technologys.each do |technology| %>
     <tr>
       <td>
-        <%= image_tag technology.icon %>
+        <%= image_tag technology.icon, class: "home-projectIcon" %>
         <%= technology.name %>
       </td>
       <td><%= technology.technology_type.name %></td>
