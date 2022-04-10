@@ -2,7 +2,7 @@
   <div class="project-landingContainer row">
     <div class="col-6">
       <div class="project-imagesContainer">
-        <%= image_tag @project.image || "example.png", class: "project-imageSmall" %>
+        <%= image_tag @project.logo || "example.png", class: "project-imageSmall" %>
         <%= image_tag @project.image || "example.png", class: "project-imageMedium" %>
         <%= image_tag @project.image || "example.png", class: "project-imageLarge" %>
       </div>
@@ -17,63 +17,60 @@
 </div>
 
 <div class="content-inset">
-  <%= render partial: "features" %>
-
-  <h3>UX/UI</h3>
-  <div class="row m-0 p-0 mt-3">
-    <div class="col-2 p-2">
-      <div class="project-sectionContainer">
-        <h4>Theme</h4>
-        <% if @project.theme_colours.present? %>
-          <% @project.theme_colours.split(",").each do |theme| %>
-            <div class="themeWrapper" style="background-color: <%= theme %>"></div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-6 p-2">
-      <div class="project-sectionContainer">
-        <h4>UX</h4>
-      </div>
-    </div>
-    <div class="col-4 p-4">
-      <%= image_tag @project.image || "example.png", class: "project-image" %>
-    </div>
-  </div>
-
-    <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center my-5">
     <% @project.technologies.each do |technology| %>
       <%= render partial: "/shared/technology", locals: {technology: technology} %>
     <% end %>
   </div>
 
-  <h3>Features</h3>
-  <div class="features-container">
+
+  <%# TODO change models to use name or title! %>
+  <div class="project-uxGithubContainer">
+    <div class="project-uxGithubWrapper">
+      <%= image_tag "icons/outline/feature_branch.png", class: "project-uxGithubIcon" %>
+      <h3>Features</h3>
+      <% @project.completed_features.each do |feature| %>
+        <dl class="project-planslist">
+          <dt><%= feature.name %></dt>
+          <dd><%= feature.description %></dd>
+          <dd>
+            <% feature.technologies.each do |technology| %>
+              <%= image_tag technology.icon, class: "project-featureTechnology" %>
+            <% end %>
+          </dd>
+        </dl>
+      <% end %>
+    </div>
+    <div class="project-uxGithubWrapper">
+      <%= image_tag "icons/outline/idea.png", class: "project-uxGithubIcon" %>
+      <h3>Plans</h3>
+      <% @project.plans.each do |plan| %>
+        <dl class="project-planslist">
+          <dt><%= plan.title %></dt>
+          <dd><%= plan.description %></dd>
+        </dl>
+      <% end %>
+    </div>
+  </div>
+
+
+    <div class="project-uxGithubWrapper my-3">
+    <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
+    <h3>Github</h3>
     <% @project.completed_features.each do |feature| %>
-      <%= render partial: "/shared/feature", locals: {feature: feature} %>
+      <dl class="project-planslist">
+        <dt><%= feature.name %></dt>
+        <dd><%= feature.description %></dd>
+        <dd>
+          <% feature.technologies.each do |technology| %>
+            <%= image_tag technology.icon, class: "project-featureTechnology" %>
+          <% end %>
+        </dd>
+      </dl>
     <% end %>
   </div>
 
 
-
- <h3>Github</h3>
-    <div class="col-12 p-2">
-      <div class="project-sectionContainer">
-        <h4>Github</h4>
-        <p>Commits: <%= @commits %></p>
-        <%= link_to "Repository", root_path %>
-      </div>
-    </div>
-
-
-  <h3>Plans</h3>
-
-  <% @project.plans.each do |plan| %>
-    <p>
-      <%= plan.title %>
-      <%= plan.description %>
-    </p>
-  <% end %>
 </div>
 
 <% content_for :extra_js do %>

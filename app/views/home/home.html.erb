@@ -21,6 +21,10 @@
 </div>
 
 <div class="content-inset">
+<%= render partial: "features" %>
+</div>
+
+<div class="content-inset">
   <% TechnologyType.all.each do |technology_type| %>
     <%# Change about me link to be smooth scroll using js %>
     <h4 class="mt-4 home-technologyTypeName" id="aboutMe" data-aos-left="slow"><%= technology_type.name %></h4>
@@ -43,6 +47,7 @@
 </div>
 
 <% content_for :extra_js do %>
+<%# TODO fix aos for "features" and bottom projects  %>
   <%= javascript_pack_tag "home/aos" %>
   <%= javascript_pack_tag "home/projects" %>
 <% end %>

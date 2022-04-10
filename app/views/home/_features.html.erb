@@ -1,12 +1,22 @@
 <div class="project-featuresContainer" id="shapeContainer">
   <div class="project-featuresWrapper">
-    <div class="project-featuresRow">
-      <%= render partial: "feature", locals: {feature: @features[0]} %>
-      <%= render partial: "feature", locals: {feature: @features[0]} %>
-      <%= render partial: "feature", locals: {feature: @features[0]} %>
+    <div class="project-featuresWrapper">
+      <div class="project-featuresRow">
+        <%= render partial: "feature", locals: {title: "HELLO!", description: "NICE TO SEE A REAL DEV", art: true} %>
+        <div class="project-featureShapeWrapper">
+          <%= image_tag "shapes/hexagon.svg", class: "project-featureShape" %>
+          <h3 class="project-featureTitle">The Title</h3>
+          <p class="project-featureSubTitle">This will be the text on the card.</p>
+        </div>
+        <div class="project-featureShapeWrapper project-featureArt">
+          <%= image_tag "shapes/hexagon.svg", class: "project-featureShape" %>
+          <h3 class="project-featureTitle">The Title</h3>
+          <p class="project-featureSubTitle">This will be the text on the card.</p>
+        </div>
+      </div>
     </div>
     <div class="project-featuresRowOffSet">
-      <div class="project-featureShapeWrapper">
+      <div class="project-featureShapeWrapper project-featureArt">
         <%= image_tag "shapes/hexagon.svg", class: "project-featureShape" %>
         <h3 class="project-featureTitle">The Title</h3>
         <p class="project-featureSubTitle">This will be the text on the card.</p>
@@ -21,7 +31,7 @@
         <h3 class="project-featureTitle">The Title</h3>
         <p class="project-featureSubTitle">This will be the text on the card.</p>
       </div>
-      <div class="project-featureShapeWrapper">
+      <div class="project-featureShapeWrapper project-featureArt">
         <%= image_tag "shapes/hexagon.svg", class: "project-featureShape" %>
         <h3 class="project-featureTitle">The Title</h3>
         <p class="project-featureSubTitle">This will be the text on the card.</p>
@@ -30,7 +40,7 @@
   </div>
   <div class="project-featuresWrapper">
     <div class="project-featuresRow">
-       <div class="project-featureShapeWrapper">
+       <div class="project-featureShapeWrapper project-featureArt">
         <%= image_tag "shapes/hexagon.svg", class: "project-featureShape" %>
         <h3 class="project-featureTitle">The Title</h3>
         <p class="project-featureSubTitle">This will be the text on the card.</p>
@@ -40,7 +50,7 @@
         <h3 class="project-featureTitle">The Title</h3>
         <p class="project-featureSubTitle">This will be the text on the card.</p>
       </div>
-      <div class="project-featureShapeWrapper">
+      <div class="project-featureShapeWrapper project-featureArt">
         <%= image_tag "shapes/hexagon.svg", class: "project-featureShape" %>
         <h3 class="project-featureTitle">The Title</h3>
         <p class="project-featureSubTitle">This will be the text on the card.</p>

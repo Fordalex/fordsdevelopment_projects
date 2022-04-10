@@ -1,5 +1,6 @@
 .project-landingContainer {
-  margin: 10rem 0;
+  margin: 0;
+  margin-top: 10rem;
 }
 
 .projectMain-container {
@@ -176,8 +177,8 @@
   top: 119px;
   left: 0;
   position: absolute;
-  border: solid grey 1px;
-  border-radius: 10px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
+  padding: 1rem;
 }
 
 .project-imageMedium {
@@ -187,8 +188,8 @@
   top: 0;
   right: 62px;
   position: absolute;
-  border: solid grey 1px;
-  border-radius: 10px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
+  padding: 1rem;
 }
 
 .project-imageLarge {
@@ -198,8 +199,12 @@
   bottom: 0;
   right: 0;
   position: absolute;
-  border: solid grey 1px;
-  border-radius: 10px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
+  padding: 1rem;
+}
+
+.project-planslist dd {
+  color: rgb(104, 104, 104);
 }
 
 /* new design */
@@ -231,6 +236,42 @@
   margin-bottom: 0.5rem;
   width: 30px;
   display: inline-block;
+}
+
+/* design ux ui / plans */
+
+.project-uxGithubContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.project-uxGithubWrapper {
+  width: 100%;
+  background-color: white;
+  border: solid rgb(240, 240, 240) 1px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
+  padding: 2rem;
+}
+
+.project-uxGithubWrapper:first-child {
+  margin-right: 1rem;
+}
+
+.project-uxGithubIcon {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+
+.project-uxGithubTitle {
+  margin: 1rem 0;
+}
+
+.project-uxGithubText {
+  color: rgb(136, 136, 136);
+}
+
+.project-featureTechnology {
+  width: 20px;
 }
 
 /* Features */
@@ -286,8 +327,16 @@
   left: -300px;
 }
 
-
 .project-featureShapeOpen {
   filter: drop-shadow(5px 7px 17px rgba(0,0,0,0.06));
   opacity: 1;
 }
+
+.project-featuresContainer .project-featureArt {
+  opacity: 0.5;
+}
+
+.project-featuresContainer .project-featureArt {
+  color: transparent;
+}
+

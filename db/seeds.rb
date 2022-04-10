@@ -11,6 +11,7 @@ Technology.delete_all
 TechnologyGroup.delete_all
 TechnologyType.delete_all
 Administrator.delete_all
+Plan.delete_all
 
 puts "\n Creating Admin"
 
@@ -354,4 +355,18 @@ TechnologyGroup.create!(
 TechnologyGroup.create!(
   technology: css,
   technology_groupable: contact,
+)
+
+puts "\n Create plans"
+
+Plan.create!(
+  project: fordsdevelopment,
+  title: "Ease",
+  description: "Make the site smaller, less information and get the customer to the contact section faster."
+)
+
+Plan.create!(
+  project: fordsdevelopment,
+  title: "Payment",
+  description: "Allow customers to make payments through the site."
 )
