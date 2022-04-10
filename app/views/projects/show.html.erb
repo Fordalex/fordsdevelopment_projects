@@ -2,9 +2,9 @@
   <div class="project-landingContainer row">
     <div class="col-6">
       <div class="project-imagesContainer">
-        <%= image_tag @project.logo || "example.png", class: "project-imageSmall" %>
-        <%= image_tag @project.image || "example.png", class: "project-imageMedium" %>
-        <%= image_tag @project.image || "example.png", class: "project-imageLarge" %>
+        <%= image_tag @project.logo || "example.png", class: "project-imageSmall white-container" %>
+        <%= image_tag @project.image || "example.png", class: "project-imageMedium white-container" %>
+        <%= image_tag @project.image || "example.png", class: "project-imageLarge white-container" %>
       </div>
     </div>
     <div class="col-6">
@@ -26,7 +26,7 @@
 
   <%# TODO change models to use name or title! %>
   <div class="project-uxGithubContainer">
-    <div class="project-uxGithubWrapper">
+    <div class="project-uxGithubWrapper white-container">
       <%= image_tag "icons/outline/feature_branch.png", class: "project-uxGithubIcon" %>
       <h3>Features</h3>
       <% @project.completed_features.each do |feature| %>
@@ -41,7 +41,7 @@
         </dl>
       <% end %>
     </div>
-    <div class="project-uxGithubWrapper">
+    <div class="project-uxGithubWrapper white-container">
       <%= image_tag "icons/outline/idea.png", class: "project-uxGithubIcon" %>
       <h3>Plans</h3>
       <% @project.plans.each do |plan| %>
@@ -54,7 +54,7 @@
   </div>
 
 
-    <div class="project-uxGithubWrapper my-3">
+    <div class="project-uxGithubWrapper my-3 white-container">
     <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
     <h3>Github</h3>
     <% @project.completed_features.each do |feature| %>

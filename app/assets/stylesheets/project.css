@@ -81,10 +81,6 @@
 
 .technology-container {
   padding: 0.4rem;
-  border-radius: 0.5rem;
-  border: solid #ffffff 1px;
-  background-color: #fff;
-  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.05);
   margin: 0.25rem;
   max-width: 65px;
   min-width: 65px;
@@ -171,35 +167,29 @@
 }
 
 .project-imageSmall {
-  background-color: #fff;
   width: 174px;
   height: 161px;
   top: 119px;
   left: 0;
   position: absolute;
-  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
   padding: 1rem;
 }
 
 .project-imageMedium {
-  background-color: #fff;
   width: 192px;
   height: 189px;
   top: 0;
   right: 62px;
   position: absolute;
-  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
   padding: 1rem;
 }
 
 .project-imageLarge {
-  background-color: #fff;
   width: 254px;
   height: 238px;
   bottom: 0;
   right: 0;
   position: absolute;
-  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
   padding: 1rem;
 }
 
@@ -217,10 +207,6 @@
 
 .project-sectionContainer {
   padding: 1rem;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
-  border: solid rgb(212, 212, 212) 1px;
   height: 100%;
 }
 
@@ -247,9 +233,6 @@
 
 .project-uxGithubWrapper {
   width: 100%;
-  background-color: white;
-  border: solid rgb(240, 240, 240) 1px;
-  box-shadow: 0 0 15px 0 rgba(0,0,0,0.07);
   padding: 2rem;
 }
 
