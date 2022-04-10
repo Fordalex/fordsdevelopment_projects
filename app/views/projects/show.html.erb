@@ -16,14 +16,7 @@
   </div>
 </div>
 
-<div class="content-inset mb-5">
-  <div class="d-flex justify-content-center my-5">
-    <% @project.technologies.each do |technology| %>
-      <%= render partial: "/shared/technology", locals: {technology: technology} %>
-    <% end %>
-  </div>
-
-
+<div class="content-inset my-5">
   <%# TODO change models to use name or title! %>
   <div class="project-uxGithubContainer">
     <div class="project-uxGithubWrapper white-container" data-aos-left="slow">
@@ -54,20 +47,30 @@
   </div>
 
 
-    <div class="project-uxGithubWrapper my-3 white-container" data-aos-center="slow">
+  <div class="project-uxGithubWrapper my-3 white-container" data-aos-center="slow">
     <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
     <h3>Github</h3>
-    <% @project.completed_features.each do |feature| %>
-      <dl class="project-planslist">
-        <dt><%= feature.name %></dt>
-        <dd><%= feature.description %></dd>
-        <dd>
-          <% feature.technologies.each do |technology| %>
-            <%= image_tag technology.icon, class: "project-featureTechnology" %>
-          <% end %>
-        </dd>
-      </dl>
-    <% end %>
+
+    <div class="d-flex justify-content-center">
+      <div>
+        <h4>Information</h4>
+        <p></p>
+      </div>
+      <div>
+        <h4>Commits</h4>
+      </div>
+      <div>
+        <h4>Commits</h4>
+        <p>243</p>
+      </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center my-5">
+      <% @project.technologies.each do |technology| %>
+        <%= image_tag technology.icon, class: "project-featureTechnology" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
