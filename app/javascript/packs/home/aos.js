@@ -81,7 +81,10 @@ function setElementsStartingStyle() {
 }
 
 const firstProject = document.getElementById('projectFirst');
-var allClosed = true;
+var allProjectsClosed = true;
+
+const shapeContainer = document.getElementById('shapeContainer')
+var allVisible = false;
 
 function checkVisible() {
   var windowBottomLocation = window.scrollY + window.innerHeight;
@@ -97,10 +100,35 @@ function checkVisible() {
       }
     })
   }
-  if (windowBottomLocation > firstProject.offsetTop + 350 && allClosed) {
+  if (windowBottomLocation > firstProject.offsetTop + 350 && allProjectsClosed) {
     firstProject.classList.remove("project-closed");
     firstProject.classList.add("project-open");
-    allClosed = false;
+    allProjectsClosed = false;
+  }
+
+  if (windowBottomLocation > shapeContainer.offsetTop + 250 && !allVisible) {
+    openShape(true)
+    allVisible = true;
+  }
+}
+
+const hexShapes = document.querySelectorAll('.project-featureShapeWrapper');
+var hexCount = 0;
+
+function openShape(first = false) {
+  if (first) {
+    hexShapes[hexCount].classList.add("project-featureShapeOpen");
+    hexShapes[hexCount + 3].classList.add("project-featureShapeOpen");
+  } else {
+    hexShapes[hexCount].classList.add("project-featureShapeOpen");
+    hexShapes[hexCount + 3].classList.add("project-featureShapeOpen");
+    hexShapes[hexCount + 6].classList.add("project-featureShapeOpen");
+  }
+  hexCount++;
+  if (hexCount < 20) {
+    setTimeout(() => {
+      openShape()
+    }, 350)
   }
 }
 

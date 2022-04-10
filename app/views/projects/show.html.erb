@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="content-inset">
+<div class="content-inset mb-5">
   <div class="d-flex justify-content-center my-5">
     <% @project.technologies.each do |technology| %>
       <%= render partial: "/shared/technology", locals: {technology: technology} %>
@@ -26,7 +26,7 @@
 
   <%# TODO change models to use name or title! %>
   <div class="project-uxGithubContainer">
-    <div class="project-uxGithubWrapper white-container">
+    <div class="project-uxGithubWrapper white-container" data-aos-left="slow">
       <%= image_tag "icons/outline/feature_branch.png", class: "project-uxGithubIcon" %>
       <h3>Features</h3>
       <% @project.completed_features.each do |feature| %>
@@ -41,7 +41,7 @@
         </dl>
       <% end %>
     </div>
-    <div class="project-uxGithubWrapper white-container">
+    <div class="project-uxGithubWrapper white-container" data-aos-right="slow">
       <%= image_tag "icons/outline/idea.png", class: "project-uxGithubIcon" %>
       <h3>Plans</h3>
       <% @project.plans.each do |plan| %>
@@ -54,7 +54,7 @@
   </div>
 
 
-    <div class="project-uxGithubWrapper my-3 white-container">
+    <div class="project-uxGithubWrapper my-3 white-container" data-aos-center="slow">
     <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
     <h3>Github</h3>
     <% @project.completed_features.each do |feature| %>
@@ -69,8 +69,6 @@
       </dl>
     <% end %>
   </div>
-
-
 </div>
 
 <% content_for :extra_js do %>

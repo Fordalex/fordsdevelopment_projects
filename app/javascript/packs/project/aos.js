@@ -80,9 +80,6 @@ function setElementsStartingStyle() {
   }
 }
 
-var shapeContainer = document.getElementById('shapeContainer')
-var allOpen = false;
-
 function checkVisible() {
   var windowBottomLocation = window.scrollY + window.innerHeight;
   var offset = 20;
@@ -96,31 +93,6 @@ function checkVisible() {
         applyStartStyleToElement(direction, e)
       }
     })
-  }
-
-  if (windowBottomLocation > shapeContainer.offsetTop + 250 && !allOpen) {
-    openShape(true)
-    allOpen = true;
-  }
-}
-
-const hexShapes = document.querySelectorAll('.project-featureShapeWrapper');
-var hexCount = 0;
-
-function openShape(first = false) {
-  if (first) {
-    hexShapes[hexCount].classList.add("project-featureShapeOpen");
-    hexShapes[hexCount + 3].classList.add("project-featureShapeOpen");
-  } else {
-    hexShapes[hexCount].classList.add("project-featureShapeOpen");
-    hexShapes[hexCount + 3].classList.add("project-featureShapeOpen");
-    hexShapes[hexCount + 6].classList.add("project-featureShapeOpen");
-  }
-  hexCount++;
-  if (hexCount < 20) {
-    setTimeout(() => {
-      openShape()
-    }, 350)
   }
 }
 
