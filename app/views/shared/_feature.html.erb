@@ -2,7 +2,7 @@
 <div class="project-sectionContainer white-container">
   <h6><%= feature.name %></h6>
   <p><%= feature.description %></p>
-  <p><%= feature.project.name %></p>
+  <%= link_to feature.project.name, feature.project %></p>
   <% feature.technologies.each do |technolgy| %>
     <%= image_tag technolgy.icon, class: "feature-icon" %>
   <% end %>
