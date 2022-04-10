@@ -62,7 +62,7 @@ module Admin
     end
 
     def feature_params
-      params.require(:feature).permit(:name, :project_id, :completed)
+      params.require(:feature).permit(:name, :description, :project_id, :completed)
     end
   end
 end
