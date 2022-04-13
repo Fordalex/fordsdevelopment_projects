@@ -16,60 +16,64 @@
   </div>
 </div>
 
+<div class="projects-technologiesContainer">
+  <% @project.technologies.each do |technology| %>
+    <%= render partial: "/shared/technology", locals: {technology: technology} %>
+  <% end %>
+</div>
+
 <div class="content-inset my-5">
   <%# TODO change models to use name or title! %>
   <div class="project-uxGithubContainer">
     <div class="project-uxGithubWrapper white-container" data-aos-left="slow">
       <%= image_tag "icons/outline/feature_branch.png", class: "project-uxGithubIcon" %>
       <h3>Features</h3>
-      <% @project.completed_features.each do |feature| %>
+      <% @project.completed_features.each_with_index do |feature, index| %>
+        <% index += 1%>
         <dl class="project-planslist">
           <dt><%= feature.name %></dt>
           <dd><%= feature.description %></dd>
           <dd>
-            <% feature.technologies.each do |technology| %>
+            <% feature.technologies.each_with_index do |technology| %>
               <%= image_tag technology.icon, class: "project-featureTechnology" %>
             <% end %>
           </dd>
+          <% unless index == 0 || index == @project.completed_features.count %>
+            <dd><hr></dd>
+          <% end %>
         </dl>
       <% end %>
     </div>
     <div class="project-uxGithubWrapper white-container" data-aos-right="slow">
       <%= image_tag "icons/outline/idea.png", class: "project-uxGithubIcon" %>
       <h3>Plans</h3>
-      <% @project.plans.each do |plan| %>
+      <% @project.plans.each_with_index do |plan, index| %>
+        <% index += 1 %>
         <dl class="project-planslist">
           <dt><%= plan.title %></dt>
           <dd><%= plan.description %></dd>
+          <% unless index == 0 || index == @project.completed_features.count %>
+            <dd><hr></dd>
+          <% end %>
         </dl>
       <% end %>
     </div>
   </div>
 
+  <div class="project-uxGithubContainer">
+    <div class="project-uxGithubWrapper white-container" data-aos-left="slow">
+      <%= image_tag "icons/outline/design.png", class: "project-uxGithubIcon" %>
+      <h3>About</h3>
 
-  <div class="project-uxGithubWrapper my-3 white-container" data-aos-center="slow">
-    <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
-    <h3>Github</h3>
-
-    <div class="d-flex justify-content-center">
-      <div>
-        <h4>Information</h4>
-        <p></p>
-      </div>
-      <div>
-        <h4>Commits</h4>
-      </div>
-      <div>
-        <h4>Commits</h4>
-        <p>243</p>
-      </div>
     </div>
-
-
-    <div class="d-flex justify-content-center my-5">
-      <% @project.technologies.each do |technology| %>
-        <%= image_tag technology.icon, class: "project-featureTechnology" %>
-      <% end %>
+    <div class="project-uxGithubWrapper white-container" data-aos-right="slow">
+      <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
+      <h3>Github</h3>
+      <div class="d-flex justify-content-center">
+        <div>
+          <h5>Commits</h5>
+        </div>
+      </div>
     </div>
   </div>
 </div>

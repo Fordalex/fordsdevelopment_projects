@@ -219,9 +219,16 @@
   display: inline-block;
 }
 
+.projects-technologiesContainer {
+  margin: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
 /* design ux ui / plans */
 
 .project-uxGithubContainer {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
 }
