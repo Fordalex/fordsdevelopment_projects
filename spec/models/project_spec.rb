@@ -4,6 +4,9 @@ require "rails_helper"
 
 RSpec.describe Project, type: :model do
   it { should have_many(:features) }
+  it { should have_many(:technology_groups) }
+  it { should have_many(:plans) }
+  it { should have_many(:descriptions) }
 
   describe "#technologies" do
     let(:project) { FactoryBot.create(:project) }

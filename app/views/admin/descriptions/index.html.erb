@@ -1,0 +1,22 @@
+
+<%= link_to "New", new_admin_description_path, class: "btn btn-success" %>
+
+<h3>Descriptions</h3>
+
+<table class="table ">
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Actions</td>
+  </tr>
+  <% @descriptions.each do |description| %>
+    <tr>
+      <td><%= description.name %></td>
+      <td><%= description.description %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_description_path(description), class: "btn btn-info" %>
+        <%= link_to "Delete", admin_description_path(description), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+      </td>
+    </tr>
+  <% end %>
+</table>

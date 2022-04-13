@@ -1,17 +1,17 @@
 
 <%= link_to "New", new_admin_plan_path, class: "btn btn-success" %>
 
-<h3>Projects</h3>
+<h3>Plans</h3>
 
 <table class="table ">
   <tr>
     <td>Name</td>
-    <td>Project</td>
+    <td>Plans</td>
     <td>Actions</td>
   </tr>
   <% @plans.each do |plan| %>
     <tr>
-      <td><%= plan.title %></td>
+      <td><%= plan.name %></td>
       <td><%= plan.project.name %></td>
       <td>
         <%= link_to "Edit", edit_admin_plan_path(plan), class: "btn btn-info" %>

@@ -23,7 +23,6 @@
 </div>
 
 <div class="content-inset my-5">
-  <%# TODO change models to use name or title! %>
   <div class="project-uxGithubContainer">
     <div class="project-uxGithubWrapper white-container" data-aos-left="slow">
       <%= image_tag "icons/outline/feature_branch.png", class: "project-uxGithubIcon" %>
@@ -50,9 +49,9 @@
       <% @project.plans.each_with_index do |plan, index| %>
         <% index += 1 %>
         <dl class="project-planslist">
-          <dt><%= plan.title %></dt>
+          <dt><%= plan.name %></dt>
           <dd><%= plan.description %></dd>
-          <% unless index == 0 || index == @project.completed_features.count %>
+          <% unless index == 0 || index == @project.plans.count %>
             <dd><hr></dd>
           <% end %>
         </dl>
@@ -64,7 +63,16 @@
     <div class="project-uxGithubWrapper white-container" data-aos-left="slow">
       <%= image_tag "icons/outline/design.png", class: "project-uxGithubIcon" %>
       <h3>About</h3>
-
+      <% @project.descriptions.each_with_index do |feature, index| %>
+        <% index += 1%>
+        <dl class="project-planslist">
+          <dt><%= feature.name %></dt>
+          <dd><%= feature.description %></dd>
+          <% unless index == 0 || index == @project.descriptions.count %>
+            <dd><hr></dd>
+          <% end %>
+        </dl>
+      <% end %>
     </div>
     <div class="project-uxGithubWrapper white-container" data-aos-right="slow">
       <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
