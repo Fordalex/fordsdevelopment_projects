@@ -3,6 +3,10 @@ class Project < ApplicationRecord
   has_many :technology_groups, as: :technology_groupable, dependent: :destroy
   has_many :plans
 
+  def to_param
+    name
+  end
+
   def completed_features
     features.where(completed: true)
   end
