@@ -303,6 +303,22 @@ contact = Feature.create!(
   completed: true
 )
 
+contact = Feature.create!(
+  name: "Contact",
+  description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
+  started: Date.new(2021,01,01),
+  project: fordsdevelopment,
+  completed: true
+)
+
+contact = Feature.create!(
+  name: "Contact",
+  description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
+  started: Date.new(2021,01,01),
+  project: family_organiser,
+  completed: true
+)
+
 puts "\n Creating TechnologyGroups projects"
 
 TechnologyGroup.create!(
