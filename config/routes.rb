@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # TODO clean up, alphabetical.
+  # TODO set params to use :name but these need a unique validation.
   devise_for :administrator
 
   namespace :admin do
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
     resources :features
     resources :technologies
     resources :plans
+    resources :packages, param: :name
     resources :descriptions
   end
 

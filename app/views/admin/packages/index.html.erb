@@ -1,0 +1,24 @@
+
+<%= link_to "New", new_admin_package_path, class: "btn btn-success" %>
+
+<h3>Packages</h3>
+
+<table class="table ">
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Technology</td>
+    <td>Actions</td>
+  </tr>
+  <% @packages.each do |package| %>
+    <tr>
+      <td><%= package.name %></td>
+      <td><%= package.description %></td>
+      <td><%= package.technology.name %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_package_path(package), class: "btn btn-info" %>
+        <%= link_to "Delete", admin_package_path(package), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+      </td>
+    </tr>
+  <% end %>
+</table>

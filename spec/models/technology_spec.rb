@@ -3,7 +3,9 @@
 require "rails_helper"
 
 RSpec.describe Technology, type: :model do
+  # TODO add describe blocks to group associations.
   it { should have_many(:technology_groups) }
+  it { should have_many(:packages) }
   it { should belong_to(:technology_type) }
 
   let!(:technology_type) { FactoryBot.create(:technology_type, name: "Frontend") }

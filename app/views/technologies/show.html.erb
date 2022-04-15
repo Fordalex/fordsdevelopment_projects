@@ -7,6 +7,14 @@
       <%= @technology.description %>
     <% end %>
 
+    <h5>Packages</h5>
+    <% @technology.packages.each do |package| %>
+      <div>
+        <h6><%= package.name %></h6>
+        <p><%= package.description %></p>
+      </div>
+    <% end %>
+
     <% if @technology&.icon_high_res&.present? %>
       <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
     <% end %>

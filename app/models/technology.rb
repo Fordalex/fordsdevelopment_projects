@@ -1,7 +1,11 @@
 class Technology < ApplicationRecord
+  # TODO group and comment has_many, belongs_to etc.
+
   has_many :technology_groups
+  has_many :packages
   belongs_to :technology_type
   validates_uniqueness_of :name
+
 
   def projects
     find_technolgoy_group_type("Project")

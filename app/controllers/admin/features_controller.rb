@@ -58,7 +58,7 @@ module Admin
     end
 
     def set_feature
-      @feature = Feature.find(params[:id])
+      @feature = Feature.find(params[:name])
     end
 
     def feature_params
