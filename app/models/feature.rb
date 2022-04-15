@@ -2,6 +2,10 @@ class Feature < ApplicationRecord
   belongs_to :project
   has_many :technology_groups, as: :technology_groupable, dependent: :destroy
 
+  def to_param
+    name
+  end
+
   def technologies
     technology_groups.map { |tg| tg.technology }
   end

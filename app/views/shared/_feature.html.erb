@@ -1,10 +1,9 @@
-<%# Add links to project read more %>
-<div class="project-sectionContainer white-container">
+<%= link_to feature_path(feature), class: "project-sectionContainer white-container" do %>
   <h6><%= feature.name %></h6>
   <p><%= feature.description %></p>
-  <%= link_to feature.project.name, feature.project %></p>
-  <% feature.technologies.each do |technolgy| %>
-    <%= image_tag technolgy.icon, class: "feature-icon" %>
+  <p><%= feature.project.name %></p>
+  <% feature.technologies.each do |technology| %>
+    <%= image_tag technology.icon, class: "feature-icon" %>
   <% end %>
   <b><%= feature.completed ? "Completed" : "In progress" %></b>
-</div>
+<% end %>
