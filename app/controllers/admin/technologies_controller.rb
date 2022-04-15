@@ -45,7 +45,7 @@ module Admin
     end
 
     def technology_params
-      params.require(:technology).permit(:name, :description, :icon, :icon_high_res, :technology_type_id)
+      params.require(:technology).permit(:name, :description, :icon, :icon_high_res, :technology_type_id, :order)
     end
   end
 end
