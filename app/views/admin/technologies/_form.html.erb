@@ -24,7 +24,7 @@
 
   <div class="form-group">
     <%= form.label :technology_type %>
-    <%= form.select :technology_type_id, options_for_select(TechnologyType.all.map{|p| [p.name, p.id] }), class: "form-control" %>
+    <%= form.select :technology_type_id, options_for_select(TechnologyType.all.map{|p| [p.name, p.id] }, technology.technology_type_id), class: "form-control" %>
   </div>
 
   <div class="actions">

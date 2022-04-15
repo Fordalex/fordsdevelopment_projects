@@ -45,7 +45,7 @@ module Admin
     end
 
     def plan_params
-      params.require(:plan).permit(:title, :description, :project_id)
+      params.require(:plan).permit(:name, :description, :project_id)
     end
   end
 end
