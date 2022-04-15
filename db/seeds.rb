@@ -303,7 +303,7 @@ contact = Feature.create!(
   completed: true
 )
 
-contact = Feature.create!(
+Feature.create!(
   name: "Contact",
   description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
   started: Date.new(2021,01,01),
@@ -311,15 +311,34 @@ contact = Feature.create!(
   completed: true
 )
 
-contact = Feature.create!(
+javascript_feature = Feature.create!(
   name: "Contact",
   description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
   started: Date.new(2021,01,01),
   project: family_organiser,
-  completed: true
+  completed: true,
+)
+
+another_feature_using_javascript = Feature.create!(
+  name: "Contact",
+  description: "Another feature using javascript, blar blar...",
+  started: Date.new(2021,01,01),
+  project: family_organiser,
+  completed: true,
+  technology_groups: []
 )
 
 puts "\n Creating TechnologyGroups projects"
+
+TechnologyGroup.create!(
+  technology: javascript,
+  technology_groupable: another_feature_using_javascript,
+)
+
+TechnologyGroup.create!(
+  technology: javascript,
+  technology_groupable: javascript_feature,
+)
 
 TechnologyGroup.create!(
   technology: html,
@@ -377,12 +396,12 @@ puts "\n Create plans"
 
 Plan.create!(
   project: fordsdevelopment,
-  title: "Ease",
+  name: "Ease",
   description: "Make the site smaller, less information and get the customer to the contact section faster."
 )
 
 Plan.create!(
   project: fordsdevelopment,
-  title: "Payment",
+  name: "Payment",
   description: "Allow customers to make payments through the site."
 )
