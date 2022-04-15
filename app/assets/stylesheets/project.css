@@ -208,6 +208,8 @@
 .project-sectionContainer {
   padding: 1rem;
   height: 100%;
+  margin-bottom: 1rem;
+  background-color: rgba(255,255,255,0.7) !important;
 }
 
 .themeWrapper {
