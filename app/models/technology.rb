@@ -1,9 +1,10 @@
 class Technology < ApplicationRecord
-  # TODO group and comment has_many, belongs_to etc.
-
+  # has many
   has_many :technology_groups
   has_many :packages
+  # belongs to
   belongs_to :technology_type
+  # validations
   validates_uniqueness_of :name
 
 
