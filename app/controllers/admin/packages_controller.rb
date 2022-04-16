@@ -9,12 +9,13 @@ module Admin
 
     def create
       @package = Package.new(package_params)
-      if @package.save!
+      if @package.save
         flash[:success] = "Package was successfully created."
+        redirect_to admin_packages_path(@package)
       else
         flash[:warning] = "An error occurred, please try again."
+        render "new"
       end
-      redirect_to admin_packages_path(@package)
     end
 
     def destroy
@@ -45,7 +46,7 @@ module Admin
     end
 
     def package_params
-      params.require(:package).permit(:name, :description, :technology_id)
+      params.require(:package).permit(:name, :description, :link, :technology_id)
     end
   end
 end

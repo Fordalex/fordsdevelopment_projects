@@ -242,6 +242,14 @@ godot = Technology.create!(
   technology_type: creative
 )
 
+puts "\n Creating Packages"
+
+Package.create(
+  name: "Devise",
+  description: "Authentication",
+  technology: ruby
+)
+
 puts "\n Creating Projects"
 
 fordsdevelopment = Project.create!(

@@ -40,7 +40,7 @@
 }
 
 .technologyShow-projectsFeaturesContainer {
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
@@ -50,4 +50,24 @@
 
 .technologyShow-projectsFeaturesWrapper {
   width: 100%;
+}
+
+.technology-packageContainer {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.technology-packageWrapper {
+   padding: 1rem;
+}
+
+.technology-packageWrapper p {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .technologyShow-projectsFeaturesContainer {
+    display: flex;
+  }
 }

@@ -4,14 +4,19 @@
     <hr class="mb-4">
 
     <% if @technology.description.present? %>
-      <%= @technology.description %>
+      <p><%= @technology.description %></p>
     <% end %>
 
-    <h5>Packages</h5>
-    <% @technology.packages.each do |package| %>
-      <div>
-        <h6><%= package.name %></h6>
-        <p><%= package.description %></p>
+    <% if @technology.packages.any? %>
+      <h5>Packages</h5>
+      <div class="technology-packageContainer">
+        <% @technology.packages.each do |package| %>
+          <div class="technology-packageWrapper white-container">
+            <h6><%= package.name %></h6>
+            <p><%= package.description %></p>
+            <%= image_tag package&.technology&.icon, class: "feature-icon" %>
+          </div>
+        <% end %>
       </div>
     <% end %>
 
