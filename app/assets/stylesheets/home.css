@@ -298,7 +298,7 @@
 
 @media screen and (min-width: 1200px) {
   .home-projectImage {
-    padding: 1rem 8rem;
+    padding: 1rem 15%;
     padding-bottom: 16rem;
     transition: 1s;
   }
