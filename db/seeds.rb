@@ -44,7 +44,6 @@ other = TechnologyType.create!(
 
 puts "\n Creating Technologies"
 
-# TODO maybe add a order to technologies
 ruby = Technology.create!(
   name: "Ruby",
   icon: "icons/ruby.png",
