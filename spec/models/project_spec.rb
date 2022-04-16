@@ -10,6 +10,10 @@ RSpec.describe Project, type: :model do
     it { should have_many(:descriptions) }
   end
 
+  describe "validation" do
+    it { should validate_uniqueness_of(:name) }
+  end
+
   let(:project) { FactoryBot.create(:project, name: "Fordsdevelopment") }
 
   describe "#to_param" do

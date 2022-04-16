@@ -7,6 +7,14 @@ RSpec.describe Feature, type: :model do
     it { should belong_to(:project) }
   end
 
+  describe "has many" do
+    it { should have_many(:technology_groups) }
+  end
+
+  describe "valiations" do
+    it { should validate_uniqueness_of(:name) }
+  end
+
   let(:feature) { FactoryBot.create(:feature) }
   let(:javascript) { FactoryBot.create(:technology, name: "Javascript") }
 

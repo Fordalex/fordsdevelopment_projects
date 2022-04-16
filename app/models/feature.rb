@@ -1,6 +1,10 @@
 class Feature < ApplicationRecord
+  # belongs to
   belongs_to :project
+  # has many
   has_many :technology_groups, as: :technology_groupable, dependent: :destroy
+  # validation
+  validates_uniqueness_of :name
 
   def to_param
     name

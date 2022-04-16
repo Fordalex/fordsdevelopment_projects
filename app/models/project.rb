@@ -1,8 +1,11 @@
 class Project < ApplicationRecord
+  # has many
   has_many :features
   has_many :technology_groups, as: :technology_groupable, dependent: :destroy
   has_many :plans
   has_many :descriptions
+  # validation
+  validates_uniqueness_of :name
 
   def to_param
     name
