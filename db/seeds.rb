@@ -303,7 +303,7 @@ contact = Feature.create!(
 )
 
 Feature.create!(
-  name: "Contact",
+  name: "Other",
   description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
   started: Date.new(2021,01,01),
   project: fordsdevelopment,
@@ -311,7 +311,7 @@ Feature.create!(
 )
 
 javascript_feature = Feature.create!(
-  name: "Contact",
+  name: "Other contact",
   description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
   started: Date.new(2021,01,01),
   project: family_organiser,
@@ -319,7 +319,7 @@ javascript_feature = Feature.create!(
 )
 
 another_feature_using_javascript = Feature.create!(
-  name: "Contact",
+  name: "asdf",
   description: "Another feature using javascript, blar blar...",
   started: Date.new(2021,01,01),
   project: family_organiser,
