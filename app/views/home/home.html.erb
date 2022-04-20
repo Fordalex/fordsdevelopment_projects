@@ -37,7 +37,7 @@
 <div class="home-projectsSection">
   <div class="content-inset">
     <div class="home-projectsContainer">
-      <% @projects.all.each do |project| %>
+      <% @projects.each do |project| %>
         <%= render partial: "project", locals: {project: project} %>
       <% end %>
     </div>
