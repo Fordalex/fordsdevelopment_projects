@@ -232,13 +232,14 @@
 
 .project-uxGithubContainer {
   margin-top: 1rem;
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
 .project-uxGithubWrapper {
   width: 100%;
   padding: 2rem;
+  margin-bottom: 1rem;
 }
 
 .project-uxGithubWrapper:first-child {
@@ -328,3 +329,12 @@
   color: transparent;
 }
 
+@media screen and (min-width: 768px) {
+  .project-uxGithubContainer {
+    display: flex;
+  }
+
+  .project-uxGithubWrapper {
+    margin-bottom: 0rem;
+  }
+}

@@ -1,6 +1,6 @@
 <div class="content-inset">
   <div class="project-landingContainer row">
-    <div class="col-6">
+    <div class="col-6 d-none d-md-block">
       <div class="project-imagesContainer">
         <%= image_tag @project.logo || "example.png", class: "project-imageSmall white-container" %>
         <%= image_tag @project.image || "example.png", class: "project-imageMedium white-container" %>
@@ -77,9 +77,13 @@
     <div class="project-uxGithubWrapper white-container" data-aos-right="slow">
       <%= image_tag "icons/outline/github.png", class: "project-uxGithubIcon" %>
       <h3>Github</h3>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-between">
         <div>
           <h5>Commits</h5>
+        </div>
+        <div>
+          <h5>More</h5>
+          <%= link_to "Repository", @project.repo, target: "_blank" %>
         </div>
       </div>
     </div>
