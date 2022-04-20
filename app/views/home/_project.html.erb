@@ -1,5 +1,5 @@
 <%# add js to add project-open class to the projectFirst id %>
-<div class="home-projectWrapper project-toggable project-closed" style="background-color:<%= project.theme_colour_first %>;" id="<%= "projectFirst" if project.order == 1 %>">
+<div class="home-projectWrapper project-toggable project-closed" style="background-color:<%= project.theme_colour_first %>;" id="<%= "projectFirst" if project == Project.all_visible.first %>">
   <%= image_tag project.image || "example.png", class: "home-projectImage" %>
   <div class="home-projectInfoWrapper">
     <div>
