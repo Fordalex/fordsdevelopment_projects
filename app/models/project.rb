@@ -7,6 +7,10 @@ class Project < ApplicationRecord
   # validation
   validates_uniqueness_of :name
 
+  def self.all_visible
+    Project.where(visible: true)
+  end
+
   def to_param
     name
   end
