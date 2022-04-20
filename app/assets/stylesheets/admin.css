@@ -14,3 +14,66 @@
 .admin-technologyOptionsContainer img {
   width: 40px;
 }
+
+.admin-iconsContainer {
+  margin: auto;
+  width: 320px;
+  height: 200px;
+  overflow-y: scroll;
+  border: solid rgb(69, 69, 69) 1px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.admin-iconWrapper {
+  display: flex;
+  flex-direction: column;
+  border: solid rgb(231, 231, 231) 1px;
+  padding: 0.5rem;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.admin-iconWrapper:hover {
+  background-color: rgb(227, 227, 227);
+}
+
+.admin-iconWrapper:hover .admin-iconToolTip {
+  display: inline-block;
+}
+
+.admin-iconWrapper input[type='radio'] {
+  display: none;
+  margin: auto;
+}
+
+.admin-iconWrapper input[type='radio']:checked {
+  background-color: red;
+}
+
+.admin-iconWrapper img {
+  width: 30px;
+  display: block;
+  margin: auto;
+}
+
+.admin-iconWrapperActive {
+  background-color: rgb(227, 227, 227);
+}
+
+.admin-iconsDisplay {
+  width: 320px;
+  margin: auto;
+  border: solid 1px black;
+  border-top: none;
+  padding: 0.2rem;
+}
+
+.admin-iconsDisplay p {
+  padding: 0.25rem;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}

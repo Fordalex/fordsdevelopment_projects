@@ -1,0 +1,19 @@
+<div class="admin-iconsContainer" data-image-select-container="<%= attribute %>">
+  <% Dir.glob(file_path).each do |f| %>
+    <% if f.include?(".png") %>
+      <% image_path = f.split("/")[-2..-1].join("/") %>
+
+      <label for="technology_<%= attribute %>_<%= f.split("/")[-2..-1].join("").split(".").join("_") %>" class="admin-iconWrapper" data-image-select-wrapper="<%= attribute %>">
+        <%= form.radio_button attribute, image_path, class: "radio-image", data: {image_select_radio: attribute} %>
+        <%# TODO make the js reuseable %>
+        <%# TODO add a tooltip to display the filename of the image %>
+        <%#= f.split("/").last %>
+        <%= image_tag image_path %>
+      </label>
+    <% end %>
+  <% end %>
+</div>
+<div class="admin-iconsDisplay">
+  <p><b>Option:</b> <span data-image-select-option="<%= attribute %>"></span></p>
+  <p><b>Selected:</b> <span data-image-select-selected="<%= attribute %>"></span></p>
+</div>

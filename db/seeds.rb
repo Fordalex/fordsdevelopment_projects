@@ -82,7 +82,7 @@ django = Technology.create!(
 
 adobe_ai = Technology.create!(
   name: "Adobe",
-  icon: "icons/ai.png",
+  icon: "icons/adobe_ai.png",
   icon_high_res: "icons/adobe_ai_high_res.png",
   technology_type: creative
 )

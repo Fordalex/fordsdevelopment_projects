@@ -1,5 +1,4 @@
 <%= form_with(model: [:admin, technology]) do |form| %>
-
   <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
@@ -12,12 +11,12 @@
 
   <div class="form-group">
     <%= form.label :icon %>
-    <%= form.select :icon, options_for_select(Dir.glob("app/assets/images/icons/*").map{|f| f.split("/")[-2..-1].join("/")}, technology.icon), class: "form-control" %>
+    <%= render partial: "/admin/shared/radio_image_select", locals: {file_path: "app/assets/images/icons/*", attribute: :icon, form: form} %>
   </div>
 
   <div class="form-group">
     <%= form.label :icon_high_res %>
-    <%= form.select :icon_high_res, options_for_select(Dir.glob("app/assets/images/icons/*").map{|f| f.split("/")[-2..-1].join("/")}, technology.icon_high_res), class: "form-control" %>
+    <%= render partial: "/admin/shared/radio_image_select", locals: {file_path: "app/assets/images/icons/*", attribute: :icon_high_res, form: form} %>
   </div>
 
   <div class="form-group">
@@ -33,5 +32,4 @@
   <div class="actions">
     <%= form.submit class: "btn btn-success w-100 mt-3" %>
   </div>
-
 <% end %>

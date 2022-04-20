@@ -17,7 +17,7 @@
 </div>
 
 <div class="projects-technologiesContainer">
-  <% @project.technologies.each do |technology| %>
+  <% @project.technologies&.each do |technology| %>
     <%= render partial: "/shared/technology", locals: {technology: technology} %>
   <% end %>
 </div>
