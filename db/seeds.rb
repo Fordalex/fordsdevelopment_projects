@@ -263,7 +263,8 @@ fordsdevelopment = Project.create!(
   image: "illustrations/undraw_fordsdevelopment.svg",
   theme_colours: "#527ab6, #3b4b62, #fff",
   order: 1,
-  repo: "fordsdevelopment_projects",
+  visible: true,
+  repo: "https://github.com/Fordalex/fordsdevelopment_projects",
 )
 
 family_organiser = Project.create!(
@@ -275,7 +276,8 @@ family_organiser = Project.create!(
   logo: "projects/family_organiser.png",
   image: "illustrations/undraw_family_organiser.svg",
   theme_colours: "#34c03c, #fff",
-  order: 2
+  order: 2,
+  visible: true
 )
 
 the_note_worthy = Project.create!(
