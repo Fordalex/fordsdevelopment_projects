@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Package.delete_all
 Project.delete_all
 Feature.delete_all
 Technology.delete_all
@@ -257,6 +258,30 @@ Package.create(
   technology: ruby
 )
 
+Package.create(
+  name: "RSpec",
+  description: "Automatic testing",
+  technology: ruby
+)
+
+Package.create(
+  name: "Sidekiq",
+  description: "Background processing tool",
+  technology: ruby
+)
+
+Package.create(
+  name: "Whenever",
+  description: "Provides a clear syntax for writing and deploying cron jobs.",
+  technology: ruby
+)
+
+Package.create(
+  name: "Another",
+  description: "Some other random gem for ruby.",
+  technology: ruby
+)
+
 puts "\n Creating Projects"
 
 fordsdevelopment = Project.create!(
@@ -272,6 +297,7 @@ fordsdevelopment = Project.create!(
   order: 1,
   visible: true,
   repo: "https://github.com/Fordalex/fordsdevelopment_projects",
+  github_commits_link: "https://api.github.com/repos/Fordalex/work-assistant/commits",
 )
 
 family_organiser = Project.create!(

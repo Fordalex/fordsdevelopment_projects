@@ -53,18 +53,31 @@
 }
 
 .technology-packageContainer {
-  flex-wrap: wrap;
   display: flex;
   justify-content: flex-start;
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding-bottom: 1rem;
 }
 
 .technology-packageWrapper {
-   padding: 1rem;
-   margin-right: 1rem;
+  position: relative;
+  padding: 1rem;
+  margin-right: 1rem;
+  min-width: 250px;
+  max-width: 250px;
+  white-space: normal;
+  padding-bottom: 2.2rem;
 }
 
 .technology-packageWrapper p {
   margin-bottom: 0;
+}
+
+.technology-packageWrapper img {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 @media screen and (min-width: 768px) {
