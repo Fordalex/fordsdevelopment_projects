@@ -338,11 +338,15 @@ calendar = Project.create!(
 puts "\n Creating Features"
 
 contact = Feature.create!(
-  name: "Contact",
-  description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
-  started: Date.new(2021,01,01),
+  name: "Image radio select",
+  description: "Easy way to display images available, using Ruby to recursively select all images from a chosen folder.",
   project: fordsdevelopment,
-  completed: true
+  completed: true,
+  body: '
+  <%= form_with(model: [:admin, Technology.new]) do |form|
+    render partial: "/admin/shared/radio_image_select", locals: {file_path: "app/assets/images/icons/*", attribute: :icon_high_res, form: form}
+  end %>
+  '
 )
 
 Feature.create!(

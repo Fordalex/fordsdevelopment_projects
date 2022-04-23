@@ -1,1 +1,14 @@
-<%= @feature.name %>
+<div class="content-inset">
+  <div class="white-container feature-pageContainer">
+    <h1><%= @feature.name %></h1>
+    <p><%= @feature.description %></p>
+    <hr>
+    <%# Render ERB using result(binding) means that the variables/methods defined %>
+    <%# Can be found in the view %>
+    <%= raw(ERB.new(@feature.body).result(binding)) %>
+  </div>
+</div>
+
+<% content_for :extra_js do %>
+  <%= javascript_pack_tag "admin/image_select" %>
+<% end %>
