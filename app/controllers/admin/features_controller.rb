@@ -58,11 +58,11 @@ module Admin
     end
 
     def set_feature
-      @feature = Feature.find(params[:name])
+      @feature = Feature.find_by(name: params[:name])
     end
 
     def feature_params
-      params.require(:feature).permit(:name, :description, :project_id, :completed)
+      params.require(:feature).permit(:name, :description, :project_id, :completed, :body)
     end
   end
 end

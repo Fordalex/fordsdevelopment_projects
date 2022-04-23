@@ -2,10 +2,12 @@
   <div class="white-container feature-pageContainer">
     <h1><%= @feature.name %></h1>
     <p><%= @feature.description %></p>
-    <hr>
     <%# Render ERB using result(binding) means that the variables/methods defined %>
     <%# Can be found in the view %>
-    <%= raw(ERB.new(@feature.body).result(binding)) %>
+    <% if @feature.body.present? %>
+      <hr>
+      <%= raw(ERB.new(@feature.body).result(binding)) %>
+    <% end %>
   </div>
 </div>
 
