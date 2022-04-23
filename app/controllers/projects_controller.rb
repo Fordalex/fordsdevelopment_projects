@@ -4,7 +4,5 @@ class ProjectsController < ApplicationController
     # sort by the project
     @project = Project.find_by(name: params[:name])
     @features = Feature.all
-    #@commits = GithubCommits.new(@project.repo).total_commits
-    @commits = 30
   end
 end
