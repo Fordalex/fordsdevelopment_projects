@@ -55,7 +55,7 @@
 .technology-packageContainer {
   display: flex;
   justify-content: flex-start;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap;
   padding-bottom: 1rem;
 }

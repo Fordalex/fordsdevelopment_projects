@@ -1,0 +1,40 @@
+body {
+  --scrollbar-track-color: #e2e2e2;
+  --scrollbar-thumb-color: #d82d2d;
+  --scrollbar-border-thickness: 1px;
+  --scrollbar-corner-color: #ffffff;
+  --scrollbar-button-color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border: solid var(--scrollbar-track-color) 2px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ae2b2b;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
+/* TODO add the arrows for the buttons */
+/* ::-webkit-scrollbar-button {
+  background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-button:hover {
+  background: grey;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--scrollbar-corner-color);
+} */
