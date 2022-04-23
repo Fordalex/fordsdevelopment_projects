@@ -10,9 +10,11 @@ function updateStyles() {
       if (radioButton.checked) {
         r.classList.add('admin-iconWrapperActive');
         document.querySelector(`[data-image-select-selected="${imageType}"]`).innerHTML = radioButton.value
+        console.log("active")
       }
     });
- });
+  });
+  console.log("clicked")
 };
 
 document.querySelectorAll('.admin-iconWrapper').forEach((r) => {
@@ -22,15 +24,13 @@ document.querySelectorAll('.admin-iconWrapper').forEach((r) => {
 function displayOption() {
   const imageType = this['dataset']['imageSelectWrapper'];
   const imageValue = this.querySelector(`[data-image-select-radio="${imageType}"]`).value;
-  console.log(imageType);
-  console.log(imageValue);
-  console.log(this)
   document.querySelector(`[data-image-select-option="${imageType}"]`).innerHTML = imageValue;
 };
 
 document.querySelectorAll('.admin-iconWrapper').forEach((r) => {
   r.addEventListener('mouseenter', displayOption);
-  r.addEventListener('mouseout', console.log("Empty the option span"))
 });
 
 updateStyles();
+
+console.log("connected")
