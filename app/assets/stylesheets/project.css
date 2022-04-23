@@ -200,7 +200,7 @@
 /* new design */
 
 .project-name {
-  font-size: 3rem;
+  font-size: 2.4rem;
   display: flex;
   justify-content: flex-start;
 }
@@ -226,6 +226,7 @@
   margin: 4rem 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* design ux ui / plans */
@@ -336,5 +337,9 @@
 
   .project-uxGithubWrapper {
     margin-bottom: 0rem;
+  }
+
+  .project-name {
+    font-size: 3rem;
   }
 }
