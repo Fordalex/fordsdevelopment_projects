@@ -242,6 +242,13 @@ godot = Technology.create!(
   technology_type: creative
 )
 
+flask = Technology.create!(
+  name: "Flask",
+  icon: "icons/flask.png",
+  icon_high_res: "icons/flask.png",
+  technology_type: backend
+)
+
 puts "\n Creating Packages"
 
 Package.create(

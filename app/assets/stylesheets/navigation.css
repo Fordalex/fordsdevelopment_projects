@@ -11,22 +11,11 @@
 }
 
 .navigation-wrapper {
-  max-width: 1200px;
+  max-width: 1235px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-
-@media screen and (min-width: 768px) {
-  .navigation-wrapper {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-}
-@media screen and (min-width: 1250px) {
-  .navigation-wrapper {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-icon {
