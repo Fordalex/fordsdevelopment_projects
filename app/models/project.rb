@@ -6,10 +6,8 @@ class Project < ApplicationRecord
   has_many :descriptions
   # validation
   validates_uniqueness_of :name
-
-  def self.all_visible
-    Project.where(visible: true)
-  end
+  # scopes
+  scope :all_visible, -> { where(visible: true).order(:order) }
 
   def to_param
     name
