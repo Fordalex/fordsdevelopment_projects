@@ -1,3 +1,7 @@
-<% @features.each do |feature| %>
-  <%= render partial: "/shared/feature", locals: {feature: feature} %>
-<% end %>
+<div class="content-inset">
+  <div class="features-container">
+    <% @features.each do |feature| %>
+      <%= render partial: "/shared/feature", locals: {feature: feature} %>
+    <% end %>
+  </div>
+</div>

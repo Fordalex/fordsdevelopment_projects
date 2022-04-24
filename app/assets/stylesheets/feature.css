@@ -2,3 +2,18 @@
   padding: 1rem;
   margin: 2rem 0;
 }
+
+/* features all */
+
+.features-container {
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .features-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
