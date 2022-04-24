@@ -5,14 +5,14 @@
   font-size: 1.1rem;
   border: solid #d5d5d5 1px;
   border-radius: 6px;
-  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
   transition: 0.2s;
 }
 
 .nav-link:hover {
   transform: scale(1.05);
   color: #000;
-  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .nav-link img {
