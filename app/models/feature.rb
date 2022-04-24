@@ -7,6 +7,7 @@ class Feature < ApplicationRecord
   validates_uniqueness_of :name
 
   # TODO add highlighted attribute
+  # TODO add link attribute, for features that can't be display in the view.
 
   def to_param
     name
