@@ -1,6 +1,6 @@
 <%= link_to project_path(project), class: "projectCard-container white-container", style: "background-color:#{project.theme_colour_first}" do %>
   <h6><%= project.name %></h6>
-  <p><%= project.description %></p>
+  <p><%= project.sub_title %></p>
   <% if project.logo %>
     <%= image_tag project.logo, class: "projectCard-logo" %>
   <% end %>

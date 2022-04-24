@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get "project/:name" => "projects#show", as: :project
   get "projects" => "projects#index", as: :projects
   get "technology/:name" => "technologies#show", as: :technology
+  get "packages" => "packages#index", as: :packages
 end

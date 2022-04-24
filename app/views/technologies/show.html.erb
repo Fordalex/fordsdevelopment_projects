@@ -11,11 +11,7 @@
       <h5>Packages</h5>
       <div class="technology-packageContainer">
         <% @technology.packages.each do |package| %>
-          <div class="technology-packageWrapper white-container">
-            <h6><%= package.name %></h6>
-            <p><%= package.description %></p>
-            <%= image_tag package&.technology&.icon, class: "feature-icon" %>
-          </div>
+          <%= render partial: "/shared/package", locals: {package: package} %>
         <% end %>
       </div>
     <% end %>
@@ -41,7 +37,7 @@
       <div class="technologyShow-projectsFeaturesWrapper">
         <h5 class="my-3">Features</h5>
           <% if @technology.features.any? %>
-          <div class="features-container">
+          <div class="technologies-featuresContainer">
             <% @technology.features.each do |feature| %>
               <%= render partial: "/shared/feature", locals: {feature: feature} %>
             <% end %>
