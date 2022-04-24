@@ -9,6 +9,8 @@ class Project < ApplicationRecord
   # scopes
   scope :all_visible, -> { where(visible: true).order(:order) }
 
+  # TODO Add packages to a project
+
   def to_param
     name
   end
