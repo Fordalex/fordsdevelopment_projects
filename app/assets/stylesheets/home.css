@@ -253,7 +253,7 @@
 
 .home-featuresContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -286,23 +286,33 @@
   .home-projectWrapper {
     margin-bottom: 0;
   }
+
   .homeHeader-featureContainer {
     display: block;
   }
+
   .homeFeature-canvas {
     display: block;
   }
+
   .firework-button {
     display: flex;
   }
+
   .welcome-text {
     font-size: 5rem;
   }
+
   .home-technologiesContainer {
     justify-content: flex-start;
   }
+
   .home-technologyTypeName {
     text-align: start;
+  }
+
+  .home-featuresContainer {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

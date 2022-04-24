@@ -1,5 +1,7 @@
-<%# TODO: Fix the navigation to the top when scrolling 'sticky' I think. %>
-
+<div class="navigation-container">
+  <%= link_to "Projects", projects_path, class: "nav-link" %>
+  <%= link_to "Features", features_path, class: "nav-link" %>
+</div>
 <nav class="navigation-container">
   <div class="navigation-wrapper">
     <% @technologies.each do |technology| %>

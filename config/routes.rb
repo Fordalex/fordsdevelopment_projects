@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   root "home#home"
 
   get "feature/:name" => "features#show", as: :feature
+  get "features" => "features#index", as: :features
   get "project/:name" => "projects#show", as: :project
+  get "projects" => "projects#index", as: :projects
   get "technology/:name" => "technologies#show", as: :technology
 end

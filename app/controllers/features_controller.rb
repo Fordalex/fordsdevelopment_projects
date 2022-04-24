@@ -4,6 +4,10 @@ class FeaturesController < ApplicationController
   def show
   end
 
+  def index
+    @features = Feature.all
+  end
+
   private
 
   def find_feature

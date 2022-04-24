@@ -5,4 +5,8 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(name: params[:name])
     @features = Feature.all
   end
+
+  def index
+    @projects = Project.all.order(:order)
+  end
 end
