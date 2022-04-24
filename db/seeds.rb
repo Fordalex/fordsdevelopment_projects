@@ -357,11 +357,11 @@ Feature.create!(
   completed: true
 )
 
-javascript_feature = Feature.create!(
+ruby_feature = Feature.create!(
   name: "Other contact",
   description: "The hex thing with all the features on, this took my some time but I think it looks nice blar blar blar...",
   started: Date.new(2021,01,01),
-  project: family_organiser,
+  project: fordsdevelopment,
   completed: true,
 )
 
@@ -382,8 +382,8 @@ TechnologyGroup.create!(
 )
 
 TechnologyGroup.create!(
-  technology: javascript,
-  technology_groupable: javascript_feature,
+  technology: ruby,
+  technology_groupable: ruby_feature,
 )
 
 TechnologyGroup.create!(

@@ -80,6 +80,12 @@
   right: 1rem;
 }
 
+.technology-projectsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 @media screen and (min-width: 768px) {
   .technologyShow-projectsFeaturesContainer {
     display: flex;

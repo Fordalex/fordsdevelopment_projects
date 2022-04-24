@@ -1,4 +1,7 @@
-<div>
-  <%= project.name %>
-  <%= project.description %>
-</div>
+<%= link_to project_path(project), class: "projectCard-container white-container" do %>
+  <h6><%= project.name %></h6>
+  <p><%= project.description %></p>
+  <% if project.logo %>
+    <%= image_tag project.logo, class: "projectCard-logo" %>
+  <% end %>
+<% end %>

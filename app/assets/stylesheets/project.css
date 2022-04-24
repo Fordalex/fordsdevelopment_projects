@@ -330,6 +330,29 @@
   color: transparent;
 }
 
+/* project card */
+
+.projectCard-container {
+  display: block;
+  position: relative;
+  padding: 1rem;
+}
+
+.projectCard-logo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  z-index: 0;
+  opacity: 0.17;
+  filter: grayscale(1);
+  object-fit: contain;
+}
+
 @media screen and (min-width: 768px) {
   .project-uxGithubContainer {
     display: flex;

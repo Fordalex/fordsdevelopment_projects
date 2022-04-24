@@ -28,15 +28,11 @@
       <div class="technologyShow-projectsFeaturesWrapper">
         <h5 class="my-3">Projects</h5>
         <% if @technology.projects.any? %>
-          <% @technology.projects.each do |project| %>
-            <div class="technologyShow-projectContainer">
-              <%= project.name %>
-              <div>
-                <%= link_to "Read More", project_path(project), class: "secondary-button" %>
-                <%= link_to "Visit Website", project.link, target: "_blank", class: "main-button" %>
-              </div>
-            </div>
-          <% end %>
+          <div class="technology-projectsContainer">
+            <% @technology.projects.each do |project| %>
+              <%= render partial: "/shared/project", locals: {project: project} %>
+            <% end %>
+          </div>
         <% else %>
           <p>No project examples currently available.</p>
         <% end %>
