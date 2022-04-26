@@ -9,14 +9,20 @@
   transition: 0.2s;
 }
 
-.nav-link:hover {
+.nav-link img {
+  width: 30px;
+}
+
+.nav-iconLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-iconLink:hover .nav-link {
   transform: scale(1.05);
   color: #000;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-}
-
-.nav-link img {
-  width: 30px;
 }
 
 .navigation-linksContainer {
@@ -41,7 +47,6 @@
 }
 
 .navigation-wrapper {
-  max-width: 1235px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -62,7 +67,7 @@
   opacity: 1;
 }
 
-.nav-icon:hover {
+.nav-iconLink:hover .nav-icon {
   transform: scale(1.5);
   cursor: pointer;
   filter: grayscale(0);

@@ -15,8 +15,8 @@
 <nav class="navigation-container">
   <div class="navigation-wrapper">
     <% @technologies.each do |technology| %>
-      <%= link_to technology_path(technology.name) do %>
-        <%= image_tag technology.icon, class: "nav-icon #{"nav-icon-active" if technology.name == params[:name] || @project&.technology_names&.include?(technology.name)}" %>
+      <%= link_to technology_path(technology.name), class: "nav-iconLink" do %>
+        <%= image_tag technology.icon, class: "nav-icon #{"nav-icon-active" if technology.name == params[:name] || @technologies_used.include?(technology.name)}" %>
       <% end %>
     <% end %>
   </div>

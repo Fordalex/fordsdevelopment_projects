@@ -3,4 +3,7 @@ class HomeController < ApplicationController
       @projects = Project.all_visible
       @features = Feature.all[0..3]
     end
+
+    def beeper
+    end
 end

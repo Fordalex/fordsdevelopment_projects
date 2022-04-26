@@ -187,6 +187,12 @@ sql = Technology.create!(
   technology_type: backend
 )
 
+rails = Technology.create!(
+  name: "rails",
+  icon: "icons/rails.svg",
+  technology_type: backend
+)
+
 # maybe remove?
 api = Technology.create!(
   name: "api",

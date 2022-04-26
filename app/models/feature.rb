@@ -6,6 +6,8 @@ class Feature < ApplicationRecord
   # validation
   validates_uniqueness_of :name
 
+  # TODO Add star attribute.
+
   def to_param
     name
   end

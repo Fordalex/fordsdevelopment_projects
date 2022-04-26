@@ -24,6 +24,7 @@ class Project < ApplicationRecord
   end
 
   def technology_names
+    # This could be smarter? Delegate, scope?
     technology_groups.map { |tg| tg.technology.name }
   end
 
