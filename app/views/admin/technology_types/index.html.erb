@@ -1,0 +1,22 @@
+
+<%= link_to "New", new_admin_technology_type_path, class: "btn btn-success" %>
+
+<h3>Technologies</h3>
+
+<table class="table ">
+  <tr>
+    <td>Name</td>
+    <td>Actions</td>
+  </tr>
+  <% @technology_types.each do |technology_type| %>
+    <tr>
+      <td>
+        <%= technology_type.name %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_admin_technology_type_path(technology_type), class: "btn btn-info" %>
+        <%= link_to "Delete", admin_technology_type_path(technology_type), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
