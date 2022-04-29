@@ -8,7 +8,9 @@
       In the navigation are a list of all the technologies I've used with examples of my work.</p>
 
       <div class="home-buttonsContainer">
-        <%= link_to "View my projects", project_path(Project.first), class: "callToAction-buttonMain" %>
+        <% if Project.all.any? %>
+          <%= link_to "View my projects", project_path(Project.first), class: "callToAction-buttonMain" %>
+        <% end %>
         <%= link_to "Read more", "#aboutMe", class: "callToAction-buttonSecondary" %>
         <div class="firework-button" id="fireworkButton">
           <%= image_tag "icons/firework.png" %>

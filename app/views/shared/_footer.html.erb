@@ -12,6 +12,8 @@
   </div>
   <div class="footer-linksContainer">
     <%= link_to "Home", root_path %>
-    <%= link_to "Projects", project_path(Project.first) %>
+    <% if Project.all.any? %>
+      <%= link_to "Projects", project_path(Project.first) %>
+    <% end %>
   </div>
 </footer>
