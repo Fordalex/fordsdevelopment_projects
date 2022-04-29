@@ -345,6 +345,7 @@
   display: block;
   position: relative;
   padding: 1rem;
+  width: 100%;
 }
 
 .projectCard-container h6,

@@ -7,13 +7,15 @@
       <p><%= @technology.description %></p>
     <% end %>
 
-    <% if @technology.packages.any? %>
-      <h5>Packages</h5>
-      <div class="technology-packageContainer">
-        <% @technology.packages.each do |package| %>
-          <%= render partial: "/shared/package", locals: {package: package} %>
+    <h5 class="my-3">Projects</h5>
+    <% if @technology.projects.any? %>
+      <div class="technology-projectsContainer">
+        <% @technology.projects.each do |project| %>
+          <%= render partial: "/shared/project", locals: {project: project} %>
         <% end %>
       </div>
+    <% else %>
+      <p>No project examples currently available.</p>
     <% end %>
 
     <% if @technology&.icon_high_res&.present? %>
@@ -22,15 +24,13 @@
 
     <div class="technologyShow-projectsFeaturesContainer">
       <div class="technologyShow-projectsFeaturesWrapper">
-        <h5 class="my-3">Projects</h5>
-        <% if @technology.projects.any? %>
-          <div class="technology-projectsContainer">
-            <% @technology.projects.each do |project| %>
-              <%= render partial: "/shared/project", locals: {project: project} %>
+        <% if @technology.packages.any? %>
+          <h5 class="my-3">Packages</h5>
+          <div class="technology-packageContainer">
+            <% @technology.packages.each do |package| %>
+              <%= render partial: "/shared/package", locals: {package: package} %>
             <% end %>
           </div>
-        <% else %>
-          <p>No project examples currently available.</p>
         <% end %>
       </div>
 

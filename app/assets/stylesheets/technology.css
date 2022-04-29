@@ -53,19 +53,14 @@
 }
 
 .technology-packageContainer {
-  display: flex;
-  justify-content: flex-start;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
 .technology-packageWrapper {
   position: relative;
   padding: 1rem;
-  min-width: 250px;
-  max-width: 250px;
   white-space: normal;
   padding-bottom: 2.2rem;
 }
@@ -89,5 +84,9 @@
 @media screen and (min-width: 768px) {
   .technologyShow-projectsFeaturesContainer {
     display: flex;
+  }
+
+  .technology-projectsContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
