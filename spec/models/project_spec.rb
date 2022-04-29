@@ -4,10 +4,11 @@ require "rails_helper"
 
 RSpec.describe Project, type: :model do
   describe "have many" do
-    it { should have_many(:features) }
-    it { should have_many(:technology_groups) }
-    it { should have_many(:plans) }
     it { should have_many(:descriptions) }
+    it { should have_many(:features) }
+    it { should have_many(:plans) }
+    it { should have_many(:package_groups) }
+    it { should have_many(:technology_groups) }
   end
 
   describe "validation" do
@@ -37,6 +38,25 @@ RSpec.describe Project, type: :model do
     context "when a project hasn't got any technologies" do
       it "should return an empty array" do
         expect(project.technologies).to eq []
+      end
+    end
+  end
+
+  describe "#package_names" do
+    let(:technology) { FactoryBot.create(:technology) }
+    let!(:package) { FactoryBot.create(:package, name: "RSpec", technology: technology) }
+
+    context "when a project has a package" do
+      let!(:package_group) { FactoryBot.create(:package_group, package_groupable: project, package: package) }
+
+      it "should return all the package names attached to a project" do
+        expect(project.package_names).to eq ["RSpec"]
+      end
+    end
+
+    context "when a project hasn't got any packages" do
+      it "should return an empty array" do
+        expect(project.package_names).to eq []
       end
     end
   end

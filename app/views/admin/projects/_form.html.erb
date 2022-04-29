@@ -51,6 +51,10 @@
     <%= form.text_area :ux, class: "form-control" %>
   </div>
 
+  <hr>
+
+  <h4>Technologies</h4>
+
   <div class="admin-technologyOptionsContainer">
     <% Technology.all.each do |technology| %>
       <div class="form-group">
@@ -60,6 +64,21 @@
       </div>
     <% end %>
   </div>
+
+  <hr>
+
+  <h4>Packages</h4>
+
+  <div class="admin-technologyOptionsContainer">
+    <% Package.all.each do |package| %>
+      <div class="form-group">
+        <%= label_tag package.name %>
+        <%= check_box_tag "[packages][#{package.id}]", {}, project.package_names.include?(package.name) %>
+      </div>
+    <% end %>
+  </div>
+
+  <hr>
 
   <div class="actions">
   <%= form.submit class: "btn btn-success w-100 mt-3" %>

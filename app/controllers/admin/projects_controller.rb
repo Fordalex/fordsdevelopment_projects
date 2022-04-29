@@ -15,6 +15,7 @@ module Admin
         flash[:warning] = "An error occurred, please try again."
       end
       create_technology_groups
+      create_package_groups
       redirect_to admin_projects_path(@project)
     end
 
@@ -29,6 +30,8 @@ module Admin
     def update
       delete_technology_groups
       create_technology_groups
+      delete_package_groups
+      create_package_groups
       if @project.update(project_params)
         flash[:success] = "Project was successfully updated."
       else
@@ -54,6 +57,22 @@ module Admin
           TechnologyGroup.create(
             technology_groupable: @project,
             technology: technology
+          )
+        end
+      end
+    end
+
+    def delete_package_groups
+      @project.package_groups.destroy_all
+    end
+
+    def create_package_groups
+      if params[:packages]
+        params[:packages].each do |key, value|
+          package = Package.find(key)
+          PackageGroup.create(
+            package_groupable: @project,
+            package: package
           )
         end
       end

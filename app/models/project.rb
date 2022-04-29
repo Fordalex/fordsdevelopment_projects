@@ -2,6 +2,9 @@ class Project < ApplicationRecord
   # has many
   has_many :features
   has_many :technology_groups, as: :technology_groupable, dependent: :destroy
+  has_many :technologies, through: :technology_groups
+  has_many :package_groups, as: :package_groupable, dependent: :destroy
+  has_many :packages, through: :package_groups
   has_many :plans
   has_many :descriptions
   # validation
@@ -24,12 +27,11 @@ class Project < ApplicationRecord
   end
 
   def technology_names
-    # This could be smarter? Delegate, scope?
-    technology_groups.map { |tg| tg.technology.name }
+    technologies.map(&:name)
   end
 
-  def technologies
-    technology_groups.map { |tg| tg.technology }
+  def package_names
+    packages.map(&:name)
   end
 
   def theme_colour_first
