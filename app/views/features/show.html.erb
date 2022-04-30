@@ -2,6 +2,9 @@
   <div class="white-container feature-pageContainer">
     <h1><%= @feature.name %></h1>
     <p><%= @feature.description %></p>
+    <% if @feature.link.present? %>
+      <%= link_to "See feature", @feature.link, class: "main-button", target: "_blank" %>
+    <% end %>
     <%# Render ERB using result(binding) means that the variables/methods defined %>
     <%# Can be found in the view %>
     <% if @feature.body.present? %>

@@ -48,12 +48,14 @@ module Admin
     end
 
     def create_technology_groups
-      params[:technologies].each do |key, value|
-        technology = Technology.find_by(name: key)
-        TechnologyGroup.create(
-          technology_groupable: @feature,
-          technology: technology
-        )
+      if params[:technologies]
+        params[:technologies].each do |key, value|
+          technology = Technology.find_by(name: key)
+          TechnologyGroup.create(
+            technology_groupable: @feature,
+            technology: technology
+          )
+        end
       end
     end
 
@@ -62,7 +64,7 @@ module Admin
     end
 
     def feature_params
-      params.require(:feature).permit(:name, :description, :project_id, :completed, :body)
+      params.require(:feature).permit(:name, :description, :project_id, :completed, :body, :link)
     end
   end
 end
