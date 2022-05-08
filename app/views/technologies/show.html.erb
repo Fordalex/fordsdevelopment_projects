@@ -1,3 +1,7 @@
+<% if @technology&.icon_high_res&.present? %>
+  <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
+<% end %>
+
 <div class="content-inset">
   <div class="technologyType-container">
     <h1 class="mt-5"><%= @technology.name.capitalize %></h1>
@@ -7,30 +11,18 @@
       <p><%= @technology.description %></p>
     <% end %>
 
-    <h5 class="my-3">Projects</h5>
-    <% if @technology.projects.any? %>
-      <div class="technology-projectsContainer">
-        <% @technology.projects.each do |project| %>
-          <%= render partial: "/shared/project", locals: {project: project} %>
-        <% end %>
-      </div>
-    <% else %>
-      <p>No project examples currently available.</p>
-    <% end %>
-
-    <% if @technology&.icon_high_res&.present? %>
-      <%= image_tag @technology.icon_high_res, class: "large-backgroundIcon" %>
-    <% end %>
 
     <div class="technologyShow-projectsFeaturesContainer">
       <div class="technologyShow-projectsFeaturesWrapper">
-        <% if @technology.packages.any? %>
-          <h5 class="my-3">Packages</h5>
-          <div class="technology-packageContainer">
-            <% @technology.packages.each do |package| %>
-              <%= render partial: "/shared/package", locals: {package: package} %>
+        <h5 class="my-3">Projects</h5>
+        <% if @technology.projects.any? %>
+          <div class="technology-projectsContainer">
+            <% @technology.projects.each do |project| %>
+              <%= render partial: "/shared/project", locals: {project: project} %>
             <% end %>
           </div>
+        <% else %>
+          <p>No project examples currently available.</p>
         <% end %>
       </div>
 
@@ -44,6 +36,17 @@
           </div>
         <% else %>
           <p>No features currently available.</p>
+        <% end %>
+      </div>
+
+      <div class="technologyShow-projectsFeaturesWrapper">
+        <% if @technology.packages.any? %>
+          <h5 class="my-3">Packages</h5>
+          <div class="technology-packageContainer">
+            <% @technology.packages.each do |package| %>
+              <%= render partial: "/shared/package", locals: {package: package} %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>

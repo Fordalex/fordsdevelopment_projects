@@ -42,14 +42,18 @@
 .technologyShow-projectsFeaturesContainer {
   display: block;
   justify-content: center;
-}
-
-.technologyShow-projectsFeaturesWrapper:first-child {
-  margin-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 .technologyShow-projectsFeaturesWrapper {
   width: 100%;
+}
+
+.technology-projectsContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .technology-packageContainer {
@@ -75,18 +79,10 @@
   right: 1rem;
 }
 
-.technology-projectsContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
 
 @media screen and (min-width: 768px) {
   .technologyShow-projectsFeaturesContainer {
     display: flex;
-  }
-
-  .technology-projectsContainer {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
   }
 }
