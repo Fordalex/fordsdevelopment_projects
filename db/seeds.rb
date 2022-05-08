@@ -45,6 +45,14 @@ other = TechnologyType.create!(
 
 puts "\n Creating Technologies"
 
+analytics = Technology.create!(
+  name: "Analytics",
+  icon: "icons/analytics.png",
+  icon_high_res: "icons/analytics_high_res.png",
+  description: "Google analytics, search console.",
+  technology_type: dev_ops
+)
+
 ruby = Technology.create!(
   name: "Ruby",
   icon: "icons/ruby.png",
@@ -257,6 +265,18 @@ flask = Technology.create!(
 )
 
 puts "\n Creating Packages"
+
+Package.create(
+  name: "Google analytics",
+  description: "Track users interaction with a site.",
+  technology: analytics
+)
+
+Package.create(
+  name: "Search console",
+  description: "",
+  technology: analytics
+)
 
 Package.create(
   name: "Devise",
