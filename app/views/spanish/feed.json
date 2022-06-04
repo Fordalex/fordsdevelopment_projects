@@ -1,0 +1,30 @@
+[
+  {
+      "english": "this",
+      "spanish": {
+          "masculine": "esto",
+          "feminine": "esta"
+      }
+  },
+  {
+      "english": "that",
+      "spanish": {
+          "masculine": "ese",
+          "feminine": "esa"
+      }
+  },
+  {
+      "english": "the",
+      "spanish": {
+          "masculine": "el",
+          "feminine": "la"
+      }
+  },
+  {
+    "english": "these",
+    "spanish": {
+        "masculine": "estos",
+        "feminine": "estas"
+    }
+}
+]
