@@ -1,4 +1,4 @@
-.quiz-flashCardCategory-container {
+.quiz-flashCardCategory-wrapper {
   background-color: #fff;
   border: solid rgb(226, 226, 226) 1px;
   border-radius: 4px;
@@ -6,4 +6,12 @@
   margin: 1rem;
   display: inline-block;
   cursor: pointer;
+}
+
+.quiz-flashCard-wrapper {
+  background-color: #fff;
+  border: solid rgb(226, 226, 226) 1px;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem;
 }
