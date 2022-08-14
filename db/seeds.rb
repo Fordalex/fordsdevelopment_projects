@@ -14,6 +14,8 @@ TechnologyType.delete_all
 Administrator.delete_all
 Plan.delete_all
 
+require_relative "seeds/quiz"
+
 puts "\n Creating Admin"
 
 Administrator.create(

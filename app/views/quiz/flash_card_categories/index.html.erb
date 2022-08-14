@@ -1,0 +1,7 @@
+<h2>Flash Card Categories</h2>
+
+<% @flash_card_categories.each do |category| %>
+  <a class="quiz-flashCardCategory-container" href="#">
+    <h5><%= category.name %></h5>
+  </a>
+<% end %>
