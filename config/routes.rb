@@ -25,4 +25,7 @@ Rails.application.routes.draw do
 
   # feed for learning spanish
   get "/spanish-feed" => "spanish#feed", defaults: {format: :json}
+
+  # Routes for flash cards
+  get "flash-cards" => "flash_cards#home"
 end
