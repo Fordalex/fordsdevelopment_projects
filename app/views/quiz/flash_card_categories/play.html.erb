@@ -1,11 +1,23 @@
 <% @flash_cards.each do |flash_card| %>
-  <div class="quiz-flashCard-wrapper">
+  <div class="quiz-flashCard-wrapper" data-flash-card="<%= flash_card.id %>">
     <h6><%= flash_card.flash_card_category.name %></h6>
-    <p><%= flash_card.question %></p>
-    <p><%= flash_card.answer %></p>
+    <p><%= flash_card.question %>?</p>
+    <p class="quiz-answer">
+      <%= flash_card.answer %>
+      <button class="quiz-wrong" data-incorrect-button="<%= flash_card.id %>">Incorrect</button>
+      <button class="quiz-right" data-correct-button="<%= flash_card.id %>">Correct</button>
+    </p>
     <div>
       <span>Correct: <b><%= flash_card.correct || "0" %></b></span>
       <span>Incorrect: <b><%= flash_card.incorrect || "0" %></b></span>
     </div>
   </div>
 <% end %>
+
+<%= form_with url: quiz_flash_card_result_update_path, method: :post do |f| %>
+  <%= f.hidden_field :flash_cards_correct %>
+  <%= f.hidden_field :flash_cards_incorrect %>
+  <%= f.submit :done %>
+<% end %>
+
+<%= javascript_pack_tag "quiz/flash-cards" %>

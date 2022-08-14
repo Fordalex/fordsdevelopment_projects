@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_14_172018) do
+ActiveRecord::Schema.define(version: 2022_08_14_200908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2022_08_14_172018) do
   end
 
   create_table "flash_cards", force: :cascade do |t|
-    t.integer "correct"
-    t.integer "incorrect"
+    t.integer "correct", default: 0
+    t.integer "incorrect", default: 0
     t.text "question"
     t.text "answer"
     t.bigint "flash_card_category_id"
