@@ -21,7 +21,7 @@ module Quiz
         flash_card.update_column(:incorrect, flash_card.incorrect + 1)
       end
 
-      redirect_to quiz_home_path
+      redirect_to quiz_categories_index_path
     end
   end
 end

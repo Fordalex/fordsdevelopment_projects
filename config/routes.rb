@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :packages, param: :name
     resources :technologies
     resources :technology_types
+    resources :flash_cards
+    resources :flash_card_categories
+    resources :technology_types
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

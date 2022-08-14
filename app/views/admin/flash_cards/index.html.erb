@@ -1,0 +1,22 @@
+
+<%= link_to "New", new_admin_flash_card_path, class: "btn btn-success" %>
+
+<h3>Flash Cards</h3>
+
+<table class="table">
+  <tr>
+    <td>Name</td>
+    <td>Category</td>
+    <td>Actions</td>
+  </tr>
+  <% @flash_cards.each do |flash_card| %>
+    <tr>
+      <td><%= flash_card.question %></td>
+      <td><%= flash_card.flash_card_category.name %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_flash_card_path(flash_card), class: "btn btn-info" %>
+        <%= link_to "Delete", admin_flash_card_path(flash_card), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
