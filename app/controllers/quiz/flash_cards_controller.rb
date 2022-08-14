@@ -1,6 +1,10 @@
 module Quiz
-  class FlashCardsController < ApplicationController
+  class FlashCardsController < QuizController
     def home
+    end
+
+    def index
+      @flash_cards = FlashCard.all
     end
 
     def result_update

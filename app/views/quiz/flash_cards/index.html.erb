@@ -1,0 +1,5 @@
+<h2>Flash Cards</h2>
+
+<% @flash_cards.each do |flash_card| %>
+  <%= render partial: "/quiz/flash_cards/flash_card", locals: {flash_card: flash_card} %>
+<% end %>

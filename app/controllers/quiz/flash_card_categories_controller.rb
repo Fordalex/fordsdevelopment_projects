@@ -1,5 +1,5 @@
 module Quiz
-  class FlashCardCategoriesController < ApplicationController
+  class FlashCardCategoriesController < QuizController
     def index
       @flash_card_categories = FlashCardCategory.all
     end
