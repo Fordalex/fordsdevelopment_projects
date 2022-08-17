@@ -5,7 +5,11 @@ module Quiz
     end
 
     def play
-      @flash_cards = FlashCard.joins(:flash_card_category).where(flash_card_category: { name: params[:flash_card_category_name] })
+      category_ids = []
+      params[:categories].each { |k,v| v === "1" ? category_ids << k : next }
+      @flash_cards = FlashCard.where(flash_card_category_id: category_ids)
+      # TODO don't render from a post request
+      render 'play'
     end
   end
 end

@@ -16,3 +16,9 @@ FactoryBot.create(:flash_card,
   question: "What is SEO",
   answer: "Search Engineer Optimization"
 )
+
+FactoryBot.create(:flash_card,
+  flash_card_category: dev_ops,
+  question: "What does TCP stand for",
+  answer: "Transmission Control Protocol"
+)
