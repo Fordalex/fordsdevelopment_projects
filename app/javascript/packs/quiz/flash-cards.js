@@ -1,5 +1,6 @@
 window.onload = () => {
   var currentFlashCard = 0;
+  var touchStart = 0;
 
   // Set up flash cards
   var flashCards = document.querySelectorAll('[data-flash-card]');
@@ -7,6 +8,23 @@ window.onload = () => {
     hideAnswer(f);
     f.style.display = "none";
     f.addEventListener('click', showAnswer);
+    f.addEventListener('touchmove', (e) => {
+      mouseXPosition = e.changedTouches[0].clientX;
+      cardWidth = f.clientWidth;
+      newCardPosition = mouseXPosition - (cardWidth / 2);
+      f.style.left = `${newCardPosition}px`;
+    })
+    f.addEventListener('touchstart', (e) => {
+      touchStart = e.changedTouches[0].clientX;
+    })
+    f.addEventListener('touchend', (e) => {
+      touchEnd = e.changedTouches[0].clientX;
+      if (touchStart < touchEnd) {
+        correctAnswer()
+      } else {
+        incorrectAnswer()
+      }
+    })
   })
 
   // Set up incorrect buttons
@@ -34,20 +52,20 @@ window.onload = () => {
   }
 
   function incorrectAnswer() {
+    var flashCardHiddenField = document.getElementById('flash_cards_incorrect');
+    value = flashCardHiddenField.value;
+    value += flashCards[currentFlashCard].dataset.flashCard.concat(",");
+    flashCardHiddenField.value = value;
     currentFlashCard++;
-    var flashCardResult = document.getElementById('flash_cards_incorrect');
-    value = flashCardResult.value;
-    value += this.dataset.incorrectButton.concat(",");
-    flashCardResult.value = value;
     displayCurrectFlashCard()
   }
 
   function correctAnswer() {
+    var flashCardHiddenField = document.getElementById('flash_cards_correct');
+    value = flashCardHiddenField.value;
+    value += flashCards[currentFlashCard].dataset.flashCard.concat(",");
+    flashCardHiddenField.value = value;
     currentFlashCard++;
-    var flashCardResult = document.getElementById('flash_cards_correct');
-    value = flashCardResult.value;
-    value += this.dataset.correctButton.concat(",");
-    flashCardResult.value = value;
     displayCurrectFlashCard()
   }
 
