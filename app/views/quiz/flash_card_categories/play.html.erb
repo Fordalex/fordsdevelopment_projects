@@ -1,6 +1,15 @@
-<% @flash_cards.each do |flash_card| %>
-  <%= render partial: "/quiz/flash_cards/flash_card", locals: {flash_card: flash_card} %>
-<% end %>
+
+<div class="quiz-directionContainer">
+  <%= image_tag "quiz/icons/left-64.png" %>
+  <%= image_tag "quiz/icons/right-64.png" %>
+</div>
+
+<div class="quiz-flashCardContainer">
+  <div class="quiz-answerContainer" id="quizAnswerStatus"></div>
+  <% @flash_cards.each do |flash_card| %>
+    <%= render partial: "/quiz/flash_cards/flash_card", locals: {flash_card: flash_card} %>
+  <% end %>
+</div>
 
 <%= form_with url: quiz_flash_card_result_update_path, method: :post do |f| %>
   <%= f.hidden_field :flash_cards_correct %>

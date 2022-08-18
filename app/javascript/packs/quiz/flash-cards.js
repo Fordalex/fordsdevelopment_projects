@@ -8,16 +8,21 @@ window.onload = () => {
     hideAnswer(f);
     f.style.display = "none";
     f.addEventListener('click', showAnswer);
-    f.addEventListener('touchmove', (e) => {
+  })
+
+  function addEventsForGradingCard() {
+    let flashCard = flashCards[currentFlashCard]
+    flashCard.addEventListener('touchmove', (e) => {
       mouseXPosition = e.changedTouches[0].clientX;
-      cardWidth = f.clientWidth;
+      cardWidth = flashCard.clientWidth;
       newCardPosition = mouseXPosition - (cardWidth / 2);
-      f.style.left = `${newCardPosition}px`;
+      flashCard.style.left = `${newCardPosition}px`;
+
     })
-    f.addEventListener('touchstart', (e) => {
+    flashCard.addEventListener('touchstart', (e) => {
       touchStart = e.changedTouches[0].clientX;
     })
-    f.addEventListener('touchend', (e) => {
+    flashCard.addEventListener('touchend', (e) => {
       touchEnd = e.changedTouches[0].clientX;
       if (touchStart < touchEnd) {
         correctAnswer()
@@ -25,19 +30,7 @@ window.onload = () => {
         incorrectAnswer()
       }
     })
-  })
-
-  // Set up incorrect buttons
-  var incorrectButtons = document.querySelectorAll('[data-incorrect-button]');
-  incorrectButtons.forEach((b) => {
-    b.addEventListener('click', incorrectAnswer);
-  })
-
-  // Set up correct buttons
-  var incorrectButtons = document.querySelectorAll('[data-correct-button]');
-  incorrectButtons.forEach((b) => {
-    b.addEventListener('click', correctAnswer);
-  })
+  }
 
   displayCurrectFlashCard();
 
@@ -47,30 +40,48 @@ window.onload = () => {
   }
 
   function showAnswer() {
+    addEventsForGradingCard();
     let answer = this.getElementsByClassName('quiz-answer')[0];
     answer.style.display = 'block';
   }
 
   function incorrectAnswer() {
     var flashCardHiddenField = document.getElementById('flash_cards_incorrect');
-    value = flashCardHiddenField.value;
-    value += flashCards[currentFlashCard].dataset.flashCard.concat(",");
-    flashCardHiddenField.value = value;
-    currentFlashCard++;
-    displayCurrectFlashCard()
+    var quizAnswerStatus = document.getElementById('quizAnswerStatus');
+    quizAnswerStatus.innerHTML = "<span class='quiz-incorrect'>Incorrect</span>";
+    var flashCard = flashCards[currentFlashCard];
+    flashCard.style.transition = "1s";
+    flashCard.style.left = "-600px";
+
+    setTimeout(() => {
+      value = flashCardHiddenField.value;
+      value += flashCard.dataset.flashCard.concat(",");
+      flashCardHiddenField.value = value;
+      currentFlashCard++;
+      quizAnswerStatus.innerHTML = "";
+      displayCurrectFlashCard()
+    }, 1000)
   }
 
   function correctAnswer() {
     var flashCardHiddenField = document.getElementById('flash_cards_correct');
-    value = flashCardHiddenField.value;
-    value += flashCards[currentFlashCard].dataset.flashCard.concat(",");
-    flashCardHiddenField.value = value;
-    currentFlashCard++;
-    displayCurrectFlashCard()
+    var quizAnswerStatus = document.getElementById('quizAnswerStatus');
+    quizAnswerStatus.innerHTML = "<span class='quiz-correct'>Correct</span>";
+    var flashCard = flashCards[currentFlashCard];
+    flashCard.style.transition = "1s";
+    flashCard.style.left = "600px";
+
+    setTimeout(() => {
+      value = flashCardHiddenField.value;
+      value += flashCard.dataset.flashCard.concat(",");
+      flashCardHiddenField.value = value;
+      currentFlashCard++;
+      quizAnswerStatus.innerHTML = "";
+      displayCurrectFlashCard()
+    }, 1000)
   }
 
   function displayCurrectFlashCard() {
-    console.log(flashCards)
     flashCards.forEach((f) => {
       f.style.display = "none";
     })
