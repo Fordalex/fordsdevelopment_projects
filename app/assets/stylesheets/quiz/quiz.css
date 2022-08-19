@@ -41,7 +41,7 @@
   width: 380px;
   overflow-y: auto;
   padding: 1rem;
-  padding-top: 6rem;
+  padding-top: 3.5rem;
   margin: 1rem;
   position: relative;
   transition: 0s;
@@ -61,8 +61,8 @@
   opacity: 0.45;
 }
 
-.quiz-answer {
-  font-size: 1.5rem;
+.quiz-categoryText {
+  text-align: right;
 }
 
 .quiz-correct {
@@ -74,7 +74,7 @@
 }
 
 .quiz-flashCard-textContainer {
-  height: 230px;
+  height: 265px;
   overflow-y: auto;
 }
 
