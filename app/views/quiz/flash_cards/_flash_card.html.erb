@@ -1,13 +1,15 @@
-<div class="quiz-flashCard-wrapper" data-flash-card="<%= flash_card.id %>">
-  <h6><%= flash_card.flash_card_category.name %></h6>
-  <p><%= flash_card.question %>?</p>
-  <div class="quiz-answer">
-    <hr>
-    <%= flash_card.answer %>
-    <hr>
+<div class="quiz-flashCard-wrapper" data-flash-card="<%= flash_card.id %>" data-colour="<%= flash_card.flash_card_category.colour %>">
+  <div class="quiz-flashCard-textContainer">
+    <h6><%= flash_card.flash_card_category.name %></h6>
+    <p><%= flash_card.question %>?</p>
+    <div class="quiz-answer">
+      <hr>
+      <%= flash_card.answer %>
+      <hr>
+    </div>
   </div>
-  <div>
-    <span>Correct: <b><%= flash_card.correct || "0" %></b></span>
-    <span>Incorrect: <b><%= flash_card.incorrect || "0" %></b></span>
+  <div class="quiz-flashCard-answerCount">
+    <span>Correct: <b class="quiz-correct"><%= flash_card.correct || "0" %></b></span>
+    <span>Incorrect: <b class="quiz-incorrect"><%= flash_card.incorrect || "0" %></b></span>
   </div>
 </div>

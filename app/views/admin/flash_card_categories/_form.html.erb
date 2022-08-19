@@ -6,7 +6,10 @@
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <%# don't forget about the colour %>
+  <div class="form-group">
+    <%= form.label :colour %>
+    <%= form.color_field :colour, class: "form-control" %>
+  </div>
 
   <div class="actions">
   <%= form.submit class: "btn btn-success w-100 mt-3" %>

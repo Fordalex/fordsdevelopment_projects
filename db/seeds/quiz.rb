@@ -1,14 +1,14 @@
 FlashCardCategory.delete_all
 FlashCard.delete_all
 
-front_end = FactoryBot.create(:flash_card_category, name: "Frontend")
-back_end = FactoryBot.create(:flash_card_category, name: "Backend")
-dev_ops = FactoryBot.create(:flash_card_category, name: "DevOps")
+front_end = FactoryBot.create(:flash_card_category, name: "Frontend", colour: "#0f0")
+back_end = FactoryBot.create(:flash_card_category, name: "Backend", colour: "#f00")
+dev_ops = FactoryBot.create(:flash_card_category, name: "DevOps", colour: "#00f")
 
 FactoryBot.create(:flash_card,
   flash_card_category: front_end,
   question: "What is W3C",
-  answer: "World Wide Web Consortium"
+  answer: "World Wide Web Consortium World Wide Web Consortium World Wide Web Consortium World Wide Web Consortium World Wide Web Consortium World Wide Web Consortium World Wide Web ConsortiumWorld Wide Web Consortium World Wide Web Consortium World Wide Web Consortium"
 )
 
 FactoryBot.create(:flash_card,

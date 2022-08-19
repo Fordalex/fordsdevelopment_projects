@@ -8,6 +8,7 @@ window.onload = () => {
     hideAnswer(f);
     f.style.display = "none";
     f.addEventListener('click', showAnswer);
+    document.documentElement.style.setProperty('--flashCardCategoryColour', f.dataset.colour)
   })
 
   function addEventsForGradingCard() {
@@ -17,7 +18,6 @@ window.onload = () => {
       cardWidth = flashCard.clientWidth;
       newCardPosition = mouseXPosition - (cardWidth / 2);
       flashCard.style.left = `${newCardPosition}px`;
-
     })
     flashCard.addEventListener('touchstart', (e) => {
       touchStart = e.changedTouches[0].clientX;
@@ -52,15 +52,7 @@ window.onload = () => {
     var flashCard = flashCards[currentFlashCard];
     flashCard.style.transition = "1s";
     flashCard.style.left = "-600px";
-
-    setTimeout(() => {
-      value = flashCardHiddenField.value;
-      value += flashCard.dataset.flashCard.concat(",");
-      flashCardHiddenField.value = value;
-      currentFlashCard++;
-      quizAnswerStatus.innerHTML = "";
-      displayCurrectFlashCard()
-    }, 1000)
+    changeFlashCard(flashCardHiddenField, flashCard);
   }
 
   function correctAnswer() {
@@ -70,13 +62,17 @@ window.onload = () => {
     var flashCard = flashCards[currentFlashCard];
     flashCard.style.transition = "1s";
     flashCard.style.left = "600px";
+    changeFlashCard(flashCardHiddenField, flashCard);
+  }
 
+  function changeFlashCard(flashCardHiddenField, flashCard) {
     setTimeout(() => {
       value = flashCardHiddenField.value;
       value += flashCard.dataset.flashCard.concat(",");
       flashCardHiddenField.value = value;
       currentFlashCard++;
       quizAnswerStatus.innerHTML = "";
+      document.documentElement.style.setProperty('--flashCardCategoryColour', flashCard.dataset.colour)
       displayCurrectFlashCard()
     }, 1000)
   }

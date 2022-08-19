@@ -41,11 +41,11 @@ module Admin
     private
 
     def set_flash_card_category
-      @flash_card_category = FlashCardCategory.find(params[:id])
+      @flash_card_category = FlashCardCategory.find_by(name: params[:name])
     end
 
     def flash_card_category_params
-      params.require(:flash_card_category).permit(:name)
+      params.require(:flash_card_category).permit(:name, :colour)
     end
   end
 end

@@ -1,3 +1,8 @@
+namespace :admin do
+  resources :flash_cards
+  resources :flash_card_categories, param: :name
+end
+
 namespace :quiz do
   # get "/subjects" => "subjects#index", as: :subjects_index
   get "/" => "flash_card_categories#index", as: :categories_index
