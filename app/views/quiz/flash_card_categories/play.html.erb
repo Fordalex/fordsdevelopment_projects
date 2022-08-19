@@ -11,10 +11,14 @@
   <% end %>
 </div>
 
-<%= form_with url: quiz_flash_card_result_update_path, method: :post do |f| %>
-  <%= f.hidden_field :flash_cards_correct %>
-  <%= f.hidden_field :flash_cards_incorrect %>
-  <%= f.submit :done %>
-<% end %>
+<div class="row m-0 p-0">
+  <%= form_with url: quiz_flash_card_result_update_path, method: :post do |f| %>
+    <%= f.hidden_field :flash_cards_correct %>
+    <%= f.hidden_field :flash_cards_incorrect %>
+    <div class="col-12 m-0 p-1">
+      <%= f.submit :done, class: "btn btn-success w-100" %>
+    </div>
+  <% end %>
+</div>
 
 <%= javascript_pack_tag "quiz/flash-cards" %>

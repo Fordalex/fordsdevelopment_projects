@@ -9,9 +9,9 @@
   border: solid rgb(226, 226, 226) 1px;
   border-radius: 4px;
   padding: 1rem;
-  margin: 1rem;
   display: inline-block;
   cursor: pointer;
+  width: 100%;
 }
 
 .quiz-flashCardContainer {
@@ -31,13 +31,27 @@
 }
 
 .quiz-flashCard-wrapper {
-  background-color: #fff;
-  border: solid rgb(226, 226, 226) 1px;
-  border-radius: 4px;
+  background-image: url("quiz/sticky-note-colourless.png");
+  background-size: cover;
+  min-height: 390px;
+  max-width: 380px;
   padding: 1rem;
+  padding-top: 6rem;
   margin: 1rem;
   position: relative;
   transition: 0;
+  z-index: 1;
+}
+
+.quiz-flashCard-wrapper::before {
+  top: 35px;
+  left: 4px;
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  width: 98%;
+  height: 91%;
+  background-color: rgb(255 0 0 / 45%);
 }
 
 .quiz-answer {

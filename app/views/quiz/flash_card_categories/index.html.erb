@@ -1,12 +1,18 @@
 <h2>Flash Card Categories</h2>
 
 <%= form_with url: quiz_flash_card_categories_play_path, method: :post do |f| %>
-  <% @flash_card_categories.each do |category| %>
-    <label class="quiz-flashCardCategory-wrapper" for="categories[<%= category.id %>]">
-      <h5><%= category.name %></h5>
-      <%= f.check_box "categories[#{category.id}]" %>
-    </label>
-  <% end %>
+  <div class="row m-0 p-0 px-1">
+    <% @flash_card_categories.each do |category| %>
+      <div class="col-6 col-md-4 p-2">
+        <label class="quiz-flashCardCategory-wrapper" for="categories[<%= category.id %>]">
+          <h5><%= category.name %></h5>
+          <%= f.check_box "categories[#{category.id}]" %>
+        </label>
+      </div>
+    <% end %>
 
-  <%= f.submit :play %>
+    <div class="col-12 p-2">
+      <%= f.submit :play, class: "btn btn-success w-100" %>
+    </div>
+  </div>
 <% end %>
