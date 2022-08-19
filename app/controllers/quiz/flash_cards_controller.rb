@@ -4,7 +4,7 @@ module Quiz
     end
 
     def index
-      @flash_cards = FlashCard.all
+      @flash_cards = FlashCard.all.order(correct: :asc, incorrect: :desc)
     end
 
     def result_update
