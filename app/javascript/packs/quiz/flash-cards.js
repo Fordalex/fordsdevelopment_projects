@@ -8,9 +8,10 @@ window.onload = () => {
     hideAnswer(f);
     f.style.display = "none";
     f.addEventListener('click', showAnswer);
-    document.documentElement.style.setProperty('--flashCardCategoryColour', f.dataset.colour)
   })
 
+  // grading card is the flash card when the answer is showing
+  // TODO this is only working for mobile. Change UI for desktop?
   function addEventsForGradingCard() {
     let flashCard = flashCards[currentFlashCard]
     flashCard.addEventListener('touchmove', (e) => {
@@ -24,16 +25,23 @@ window.onload = () => {
     })
     flashCard.addEventListener('touchend', (e) => {
       touchEnd = e.changedTouches[0].clientX;
+      if (Math.abs(Math.abs(touchStart) - Math.abs(touchEnd)) < 100) {
+        var flashCard = flashCards[currentFlashCard];
+        flashCard.style.left = "0px";
+        return
+      }
       if (touchStart < touchEnd) {
-        correctAnswer()
+        answerFlashCard("correct", "600px")
       } else {
-        incorrectAnswer()
+        answerFlashCard("incorrect", "-600px")
       }
     })
   }
 
   displayCurrectFlashCard();
 
+  // This isn't done with css so I can still read the
+  // answers on the flash cards index page
   function hideAnswer(flashCard) {
     let answer = flashCard.getElementsByClassName('quiz-answer')[0];
     answer.style.display = 'none';
@@ -45,23 +53,13 @@ window.onload = () => {
     answer.style.display = 'block';
   }
 
-  function incorrectAnswer() {
-    var flashCardHiddenField = document.getElementById('flash_cards_incorrect');
+  function answerFlashCard(mark, direction) {
+    var flashCardHiddenField = document.getElementById(`flash_cards_${mark}`);
     var quizAnswerStatus = document.getElementById('quizAnswerStatus');
-    quizAnswerStatus.innerHTML = "<span class='quiz-incorrect'>Incorrect</span>";
+    quizAnswerStatus.innerHTML = `<span class='quiz-${mark}'>${mark}</span>`;
     var flashCard = flashCards[currentFlashCard];
     flashCard.style.transition = "1s";
-    flashCard.style.left = "-600px";
-    changeFlashCard(flashCardHiddenField, flashCard);
-  }
-
-  function correctAnswer() {
-    var flashCardHiddenField = document.getElementById('flash_cards_correct');
-    var quizAnswerStatus = document.getElementById('quizAnswerStatus');
-    quizAnswerStatus.innerHTML = "<span class='quiz-correct'>Correct</span>";
-    var flashCard = flashCards[currentFlashCard];
-    flashCard.style.transition = "1s";
-    flashCard.style.left = "600px";
+    flashCard.style.left = direction;
     changeFlashCard(flashCardHiddenField, flashCard);
   }
 
@@ -82,5 +80,7 @@ window.onload = () => {
       f.style.display = "none";
     })
     flashCards[currentFlashCard].style.display = "block";
+    var flashCard = flashCards[currentFlashCard];
+    document.documentElement.style.setProperty('--flashCardCategoryColour', flashCard.dataset.colour)
   }
 }
