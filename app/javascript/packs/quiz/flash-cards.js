@@ -4,6 +4,8 @@ window.onload = () => {
 
   // Set up flash cards
   var flashCards = document.querySelectorAll('[data-flash-card]');
+  var totalFlashCards = flashCards.length;
+
   flashCards.forEach((f) => {
     hideAnswer(f);
     f.style.display = "none";
@@ -72,7 +74,12 @@ window.onload = () => {
       quizAnswerStatus.innerHTML = "";
       document.documentElement.style.setProperty('--flashCardCategoryColour', flashCard.dataset.colour)
       displayCurrectFlashCard()
-    }, 1000)
+    }, 500)
+  }
+
+  function updateQuestionsStatus() {
+    var questionsStatus = document.getElementById('questionsStatus');
+    questionsStatus.innerHTML = `${currentFlashCard + 1} / ${totalFlashCards}`
   }
 
   function displayCurrectFlashCard() {
@@ -81,6 +88,7 @@ window.onload = () => {
     })
     flashCards[currentFlashCard].style.display = "block";
     var flashCard = flashCards[currentFlashCard];
-    document.documentElement.style.setProperty('--flashCardCategoryColour', flashCard.dataset.colour)
+    document.documentElement.style.setProperty('--flashCardCategoryColour', flashCard.dataset.colour);
+    updateQuestionsStatus();
   }
 }
