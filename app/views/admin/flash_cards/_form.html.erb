@@ -3,17 +3,17 @@
 
   <div class="form-group">
     <%= form.label :question %>
-    <%= form.text_field :question, class: "form-control" %>
+    <%= form.text_area :question, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= form.label :answer %>
-    <%= form.text_field :answer, class: "form-control" %>
+    <%= form.text_area :answer, class: "form-control" %>
   </div>
 
     <div class="form-group">
     <%= form.label :flash_card_category_id %>
-    <%= form.select :flash_card_category_id, options_for_select(FlashCardCategory.all.map{|p| [p.name, p.id]}, flash_card.flash_card_category_id), class: "form-control" %>
+    <%= form.select :flash_card_category_id, options_for_select(FlashCardCategory.all.map{|p| [p.name, p.id]}, flash_card.flash_card_category_id), {}, class: "form-control" %>
   </div>
 
   <div class="actions">
