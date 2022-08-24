@@ -12,7 +12,19 @@
     <% end %>
 
     <div class="col-12 p-2">
-      <%= f.submit :play, class: "btn btn-success w-100" %>
+      <%= f.submit "Play selected", class: "btn btn-success w-100" %>
+    </div>
+  </div>
+<% end %>
+
+<%= form_with url: quiz_flash_card_categories_play_path, method: :post do |f| %>
+  <div class="row m-0 p-0 px-1">
+    <% @flash_card_categories.each do |category| %>
+      <%= f.hidden_field "categories[#{category.id}]", value: "1" %>
+    <% end %>
+
+    <div class="col-12 p-2">
+      <%= f.submit "Play all", class: "btn btn-success w-100" %>
     </div>
   </div>
 <% end %>
