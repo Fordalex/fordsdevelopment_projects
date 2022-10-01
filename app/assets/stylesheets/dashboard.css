@@ -1,0 +1,66 @@
+.dashboard-background {
+  background: rgb(33,147,176);
+  background: linear-gradient(12deg, rgba(33,147,176,1) 0%, rgba(109,213,237,1) 100%);
+  min-height: 100vh;
+}
+
+.dashboard-wigetContainer {
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+
+.dashboard-wigetWrapper {
+  background-color: #fff;
+  border-radius: 9px;
+  padding: 1rem;
+}
+
+.dashboard-wigetWrapper h3 {
+  text-align: center;
+}
+
+.dashboard-wigetWrapper p {
+  text-align: center;
+  margin: 0;
+}
+
+.dashboard-appPageContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: max-content;
+  padding: 1rem;
+}
+
+.dashboard-app-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 90px;
+}
+
+.dashboard-app-wrapper {
+  height: 90px;
+  display: inline-block;
+}
+
+.dashboard-app {
+  background-color: white;
+  border-radius: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.dashboard-app-wrapper .name-container {
+  font-size: 8px;
+  text-align: center;
+  display: inline-block;
+  height: 30px;
+  margin-top: 5px;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0 0.5rem;
+}

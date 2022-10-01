@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "projects" => "projects#index", as: :projects
   get "technology/:name" => "technologies#show", as: :technology
   get "packages" => "packages#index", as: :packages
+  get "dashboard" => "dashboard#dashboard", as: :dashboard
 
   # feed for learning spanish
   get "/spanish-feed" => "spanish#feed", defaults: {format: :json}

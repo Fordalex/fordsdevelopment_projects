@@ -4,7 +4,15 @@
 
 ### Features left to implement
 
+Need to create a cron job to back-up databases.
+
+Add project ideas to admin section. (boolean private)
+Add better acknowledgements
 Allow all categories to be played at once.
+Setup a job to get gGithub data use new command.
+Add 3d model for the music box made with CommitDigital.
+Add socials to projects
+Add reviews section.
 
 ### Questions
 
