@@ -4,6 +4,8 @@
 
 ### Features left to implement
 
+White svg icon for dashboard apps.
+
 Need to create a cron job to back-up databases.
 
 Add project ideas to admin section. (boolean private)
