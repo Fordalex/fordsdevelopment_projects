@@ -6,6 +6,16 @@
     </div>
   </div>
   <div class="dashboard-appPageContainer">
+      <div class="dashboard-app-container" data-bs-toggle="modal" data-bs-target="#settingsContainer">
+        <div target="_blank", class="dashboard-app-wrapper">
+          <div class="dashboard-app" style="background-color: #000">
+            <%= image_tag "icons/white/settings.png" %>
+          </div>
+          <div class="name-container">
+            <span class="name">Settings</span>
+          </div>
+        </div>
+      </div>
     <% @projects.each do |project| %>
       <div class="dashboard-app-container">
         <%= link_to project.link, target: "_blank", class: "dashboard-app-wrapper" do %>
@@ -19,17 +29,48 @@
   </div>
 </div>
 
+<div class="modal fade" id="settingsContainer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Settings</h5>
+      </div>
+      <div class="modal-body">
+        <input type="color" id="backgroundColourInput">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const dayElement = document.getElementById("day");
-  const dateElement = document.getElementById("date");
-  const container = document.getElementById("container");
-  let today = new Date();
-  let day = today.getDay();
-  let date = today.getDate();
-  let month = today.getMonth();
-  let year = today.getFullYear();
-  dayElement.innerHTML = weekday[day];
-  dateElement.innerHTML = months[month].concat(" ", date, ", ", year);
+  window.onload = function() {
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const dayElement = document.getElementById("day");
+    const dateElement = document.getElementById("date");
+    const container = document.getElementById("container");
+    let today = new Date();
+    let day = today.getDay();
+    let date = today.getDate();
+    let month = today.getMonth();
+    let year = today.getFullYear();
+    dayElement.innerHTML = weekday[day];
+    dateElement.innerHTML = months[month].concat(" ", date, ", ", year);
+
+    const saveChanges = document.getElementById("saveChanges");
+    saveChanges.addEventListener("click", () => { updateBackgroundColour() });
+
+    function updateBackgroundColour() {
+      const backgroundColour = document.getElementById("backgroundColourInput").value;
+      localStorage.setItem("backgroundColour", backgroundColour);
+      container.style.backgroundColor = localStorage.getItem("backgroundColour");
+    }
+
+    container.style.backgroundColor = localStorage.getItem("backgroundColour");
+    document.getElementById("backgroundColourInput").value = localStorage.getItem("backgroundColour");
+  }
 </script>
