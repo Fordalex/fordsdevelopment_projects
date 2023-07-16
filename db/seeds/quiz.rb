@@ -1,13 +1,13 @@
 FlashCardCategory.delete_all
 FlashCard.delete_all
 
-frontend = FactoryBot.create(:flash_card_category, name: "Frontend")
-backend = FactoryBot.create(:flash_card_category, name: "Backend")
-dev_ops = FactoryBot.create(:flash_card_category, name: "DevOps")
+frontend = FactoryBot.create(:flash_card_category, name: "Frontend", colour: "#0f0")
+backend = FactoryBot.create(:flash_card_category, name: "Backend", colour: "#f00",)
+dev_ops = FactoryBot.create(:flash_card_category, name: "DevOps", colour: "#00f")
 
-web_conventions = FactoryBot.create(:flash_card_sub_category, name: "Web Conventions", colour: "#0f0", flash_card_category: frontend)
-FactoryBot.create(:flash_card_sub_category, name: "Backend", colour: "#f00", flash_card_category: backend)
-dev_ops_generic = FactoryBot.create(:flash_card_sub_category, name: "DevOps", colour: "#00f", flash_card_category: dev_ops)
+web_conventions = FactoryBot.create(:flash_card_sub_category, name: "Web Conventions", flash_card_category: frontend)
+FactoryBot.create(:flash_card_sub_category, name: "Backend", flash_card_category: backend)
+dev_ops_generic = FactoryBot.create(:flash_card_sub_category, name: "DevOps", flash_card_category: dev_ops)
 
 FactoryBot.create(:flash_card,
   flash_card_sub_category: web_conventions,

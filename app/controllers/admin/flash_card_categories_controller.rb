@@ -1,7 +1,6 @@
 module Admin
   class FlashCardCategoriesController < AdminController
     before_action :set_flash_card_category, only: %i[destroy edit update].freeze
-    layout "admin"
 
     def new
       @flash_card_category = FlashCardCategory.new

@@ -1,5 +1,6 @@
 namespace :admin do
   resources :flash_cards
+  resources :flash_card_sub_categories, param: :name
   resources :flash_card_categories, param: :name
 end
 
