@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_16_194456) do
+ActiveRecord::Schema.define(version: 2023_07_17_094207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,14 +55,8 @@ ActiveRecord::Schema.define(version: 2023_07_16_194456) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "colour", limit: 9
-  end
-
-  create_table "flash_card_sub_categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "flash_card_category_id"
-    t.index ["flash_card_category_id"], name: "index_flash_card_sub_categories_on_flash_card_category_id"
+    t.integer "parent_id"
+    t.index ["parent_id"], name: "index_flash_card_categories_on_parent_id"
   end
 
   create_table "flash_cards", force: :cascade do |t|
@@ -72,8 +66,8 @@ ActiveRecord::Schema.define(version: 2023_07_16_194456) do
     t.text "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "flash_card_sub_category_id"
-    t.index ["flash_card_sub_category_id"], name: "index_flash_cards_on_flash_card_sub_category_id"
+    t.bigint "flash_card_category_id"
+    t.index ["flash_card_category_id"], name: "index_flash_cards_on_flash_card_category_id"
   end
 
   create_table "package_groups", force: :cascade do |t|
@@ -157,6 +151,5 @@ ActiveRecord::Schema.define(version: 2023_07_16_194456) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "flash_card_sub_categories", "flash_card_categories"
-  add_foreign_key "flash_cards", "flash_card_sub_categories"
+  add_foreign_key "flash_cards", "flash_card_categories"
 end

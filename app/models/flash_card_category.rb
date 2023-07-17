@@ -1,6 +1,6 @@
 class FlashCardCategory < ApplicationRecord
-  has_many :flash_card_sub_categories
-  has_many :flash_cards, through: :flash_card_sub_categories
+  acts_as_tree
+  has_many :flash_cards
 
   def to_param
     name
