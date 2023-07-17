@@ -77,3 +77,54 @@
   display: flex;
   justify-content: space-between;
 }
+
+.flashCardCategoryAdmin-container {
+  border-left: solid grey 1px;
+  margin-left: 30px;
+  padding: 1rem;
+  padding-right: 0;
+}
+
+.flashCardCategoryAdmin-titleContainer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem;
+
+}
+
+.flashCardCategoryAdmin-wrapper {
+  margin-left: 1rem;
+  position: relative;
+}
+
+.flashCardCategoryAdmin-wrapper::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  border-bottom: 1px solid grey;
+  position: absolute;
+  left: -32px;
+  top: 19px;
+}
+
+.flashCardCategoryAdmin-wrapper::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 50%;
+  position: absolute;
+  left: -37px;
+  top: 16px;
+}
+
+.flashCardCategoryAdmin-categoryWrapper {
+  padding: 1rem;
+  border: solid grey 1px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.01);
+  background-color: #fff;
+  border-radius: 0 0.5rem 0.5rem 0;
+}

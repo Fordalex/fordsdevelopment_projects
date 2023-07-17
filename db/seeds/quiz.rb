@@ -32,9 +32,12 @@ sub_child_category11 = child_category6.children.create(name: "Climate", colour: 
 sub_child_category12 = child_category6.children.create(name: "Ecosystems", colour: "#2E8B57")
 
 # Create flash cards associated with categories
-FactoryBot.create(:flash_card, flash_card_category: root_category1, question: "What is DNA?", answer: "DNA is a molecule that carries genetic information.", correct: rand(10), incorrect: rand(10))
-FactoryBot.create(:flash_card, flash_card_category: child_category1, question: "What is a cell?", answer: "A cell is the basic structural and functional unit of all living organisms.", correct: rand(10), incorrect: rand(10))
-FactoryBot.create(:flash_card, flash_card_category: sub_child_category1, question: "What is the nucleus?", answer: "The nucleus is a membrane-bound organelle that contains the DNA of a cell.", correct: rand(10), incorrect: rand(10))
-FactoryBot.create(:flash_card, flash_card_category: root_category2, question: "What was the Renaissance?", answer: "The Renaissance was a period of cultural and intellectual rebirth in Europe.", correct: rand(10), incorrect: rand(10))
-FactoryBot.create(:flash_card, flash_card_category: child_category4, question: "What was the Industrial Revolution?", answer: "The Industrial Revolution was a period of major industrialization in the 18th and 19th centuries.", correct: rand(10), incorrect: rand(10))
-FactoryBot.create(:flash_card, flash_card_category: sub_child_category7, question: "When did World War I start?", answer: "World War I started in 1914.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "DNA", flash_card_category: root_category1, question: "What is DNA?", answer: "DNA is a molecule that carries genetic information.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "AASDF", flash_card_category: root_category1, question: "What is DNA?", answer: "DNA is a molecule that carries genetic information.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "Random", flash_card_category: root_category1, question: "What is DNA?", answer: "DNA is a molecule that carries genetic information.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "More", flash_card_category: root_category1, question: "What is DNA?", answer: "DNA is a molecule that carries genetic information.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "Cell", flash_card_category: child_category1, question: "What is a cell?", answer: "A cell is the basic structural and functional unit of all living organisms.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "Nucleus", flash_card_category: sub_child_category1, question: "What is the nucleus?", answer: "The nucleus is a membrane-bound organelle that contains the DNA of a cell.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "Renaissance", flash_card_category: root_category2, question: "What was the Renaissance?", answer: "The Renaissance was a period of cultural and intellectual rebirth in Europe.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "Industrial Revolution", flash_card_category: child_category4, question: "What was the Industrial Revolution?", answer: "The Industrial Revolution was a period of major industrialization in the 18th and 19th centuries.", correct: rand(10), incorrect: rand(10))
+FactoryBot.create(:flash_card, title: "Start of WWI", flash_card_category: sub_child_category7, question: "When did World War I start?", answer: "World War I started in 1914.", correct: rand(10), incorrect: rand(10))

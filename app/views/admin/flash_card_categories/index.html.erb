@@ -1,7 +1,9 @@
 <%= link_to "New", new_admin_flash_card_category_path, class: "btn btn-success" %>
 
-<h3>Flash Cards</h3>
+<div class="p-3">
+  <h3>Flash card categories</h3>
 
-<% @flash_card_categories.each do |flash_card_category| %>
-  <%= render partial: 'category', locals: { category: flash_card_category } %>
-<% end %>
+  <% @flash_card_categories.each do |flash_card_category| %>
+    <%= render partial: 'category', locals: { category: flash_card_category } %>
+  <% end %>
+</div>
