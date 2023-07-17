@@ -34,7 +34,7 @@ module Admin
     end
 
     def index
-      @flash_card_categories = FlashCardCategory.all
+      @flash_card_categories = FlashCardCategory.roots
     end
 
     private
@@ -44,7 +44,7 @@ module Admin
     end
 
     def flash_card_category_params
-      params.require(:flash_card_category).permit(:name, :colour)
+      params.require(:flash_card_category).permit(:name, :colour, :parent_id)
     end
   end
 end

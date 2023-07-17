@@ -1,0 +1,12 @@
+<div class="p-3 ms-3 border" style="background-color: <%= category.colour %>;">
+    <p><%= category.name %></p>
+    <p><div class="quiz-flashCardCategory-colour" style="background-color: <%= category.colour %>;"></div></p>
+    <p>
+      <%= link_to "Edit", edit_admin_flash_card_category_path(category), class: "btn btn-info" %>
+      <%= link_to "Delete", admin_flash_card_category_path(category), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+    </p>
+
+    <% category.children.each do |sub_category| %>
+      <%= render partial: 'category', locals: { category: sub_category } %>
+    <% end %>
+  </div>

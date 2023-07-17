@@ -2,6 +2,19 @@
 
 <p>Score will decrease over time.</p>
 
+<div class="p-3">
+  <table class="p-3">
+    <% FlashCardCategory.ordered_by_score.each do |category| %>
+      <tr class="p-3">
+        <td class="w-100"><%= category.name %></td>
+        <td class="w-100" style="min-width: 100px;">
+          <%= render partial: 'category_progress', locals: { category: category } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
 <div class="row p-3">
   <% @flash_card_categories.each do |flash_card_category| %>
     <%= render partial: 'stat', locals: { category: flash_card_category } %>
