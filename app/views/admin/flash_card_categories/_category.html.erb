@@ -8,7 +8,10 @@
             <p class="text-secondary m-0"><%= category.parent&.name %></p>
           </div>
           <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory<%= category.id %>" aria-expanded="false" aria-controls="collapseCategory">
-            Expand
+            Expand Category
+          </button>
+          <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubCategory<%= category.id %>" aria-expanded="false" aria-controls="collapseCategory">
+            Expand Sub Categories
           </button>
         </div>
         <div>
@@ -40,15 +43,31 @@
               </tr>
             <% end %>
           </table>
-
-
-          <%= link_to "New Sub Category", new_admin_flash_card_category_path, class: "mt-3 btn btn-success" %>
         </div>
       </div>
     </div>
 
-    <% category.children.each do |sub_category| %>
-      <%= render partial: 'category', locals: { category: sub_category } %>
-    <% end %>
+    <div class="collapse" id="collapseSubCategory<%= category.id %>">
+      <% category.children.each do |sub_category| %>
+        <%= render partial: 'category', locals: { category: sub_category } %>
+      <% end %>
+      <div class="flashCardCategoryAdmin-container">
+        <div class="flashCardCategoryAdmin-wrapper">
+          <div class="flashCardCategoryAdmin-categoryWrapper" style="border-left: solid 5px #fff">
+            <div class="flashCardCategoryAdmin-titleContainer">
+              <div class="flashCardCategoryAdmin-titleWrapper">
+                <div>
+                  <h5 class="m-0">New Sub Category</h5>
+                  <p class="text-secondary m-0"><%= category.name %></p>
+                </div>
+              </div>
+              <div>
+                <%= link_to "New Sub Category", new_admin_flash_card_category_path, class: "mt-3 btn btn-success" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
