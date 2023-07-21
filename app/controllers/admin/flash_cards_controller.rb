@@ -45,7 +45,7 @@ module Admin
     end
 
     def flash_card_params
-      params.require(:flash_card).permit(:question, :answer, :flash_card_sub_category_id)
+      params.require(:flash_card).permit(:question, :answer, :flash_card_category_id)
     end
   end
 end

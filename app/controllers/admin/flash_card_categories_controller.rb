@@ -13,12 +13,12 @@ module Admin
       else
         flash[:warning] = "An error occurred, please try again."
       end
-      redirect_to admin_root_path
+      redirect_to admin_flash_card_categories_path
     end
 
     def destroy
       @flash_card_category.destroy
-      redirect_to admin_flash_card_categorys_path
+      redirect_to admin_flash_card_categories_path
     end
 
     def edit
@@ -30,11 +30,11 @@ module Admin
       else
         flash[:warning] = "An error occurred, please try again."
       end
-      redirect_to admin_root_path
+      redirect_to admin_flash_card_categories_path
     end
 
     def index
-      @flash_card_categories = FlashCardCategory.roots
+      @flash_card_categories = FlashCardCategory.roots.order(:name)
     end
 
     private

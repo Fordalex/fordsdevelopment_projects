@@ -13,7 +13,8 @@
 
   <div class="form-group">
     <%= form.label :parent_id %>
-    <%= form.select :parent_id, options_for_select(FlashCardCategory.all.map{|p| [p.name, p.id]}, flash_card_category.parent_id), {}, class: "form-control" %>
+    <%= form.select :parent_id, options_for_select(FlashCardCategory.all.map { |p| [p.name, p.id] }, flash_card_category.parent_id), { include_blank: true }, class: "form-control" %>
+
   </div>
 
   <div class="actions">
