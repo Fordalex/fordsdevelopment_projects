@@ -139,6 +139,12 @@
   font-weight: 800;
 }
 
+.category-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 0.5rem;
+}
+
 @media screen and (min-width: 768px) {
   .flashCardCategoryAdmin-container {
     margin-left: 2rem;

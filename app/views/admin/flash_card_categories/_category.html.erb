@@ -7,16 +7,16 @@
             <h5 class="m-0"><%= category.name %></h5>
             <p class="text-secondary m-0"><%= category.parent&.name %></p>
           </div>
-          <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory<%= category.id %>" aria-expanded="false" aria-controls="collapseCategory">
-            Expand Category
-          </button>
-          <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubCategory<%= category.id %>" aria-expanded="false" aria-controls="collapseCategory">
-            Expand Sub Categories
-          </button>
+          <%= image_tag("quiz/icons/icons8-details-48.png", data: { bs_target: "#collapseCategory#{category.id}", bs_toggle: 'collapse' }, class: 'category-icon') %>
+          <%= image_tag("quiz/icons/icons8-folder-tree-48.png", data: { bs_target: "#collapseSubCategory#{category.id}", bs_toggle: 'collapse' }, class: 'category-icon') %>
         </div>
         <div>
-          <%= link_to "Edit", edit_admin_flash_card_category_path(category), class: "btn btn-info" %>
-          <%= link_to "Delete", admin_flash_card_category_path(category), class: "btn btn-danger mx-3", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+          <%= link_to edit_admin_flash_card_category_path(category) do %>
+            <%= image_tag("quiz/icons/icons8-edit-row-48.png", class: 'category-icon') %>
+          <% end %>
+          <%= link_to admin_flash_card_category_path(category), method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} do %>
+            <%= image_tag("quiz/icons/icons8-cancel-48.png", class: 'category-icon') %>
+          <% end %>
         </div>
       </div>
       <div class="progress">
@@ -24,8 +24,14 @@
         </div>
 
       <div class="collapse" id="collapseCategory<%= category.id %>">
-        <div class="card card-body p-1">
-          <h6>Flash Cards <%= link_to "New", new_admin_flash_card_path, class: "btn btn-success" %></h6>
+        <div class="card card-body p-2">
+          <h6 class="my-3">
+            Flash Cards
+            <%= link_to new_admin_flash_card_path do %>
+              <%= image_tag("quiz/icons/icons8-add-48.png", class: 'category-icon') %>
+            <% end %>
+          </h6>
+
 
           <table class="table table-striped">
             <tr>
@@ -62,7 +68,9 @@
                 </div>
               </div>
               <div>
-                <%= link_to "New Sub Category", new_admin_flash_card_category_path, class: "mt-3 btn btn-success" %>
+                <%= link_to new_admin_flash_card_category_path do %>
+                  <%= image_tag("quiz/icons/icons8-add-48.png", class: 'category-icon') %>
+                <% end %>
               </div>
             </div>
           </div>
