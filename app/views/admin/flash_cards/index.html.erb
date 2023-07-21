@@ -7,14 +7,12 @@
   <tr>
     <td>Name</td>
     <td>Category</td>
-    <td>Sub Category</td>
     <td>Actions</td>
   </tr>
   <% @flash_cards.each do |flash_card| %>
     <tr>
       <td><%= flash_card.question %></td>
       <td><%= flash_card.flash_card_category&.name %></td>
-      <td><%= flash_card.flash_card_sub_category&.name %></td>
       <td>
         <%= link_to "Edit", edit_admin_flash_card_path(flash_card), class: "btn btn-info" %>
         <%= link_to "Delete", admin_flash_card_path(flash_card), class: "btn btn-danger", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
