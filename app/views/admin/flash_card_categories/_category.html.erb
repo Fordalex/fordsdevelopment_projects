@@ -2,30 +2,49 @@
   <div class="flashCardCategoryAdmin-wrapper">
     <div class="flashCardCategoryAdmin-categoryWrapper" style="border-left: solid 5px <%= category.colour %>">
       <div class="flashCardCategoryAdmin-titleContainer">
-        <div>
-          <h5><%= category.name %></h5>
-          <h6 class="text-secondary"><%= category.parent&.name %></h6>
+        <div class="flashCardCategoryAdmin-titleWrapper">
+          <div>
+            <h5 class="m-0"><%= category.name %></h5>
+            <p class="text-secondary m-0"><%= category.parent&.name %></p>
+          </div>
+          <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory<%= category.id %>" aria-expanded="false" aria-controls="collapseCategory">
+            Expand
+          </button>
         </div>
-        <%= link_to "Edit", edit_admin_flash_card_category_path(category), class: "btn btn-info" %>
-        <%= link_to "Delete", admin_flash_card_category_path(category), class: "btn btn-danger mx-3", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+        <div>
+          <%= link_to "Edit", edit_admin_flash_card_category_path(category), class: "btn btn-info" %>
+          <%= link_to "Delete", admin_flash_card_category_path(category), class: "btn btn-danger mx-3", method: :delete, :data => {:confirm => 'Are you sure?', :method => "Delete"} %>
+        </div>
       </div>
-
-      <h6>Flash Cards <%= link_to "New", new_admin_flash_card_path, class: "btn btn-success" %></h6>
-
-      <% category.flash_cards.each do |flash_card| %>
-        <p>
-          Title: <%= flash_card.title.present? ? flash_card.title : 'ADD A TITLE' %>,
-          Correct: <b><%= flash_card.correct %></b>,
-          Incorrect: <b><%= flash_card.incorrect %></b>
-          <%= link_to "Edit", edit_admin_flash_card_path(flash_card), class: "btn btn-info" %>
-        </p>
-      <% end %>
-
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: <%= category.score %>%; background-color: <%= category.colour %>;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= category.score %>%</div>
-      </div>
+          <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: <%= category.score %>%; background-color: <%= category.colour %>;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= category.score %>%</div>
+        </div>
 
-      <%= link_to "New Sub Category", new_admin_flash_card_category_path, class: "mt-3 btn btn-success" %>
+      <div class="collapse" id="collapseCategory<%= category.id %>">
+        <div class="card card-body p-1">
+          <h6>Flash Cards <%= link_to "New", new_admin_flash_card_path, class: "btn btn-success" %></h6>
+
+          <table class="table table-striped">
+            <tr>
+              <th>Title</th>
+              <th>Correct</th>
+              <th>Incorrect</th>
+              <th>Actions</th>
+            </tr>
+            <% category.flash_cards.each do |flash_card| %>
+              <tr>
+                <td><%= flash_card.title.present? ? flash_card.title : 'ADD A TITLE' %></td>
+                <td><%= flash_card.correct %></td>
+                <td><%= flash_card.incorrect %></td>
+                <td><%= link_to "Edit", edit_admin_flash_card_path(flash_card), class: "btn btn-info" %></td>
+              </tr>
+            <% end %>
+          </table>
+
+
+          <%= link_to "New Sub Category", new_admin_flash_card_category_path, class: "mt-3 btn btn-success" %>
+        </div>
+      </div>
     </div>
 
     <% category.children.each do |sub_category| %>
