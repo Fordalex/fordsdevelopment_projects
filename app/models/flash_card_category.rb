@@ -37,25 +37,16 @@ class FlashCardCategory < ApplicationRecord
   end
 
   def score
-    total_correct = total_correct_answers_count
-    total_incorrect = total_incorrect_answers_count
-    total_attempts = total_correct + total_incorrect
+    total_flash_cards = flash_cards.count
 
-    return 0 if total_attempts.zero?
+    return 0 if total_flash_cards.zero?
 
-    # calculate the basic score
-    basic_score = (total_correct.to_f / total_attempts) * 100
+    total_score = flash_cards.sum do |flash_card|
+      flash_card.score.to_f
+    end
 
-    # get the number of days since last updated
-    days_since_update = (Time.current - self.updated_at) / (60 * 60 * 24)
-
-    # calculate the time penalty (0 to 1, where 0 means it was updated today and 1 means it was updated more than 30 days ago)
-    time_penalty = [days_since_update / 30.0, 1].min
-
-    # apply the time penalty to the score
-    final_score = basic_score * (1 - time_penalty)
-
-    final_score.round(2)
+    average_score = total_score / total_flash_cards
+    average_score.round(2)
   end
 
 

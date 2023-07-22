@@ -1,7 +1,7 @@
 module Quiz
   class FlashCardCategoriesController < QuizController
     def index
-      @flash_card_categories = FlashCardCategory.all
+      @flash_card_categories = FlashCardCategory.left_outer_joins(:flash_cards).all.order(:name)
     end
 
     def play

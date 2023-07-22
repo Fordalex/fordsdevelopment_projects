@@ -6,6 +6,15 @@
       <div class="col-6 col-md-4 p-2">
         <label class="quiz-flashCardCategory-wrapper" for="categories[<%= category.id %>]">
           <h5><%= category.name %></h5>
+          <table class="table table-striped">
+            <tr>
+              <th>Flash Cards</th>
+            </tr>
+            <tr>
+              <td><%= category.flash_cards.count %></td>
+            </tr>
+          </table>
+          <%= render partial: '/quiz/flash_card_stats/category_progress', locals: { category: category } %>
           <%= f.check_box "categories[#{category.id}]" %>
         </label>
       </div>
