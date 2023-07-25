@@ -1,6 +1,7 @@
 <div class="quiz-flashCard-wrapper" data-flash-card="<%= flash_card.id %>" data-colour="<%= flash_card.flash_card_category.colour %>">
   <div class="quiz-flashCard-textContainer">
-    <h6 class="quiz-categoryText"><%= flash_card.flash_card_category.name %></h6>
+    <h6><%= flash_card.title %></h6>
+    <h5 class="quiz-categoryText"><%= flash_card.flash_card_category.name %></h5>
     <p><%= flash_card.question %>?</p>
     <div class="quiz-answer">
       <hr class="m-1">

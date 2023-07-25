@@ -11,5 +11,10 @@ module Quiz
       # TODO don't render from a post request
       render 'play'
     end
+
+    def play_random
+      @flash_cards = FlashCard.order("RANDOM()").limit(20)
+      render 'play'
+    end
   end
 end
