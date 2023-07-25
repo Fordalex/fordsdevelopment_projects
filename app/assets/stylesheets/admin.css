@@ -1,3 +1,7 @@
+.large-textarea {
+  height: 70vh !important
+}
+
 .admin-technologyOptionsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

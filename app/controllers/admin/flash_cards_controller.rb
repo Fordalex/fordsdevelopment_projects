@@ -8,6 +8,8 @@ module Admin
     end
 
     def create
+      return bulk_create_flash_cards if params[:bulk_upload].present?
+
       @flash_card = FlashCard.new(flash_card_params)
       if @flash_card.save!
         flash[:success] = "FlashCard was successfully created."
@@ -39,6 +41,20 @@ module Admin
     end
 
     private
+
+    def bulk_create_flash_cards
+      JSON.parse(params[:bulk_upload]).each do |flash_card|
+        FlashCard.create!(
+          title: flash_card["title"],
+          question: flash_card["question"],
+          answer: flash_card["answer"],
+          flash_card_category_id: flash_card_params["flash_card_category_id"]
+        )
+      end
+
+      flash[:success] = "FlashCards were successfully created."
+      redirect_to admin_flash_cards_path(@flash_card)
+    end
 
     def set_flash_card
       @flash_card = FlashCard.find(params[:id])
