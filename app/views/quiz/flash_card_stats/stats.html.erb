@@ -1,6 +1,23 @@
 <h1>Stats</h1>
 
-<p>Score will decrease over time.</p>
+<table class="table table-striped">
+  <tr>
+    <th>Total Flash Cards</th>
+    <td><%= FlashCard.count %></td>
+  </tr>
+  <tr>
+    <th>Unanswered Flash Cards</th>
+    <td><%= FlashCard.where(incorrect: 0, correct: 0).count %></td>
+  </tr>
+  <tr>
+    <th>Incorrect</th>
+    <td><%= FlashCard.all.sum(:incorrect) %></td>
+  </tr>
+  <tr>
+    <th>Correct</th>
+    <td><%= FlashCard.all.sum(:correct) %></td>
+  </tr>
+</table>
 
 <div class="p-3">
   <table class="p-3">
