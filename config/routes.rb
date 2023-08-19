@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "technology/:name" => "technologies#show", as: :technology
   get "packages" => "packages#index", as: :packages
   get "dashboard" => "dashboard#dashboard", as: :dashboard
+  get "booking-application-features" => 'booking_application#features', as: :booking_application_features
 
   # feed for learning spanish
   get "/spanish-feed" => "spanish#feed", defaults: {format: :json}
